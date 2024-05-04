@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriszti Műhelye</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+  <div class="menu-container">
+    <div class="menu"> 
+        <img src="./img/logo1.png" alt="" class="logo">        
+        <div class="main_link pulse" onclick="navigateToPage('index.html')">Főoldal</div>
+        <div class="main_link pulse" onclick="navigateToPage('about.html')">Rólam</div>
+        <div class="main_link pulse" onclick="navigateToPage('vásárlás_menete.html')">Vásárlás menete</div>
+        <div class="dropdown">
+            <div class="main_link pulse" onclick="navigateToPage('index.html#category-section')"> Termékeim <img src="./img/icons/down-arrow (2).png" alt="" class="icon"></div>
+            <ul class="dropdown-content">
+                <li onclick="navigateToPage('category.html')">Kategória 1</li>
+                <li onclick="navigateToPage('category.html')">Kategória 2</li>
+                <li onclick="navigateToPage('category.html')">Kategória 2</li>
+                <li onclick="navigateToPage('category.html')">Kategória 2</li>
+                <li onclick="navigateToPage('category.html')">Kategória 2</li>
+                <li onclick="navigateToPage('category.html')">Kategória 2</li>
+                <li onclick="navigateToPage('category.html')">Kategória 2</li>
+            </ul>
+        </div>
+        <div class="main_link pulse" onclick="navigateToPage('ÁSZF.html')">ÁSZF</div>
+        <div class="main_link pulse" onclick="navigateToPage('contact.html')">Kapcsolat</div>
+    </div>
+</div>
+
+  </div>
+      <div class="container">
+          <img src="img/shape.png" class="square" alt="" />
+          <div class="form">
+            <div class="contact-info">
+              <h3 class="title">Let's get in touch</h3>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                dolorum adipisci recusandae praesentium dicta!
+              </p>
+    
+              <div class="info">
+                <div class="information">
+                  <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
+    
+                  <p>92 Cherry Drive Uniondale, NY 11553</p>
+                </div>
+                <div class="information">
+                  <i class="fas fa-envelope"></i> &nbsp &nbsp
+                  <p>lorem@ipsum.com</p>
+                </div>
+                <div class="information">
+                  <i class="fas fa-phone"></i>&nbsp&nbsp
+                  <p>123-456-789</p>
+                </div>
+              </div>
+    
+              <div class="social-media">
+                <p>Connect with us :</p>
+                <div class="social-icons">
+                  <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+    
+            <div class="contact-form">
+              <span class="circle one"></span>
+              <span class="circle two"></span>
+    
+              <form action="https://api.web3forms.com/submit" method="POST">
+                  <input type="hidden" name="subject" value="Üzenet az oldaladról">
+                  <input type="hidden" name="from_name" value="Epoxy">
+                  <input type="hidden" name="access_key" value="fe210939-8be2-45f2-ba40-f02b696011fe">
+                  <input type="hidden" name="redirect" value="http://127.0.0.1:5501/thankYouPage.html">
+                  <h3 class="title">Contact us</h3>
+                  <div class="input-container">
+                      <input type="text" name="name" class="input" required/>
+                      <label for="">Username</label>
+                      <span>Username</span>
+                  </div>
+                  <div class="input-container">
+                      <input type="email" name="email" class="input" required/>
+                      <label for="">Email</label>
+                      <span>Email</span>
+                  </div>
+                  <div class="input-container">
+                      <input type="tel" name="phone" class="input" required />
+                      <label for="">Phone</label>
+                      <span>Phone</span>
+                  </div>
+                  <div class="input-container textarea">
+                      <textarea name="message" class="input" required></textarea>
+                      <label for="">Message</label>
+                      <span>Message</span>
+                  </div>
+                <button type="submit" value="Send" class="btn">Send</button>
+              </form>
+            </div>
+          </div>
+  </div>
+  
+  <footer>
+    <div class="media">
+        <div>Kriszi Epoxi műhelye</div>
+        <div>Egy szebb otthonért</div>
+        <div>Ajándéktárgyinkat kézzel, egyedileg készítjük, igy minden alkotásunk más és más.</div>
+        <a href="https://www.facebook.com/YourFacebookPage" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                <!-- SVG code for Facebook icon -->
+            </svg>
+        </a>
+        <a href="https://www.instagram.com/YourInstagramPage" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                <!-- SVG code for Instagram icon -->
+            </svg>
+        </a>   
+    </div>
+    <div class="contact">
+        <div>kapcsolat</div>
+        <div>Petőné Birta Kriszti</div>
+        <div>4243 meg a cím</div>
+        <div>telefonszám</div>
+        <div>email</div>
+        <div>adószám</div>
+    </div>
+</footer>
+  <script src="contact.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
