@@ -44,6 +44,11 @@
 .thumbnail_pictures img {
     height: 100px;
     margin: 1em;
+    cursor: pointer;
+}
+
+.product_description .pulse:hover {
+    border-radius: 20px;
 }
 
 
@@ -56,7 +61,7 @@
 }
 
 .to_basket {
-    background-color: rgb(251, 112, 112);
+    background-color: rgb(252, 197, 253);
     border: 2px solid black;
     border-radius: 20px;
     margin-left: 20px;

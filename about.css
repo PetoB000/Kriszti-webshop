@@ -35,3 +35,12 @@ footer {
     float: right;
     font-family: "Poppins", sans-serif;
   }
+
+  .container img {
+    width: 20vw;
+  }
+
+  .introduction span {
+    font-size: 20px;
+    font-weight: 600;
+  }
