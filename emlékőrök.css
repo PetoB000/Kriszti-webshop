@@ -1,0 +1,44 @@
+.product_img {
+    height: auto;
+}
+
+.product {
+    height: auto;
+}
+
+@media screen and (min-width:1658px) {
+    .product,
+    .product_img {
+        width: 340px;
+    }
+
+    .product_img {
+        max-height: 425px;
+    }
+
+}
+
+@media screen and (max-width:1250px) {
+    .product,
+    .product_img {
+        width: 420px;
+    }
+}
+
+@media screen and (max-width:1033px) {
+    .product,
+    .product_img {
+        width: 330px;
+    }
+
+    .container {
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width:843px) {
+    .product,
+    .product_img {
+        width: 300px;
+    }
+}

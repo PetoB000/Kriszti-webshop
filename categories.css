@@ -26,11 +26,7 @@
     margin: 20px;
 }
 
-.products .product:nth-child(4),
-.products .product:nth-child(5),
-.products .product:nth-child(6) {
-    height: auto;
-}
+
 
 
 .product_img {
@@ -42,12 +38,6 @@
 }
 
 
-.products .product:nth-child(4) img,
-.products .product:nth-child(5) img,
-.products .product:nth-child(6) img {
-    height: auto;
-}
-
 
 span {
     margin-top: 5vh;
@@ -58,4 +48,10 @@ span {
 button {
     margin-top: 20px;
     margin-bottom: 10px;
+    color: black;
+    border: 1.5px solid black;
+}
+
+button:hover {
+    background-color: #d8b4aa;
 }

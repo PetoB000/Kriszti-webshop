@@ -62,6 +62,7 @@ footer {
   margin-left: 13vw;
   cursor: pointer;
   transform: translate(-10%, 20%);
+  z-index: 999999999;
 }
 
 
@@ -289,8 +290,6 @@ footer {
 
 .category-container {
   width: 30%; /* Adjust as needed */
-  display: flex;
-  flex-direction: column;
   margin: 10px;
 }
 
@@ -298,6 +297,7 @@ footer {
   flex: 1;
   position: relative;
 }
+
 
 .category img {
   width: 100%;
@@ -368,22 +368,35 @@ footer {
 
 .prev-btn,
 .next-btn {
+  display: flex;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
 }
 
 .prev-btn {
   left: 10px;
 }
 
+.prev-btn img {
+  width: 15px;
+  transform: rotate(90deg);
+}
+
 .next-btn {
   right: 10px;
+}
+
+.next-btn img {
+  width: 15px;
+  transform: rotate(270deg);
 }
 
 
@@ -395,6 +408,7 @@ footer {
   font-weight: bold;
   font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
+
 
 
 
