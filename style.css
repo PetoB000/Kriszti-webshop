@@ -57,19 +57,22 @@ footer {
 
 
 .logo {
-  width: 130px;
+  width: 16%;
   margin-right: auto;
   margin-left: 13vw;
   cursor: pointer;
+  transform: translate(-10%, 20%);
 }
 
 
 .menu {
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgba(128, 128, 128, 0.5);
   font-weight: 500;
+
 }
 
 .dropdown {
@@ -106,8 +109,11 @@ footer {
 }
 
 
+
+
+
 .dropdown-content li {
-  background-color: lightgray;
+  background-color: rgb(192,188,188,0.6);
   margin-bottom: 5px;
   border-radius: 15px;
   display: flex;
@@ -141,9 +147,14 @@ footer {
 }
 
 
+.main_link:hover {
+  background-color: #F9D2C9;
+}
+
+
 .pulse:hover, 
 .pulse:focus {
-  animation: pulse 1s;
+  animation: pulse 1.3s;
   box-shadow: 0 0 0 2em transparent;
   border-radius: 10px;
 }
@@ -153,7 +164,9 @@ footer {
 }
 
 
-
+.dropdown-content .pulse {
+  border-radius: 15px;
+}
 
 
 li {
@@ -161,7 +174,7 @@ li {
 }
 
 li:hover {
-  background-color: rgb(230, 209, 183);
+  background-color: #F9D2C9;
 }
 
 
@@ -214,7 +227,7 @@ button {
 }
 
 .read_more_btn:hover {
-  background-color: rgb(243, 163, 163);
+  background-color: #F9D2C9;
 }
 
 
@@ -343,7 +356,7 @@ footer {
 
 .carousel img {
   width: calc(100% / 5);
-  height: auto;
+  height: 300px;
   margin-right: 20px;
   border-radius: 10px;
 }

@@ -13,7 +13,7 @@ let counter = 0;
 const slideWidth = 33;
 
 nextBtn.addEventListener('click', () => {
-  if (counter < 5) {
+  if (counter < 4) {
     counter++;
     carousel.style.transform = `translateX(-${counter * slideWidth}%)`;
   }

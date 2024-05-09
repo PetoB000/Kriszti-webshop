@@ -12,7 +12,9 @@ textarea {
   box-sizing: border-box;
 }
 
-
+.logo {
+  z-index: 9999999999;
+}
 
 
 .container {
