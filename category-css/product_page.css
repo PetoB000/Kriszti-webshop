@@ -6,7 +6,7 @@
 
 .picture_container {
 
-    flex-basis: 50%;
+    flex-basis: 40%;
 }
 
 .picture_container img {
@@ -15,7 +15,6 @@
 
 .product_description {
     flex-basis: 70%;
-    padding-right: 5vw;
     padding-top: 2vh;
 }
 
@@ -42,9 +41,13 @@
 }
 
 .thumbnail_pictures img {
-    height: 100px;
-    margin: 1em;
+    height: 110px;
+    margin: 10px;
     cursor: pointer;
+}
+
+.thumbnail_pictures img:first-child {
+    margin-left: 0px;
 }
 
 .product_description .pulse:hover {
@@ -72,3 +75,14 @@
     justify-content: center; 
     cursor: pointer;
 }
+
+
+#flower_collection_img {
+    height: 50vh;
+}
+
+#green_collection {
+    height: 40vh;
+    width: 90%;
+}
+  
