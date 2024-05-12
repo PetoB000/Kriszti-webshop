@@ -79,6 +79,7 @@ textarea {
 }
 
 form {
+  
   padding: 2.3rem 2.2rem;
   z-index: 10;
   overflow: hidden;
@@ -275,14 +276,14 @@ textarea.input {
 }
 
 
-.square {
-  position: absolute;
-  height: 400px;
-  top: 50%;
-  left: 50%;
-  transform: translate(181%, 11%);
-  opacity: 0.2;
+@media (min-width: 1250px) {
+  /* Scale up the layout by 25% */
+ .form_container {
+    transform: scale(1.2);
+  }
 }
+
+
 
 @media (max-width: 850px) {
   .form {

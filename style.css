@@ -39,12 +39,13 @@ body {
   flex-direction: column;
   height: 100%;
   background-image: url(./img/letöltés\ \(2\).jpg);
-
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 20px;
 
 }
 
 .menu-container,
-.about_me_container,
 footer {
   width: 100%;
 }
@@ -93,10 +94,9 @@ footer {
 
 
 .dropdown-content li {
-  animation: fadeDown 0.5s ease;
-  animation-fill-mode: both;
+  animation: fadeDown 0.6s ease;
   transform-origin: top center;
-  
+  animation-fill-mode: both;
 }
 
 
@@ -139,7 +139,7 @@ footer {
 
 
 .dropdown-content li {
-  background-color: rgb(192,188,188,0.6);
+  background-color: rgba(198, 181, 141, 0.544);
   margin-bottom: 5px;
   border-radius: 15px;
   display: flex;
@@ -272,7 +272,7 @@ button:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.692);
   display: flex;
   margin: 0 auto;
-  width: 45vw;
+  width: 45%;
   margin-bottom: 14vh;
   background-color: whitesmoke;
   position: relative;
@@ -295,11 +295,34 @@ button:hover {
 
 footer {
   display: flex;
-  background-color: rgba(128, 128, 128, 0.5);
-  justify-content: space-around;
+  background-color: rgba(198, 181, 141, 0.544);
+  justify-content: space-between;
+  
+}
+
+.media {
+  width: 25vw;
+  margin-left: 100px;
 }
 
 
+.contact {
+  margin-right: 100px;
+}
+
+
+.contact div,
+.media div {
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+.contact div:first-child,
+.media div:first-child {
+  font-weight: 500;
+  font-size: 20px;
+}
 
 
 .category-section {
@@ -359,37 +382,27 @@ footer {
 }
 
 
-.carousel-container {
+.carousel {
   position: relative;
   overflow: hidden;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
+  width: 100%; /* adjust the width to your needs */
+  margin: 40px auto;
 }
 
-.carousel {
+.carousel-inner {
   display: flex;
-  transition: transform 0.5s ease;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease-in-out;
 }
 
-.carousel-items {
-  display: flex;
-  cursor: pointer;
+.carousel-inner img {
+  width: calc(15% - 20px);; /* adjust the width to your needs */
+  margin: 10px;
+
 }
 
-.carousel img {
-  width: calc(100% / 5);
-  height: 300px;
-  margin-right: 20px;
-  border-radius: 10px;
-}
-
-
-
-
-
-
-.prev-btn,
-.next-btn {
+.carousel-prev, 
+.carousel-next {
   display: flex;
   position: absolute;
   top: 50%;
@@ -403,20 +416,21 @@ footer {
   justify-content: center;
 }
 
-.prev-btn {
+.carousel-prev {
   left: 10px;
 }
 
-.prev-btn img {
+.carousel-next {
+  right: 10px;
+}
+
+.carousel-prev img {
   width: 15px;
   transform: rotate(90deg);
 }
 
-.next-btn {
-  right: 10px;
-}
 
-.next-btn img {
+.carousel-next img {
   width: 15px;
   transform: rotate(270deg);
 }
@@ -430,6 +444,8 @@ footer {
   font-weight: bold;
   font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
+
+
 
 
 
