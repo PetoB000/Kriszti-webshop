@@ -1,6 +1,5 @@
 function navigateToPage(pageUrl) {
   window.location.href = pageUrl;
-  console.log('navigate to')
 }
 
 
@@ -71,3 +70,21 @@ hamburgerImg.parentNode.addEventListener('click', function() {
 });
 
 
+
+const dropdownContent = document.querySelector('.dropdown-content');
+
+let isdropdownOpen = false;
+
+dropdown.addEventListener('click', function() {
+  isdropdownOpen = !isdropdownOpen;
+  dropdownContent.style.display = isdropdownOpen ? 'block' : 'none';
+});
+
+
+const screenWidth = window.innerWidth;
+
+if (screenWidth > 1000) {
+  dropdown.addEventListener('click', function() {
+    navigateToPage('index.html#category-section')
+  })
+}
