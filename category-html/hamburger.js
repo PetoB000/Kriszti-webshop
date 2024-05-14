@@ -16,3 +16,5 @@ hamburgerImg.parentNode.addEventListener('click', function() {
   dropdown.style.display = isMenuOpen? "flex" : "none";
   menu.style.height = isMenuOpen? "333px" : "110px";
 });
+
+

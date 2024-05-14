@@ -44,7 +44,12 @@ footer {
   }
 
 
-  /* Responsive design */
+@media screen and (min-width: 1001px) {
+  .left {
+    transform: translateY(30px);
+  }
+}
+
 @media (max-width: 1000px) {
   .left img {
     width: 100%;

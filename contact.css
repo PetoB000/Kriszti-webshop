@@ -277,7 +277,7 @@ textarea.input {
 
 
 @media (min-width: 1250px) {
-  /* Scale up the layout by 25% */
+
  .form_container {
     transform: scale(1.2);
   }

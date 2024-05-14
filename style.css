@@ -74,7 +74,7 @@ footer {
   background-color: rgb(224,212,188);
   font-weight: 500;
   position: relative;
-  z-index: 1; /* Add z-index to menu */
+  z-index: 1; 
 }
 
 .dropdown {
@@ -381,7 +381,7 @@ footer {
 .carousel {
   position: relative;
   overflow: hidden;
-  width: 100%; /* adjust the width to your needs */
+  width: 100%; 
   margin: 40px auto;
 }
 
@@ -392,7 +392,7 @@ footer {
 }
 
 .carousel-inner img {
-  width: calc(15% - 20px);; /* adjust the width to your needs */
+  width: calc(15% - 20px);
   margin: 10px;
 
 }
@@ -441,6 +441,12 @@ footer {
   font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
 
+.hamburger {
+  cursor: pointer;
+}
+
+
+
 
 .hamburger img {
   display: none;
@@ -468,7 +474,7 @@ footer {
     margin-left: 0;
   }
   .carousel-inner img{
-    width: calc(20% - 20px); /* adjust the width to your needs */
+    width: calc(20% - 20px);
   }
 }
 
@@ -547,19 +553,19 @@ footer {
     border-radius: 10px;
     border: 2px solid black;
     z-index: 300;
-    position: relative; /* Add this */
-    top: 45px; /* Adjust this value as needed */
+    position: relative; 
+    top: 45px;
     
   }
 
   .category_text {
     opacity: 1;
     font-size: 17px;
-    position: relative; /* Position it absolutely */
+    position: relative;
     transform: translateY(0px);
 
 
-    z-index: 1; /* Ensure it's above the images */
+    z-index: 1;
   }
 
   .category:hover img {
@@ -568,7 +574,7 @@ footer {
 
   .about_me_container {
     z-index: 5;
-    transform: translate(-20px, 150px);
+    transform: translate(-20px, 90px);
   }
 
   .dropdown:hover .dropdown-content {
@@ -580,7 +586,7 @@ footer {
 @media screen and (max-width:770px) {
   .about_me_container {
     scale: 0.85;
-    transform: translate(-100px, 150px);
+    transform: translate(-100px, 90px);
   }
 
   .category-section {
@@ -603,8 +609,9 @@ footer {
     align-items: center;
   }
 
+
   .carousel-inner img{
-    width: calc(25% - 20px); /* adjust the width to your needs */
+    width: calc(25% - 20px);
   }
 
   .hamburger img {
@@ -649,7 +656,7 @@ footer {
   }
 
   .carousel-inner img{
-    width: calc(33% - 20px); /* adjust the width to your needs */
+    width: calc(33% - 20px);
   }
 }
 
@@ -657,7 +664,8 @@ footer {
 @media screen and (max-width:455px) {
   .about_me_container {
     height: 180px;
-    width: 142%;
+    width: 140%;
+    
   }
 
   .me_img {
@@ -667,6 +675,17 @@ footer {
 
   .categories_text {
     font-size: 35px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .contact p,
+  .media p {
+    font-size: 12px;
   }
 }
 
@@ -684,15 +703,9 @@ footer {
     transform: translateY(-19%);
   }
 
-  footer {
-    display: flex;
-    justify-content: center;
-    
-  }
-
   .contact p,
   .media p {
     font-size: 10px;
-    
-}
+  }
+
 }

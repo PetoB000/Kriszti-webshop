@@ -36,7 +36,7 @@ function toggleTransitionClass() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
   const thumbnails = document.querySelectorAll('.carousel-item');
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-content');
@@ -52,4 +52,4 @@ document.addEventListener('DOMContentLoaded', function() {
   modal.addEventListener('click', function() {
       modal.style.display = 'none';
   });
-});
+}); */

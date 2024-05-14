@@ -6,7 +6,7 @@ function navigateToPage(pageUrl) {
 
 
 
-
+// TERMÉK OLDALI KÉPVÁLASZTÓ
 
 document.addEventListener('DOMContentLoaded', function() {
   const productThumbnails = document.querySelectorAll('.thumbnail_pictures img');
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
 dropdown = document.querySelector(".dropdown");
 const dropdownContent = document.querySelector('.dropdown-content');
 
@@ -34,4 +35,10 @@ dropdown.addEventListener('click', function() {
   isdropdownOpen = !isdropdownOpen;
   dropdownContent.style.display = isdropdownOpen ? 'block' : 'none';
 });
+
+
+
+
+
+
 

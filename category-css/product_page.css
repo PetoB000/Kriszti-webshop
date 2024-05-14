@@ -1,205 +1,3 @@
-/* .content-wrapper {
-    display: flex;
-    margin-bottom: 5vh;
-    margin-left: 3vw;
-}
-
-
-.container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-
-.picture_container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-basis: 40%;
-}
-
-.picture_container img {
-    max-width: 60vw;
-}
-
-.product_description {
-    flex-basis: 70%;
-    padding-top: 2vh;
-    margin-left: 20px;
-}
-
-.product_name {
-    margin: 0 auto;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    font-size: 35px;
-    font-weight: 500;
-}
-
-.product_description span {
-    font-size: 25px;
-    font-weight: 450;
-}
-
-.shown_picture {
-    height: 60vh;
-    flex-basis: 50%;
-}
-
-.shown_picture img {
-    height: inherit;
-}
-
-.thumbnail_pictures img {
-    height: 110px;
-    margin: 10px;
-    cursor: pointer;
-}
-
-
-
-
-
-.thumbnail_pictures img:first-child {
-    margin-left: 0px;
-}
-
-.product_description .pulse:hover {
-    border-radius: 20px;
-}
-
-
-.product_price {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    height: 100px;
-
-}
-
-.to_basket {
-    background-color: rgb(252, 197, 253);
-    border: 2px solid black;
-    border-radius: 20px;
-    margin-left: 20px;
-    height: 50px;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    cursor: pointer;
-}
-
-
-#flower_collection_img {
-    height: 50vh;
-}
-
-#green_collection {
-    height: 40vh;
-    width: 90%;
-}
-  
-
-
-@media screen and (max-width: 1200px) {
-    .content-wrapper {
-      flex-direction: column;
-    }
-    .picture_container {
-      flex-basis: 100%;
-      margin: 0 auto;
-    }
-    .product_description {
-      flex-basis: 100%;
-      padding-top: 20px;
-    }
-
-    .thumbnail_pictures {
-      display: flex;
-      justify-content: center;
-      
-    }
-}
-  
-@media screen and (max-width: 900px) {
-    .picture_container {
-      height: 100%;
-      flex-basis: 100%;
-      margin: 0 auto;
-      width: 100%;
-      min-width: 450px;
-    }
-
-    
-
-    .product_name {
-      font-size: 25px;
-    }
-    .product_description span {
-      font-size: 20px;
-    }
-
-    .thumbnail_pictures img {
-        height: 110px;
-    }
-}
-
-
-@media screen and (min-width:600px) and (max-width: 750px) {
-  .thumbnail_pictures {
-    transform: translateX(-40px);
-  }
-}
-
-
-  
-@media screen and (max-width: 600px) {
-
-    .picture_container img {
-      max-width: 80vw;
-    }
-    .product_description {
-      padding-top: 10px;
-    }
-    .product_price {
-      height: 80px;
-    }
-    .to_basket {
-      width: 150px;
-    }
-
-
-}
-  
-@media screen and (max-width: 400px) {
-
-
-
-    .product_name {
-      font-size: 20px;
-    }
-    .product_description span {
-      font-size: 18px;
-    }
-    .product_price {
-      height: 60px;
-    }
-    .to_basket {
-      width: 100px;
-      text-align: center;
-    }
-    .thumbnail_pictures img {
-      height: 80px;
-
-    .picture_container {
-      max-width: 350px;
-    }
-  }
-} */
-
-
 .content-wrapper {
   display: flex;
   margin-bottom: 5vh;
@@ -215,13 +13,13 @@
 .picture_container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* added to center images */
+  align-items: center;
   flex-basis: 40%;
 }
 
 .picture_container img {
   max-width: 60vw;
-  margin: 0 auto; /* added to center images */
+  margin: 0 auto;
 }
 
 .product_description {
@@ -250,20 +48,20 @@
 
 .shown_picture img {
   height: inherit;
-  object-fit: cover; /* added to maintain aspect ratio */
+  object-fit: cover;
 }
 
 .thumbnail_pictures {
   display: flex;
-  flex-wrap: wrap; /* added to wrap images */
-  justify-content: center; /* added to center images */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .thumbnail_pictures img {
   height: 110px;
   margin: 10px;
   cursor: pointer;
-  object-fit: cover; /* added to maintain aspect ratio */
+  object-fit: cover;
 }
 
 .thumbnail_pictures img:first-child {
@@ -303,7 +101,7 @@
   width: 90%;
 }
 
-/* Media Queries */
+
 
 @media screen and (max-width: 1200px) {
   .content-wrapper {

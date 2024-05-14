@@ -10,9 +10,12 @@ hamburgerImg.parentNode.addEventListener('click', function() {
   menuLinks.forEach(menuLink => {
     menuLink.style.display = isMenuOpen? "flex" : "none";
   });
-  hamburgerImg.src = isMenuOpen? '../../img/icons/remove.png' : '../../img/icons/menu-circle-3-512.png';
+  hamburgerImg.src = isMenuOpen? '../../../img/icons/remove.png' : '../../../img/icons/menu-circle-3-512.png';
   console.log(isMenuOpen? "open" : "closed");
 
   dropdown.style.display = isMenuOpen? "flex" : "none";
   menu.style.height = isMenuOpen? "333px" : "110px";
 });
+
+
+
