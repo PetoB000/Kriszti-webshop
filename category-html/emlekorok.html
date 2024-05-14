@@ -13,19 +13,19 @@
 <body>
     <div class="menu-container">
         <div class="menu"> 
-            <img src="./img/logo3.png" alt="" class="logo" onclick="navigateToPage('../index.html')">        
+            <img src="../img/logo3.png" alt="" class="logo" onclick="navigateToPage('../index.html')">        
             <div class="main_link pulse" onclick="navigateToPage('../index.html')">Főoldal</div>
             <div class="main_link pulse" onclick="navigateToPage('../about.html')">Rólam</div>
             <div class="main_link pulse" onclick="navigateToPage('../vásárlás_menete.html')">Vásárlás menete</div>
             <div class="dropdown">
                 <div class="main_link pulse">Termékeim  <img src="../img/icons/down-arrow (2).png" alt="" class="icon"></div>
                 <ul class="dropdown-content">
-                    <li onclick="navigateToPage('./category-html/tálcák.html')">Tálcák</li>
-                    <li onclick="navigateToPage('./category-html/emlékőrök.html')">Emlékőrök</li>
-                    <li onclick="navigateToPage('./category-html/Faliórák.html')">Faliórák</li>
-                    <li onclick="navigateToPage('./category-html/Kollekciók.html')">Kollekciók</li>
-                    <li onclick="navigateToPage('./category-html/Sütistálcák.html')">Sütis tálcák</li>
-                    <li onclick="navigateToPage('./category-html/Poháralátétek,tálak.html')">Poháralátétek/Tálak</li>
+                    <li onclick="navigateToPage('./talcak.html')">Tálcák</li>
+                    <li onclick="navigateToPage('./emlekorok.html')">Emlékőrök</li>
+                    <li onclick="navigateToPage('./faliorak.html')">Faliórák</li>
+                    <li onclick="navigateToPage('./Kollekciok.html')">Kollekciók</li>
+                    <li onclick="navigateToPage('./Sutistalcak.html')">Sütis tálcák</li>
+                    <li onclick="navigateToPage('./Poharalatetek,talak.html')">Poháralátétek/Tálak</li>
                 </ul>
             </div>
             <div class="main_link pulse" onclick="navigateToPage('../contact.html')">Kapcsolat</div>
@@ -51,12 +51,12 @@
             </div>
             <div class="product_section">
                 <div class="product long_product">
-                    <img src="../img/categories/Szív formàjú Emlékőr/image_6487327 (15).JPG" class="product_img long_img" alt="">
+                    <img src="../img/categories/Szív formàjú Emlékőr/image_6487327 (15).JPG" class="product_img long_img object_fit" alt="">
                     Szív formájú Emlékőr <br> <span>Ára: 25.000Ft</span> <br>
                     <button onclick="navigateToPage('./product-html/Emlékőrzők/Szív formájú Emlékőr.html')">megnézem</button>
                 </div>
                 <div class="product">
-                    <img src="../img/categories/Fényképes szívecskés emlékőr II/image_67147009.JPG" class="product_img_exception" alt="">
+                    <img src="../img/categories/Fényképes szívecskés emlékőr II/image_67147009.JPG" class="product_img_exception object_fit" alt="">
                     Fényképes, szívecskés emlékőr II <br> <span>Ára: 10.000Ft</span> <br>
                     <button onclick="navigateToPage('./product-html/Emlékőrzők/Fényképes, szívecske emlékőr II.html')">megnézem</button>
                 </div>
@@ -97,5 +97,6 @@
         </div>
     </footer>
     <script src="../main.js"></script>
+    <script src="hamburger.js"></script>
 </body>
 </html>

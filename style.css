@@ -7,6 +7,9 @@ body {
 }
 
 
+
+
+
 .modal {
   display: none;
   position: fixed;
@@ -33,14 +36,12 @@ body {
 
 
 .container {
-
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
-  height: 100%;
+
   background-image: url(./img/letöltés\ \(7\).jpg);
-  
+  padding: 30px;
 }
 
 .menu-container,
@@ -307,15 +308,15 @@ footer {
 }
 
 
-.contact div,
-.media div {
+.contact p,
+.media p {
   margin-bottom: 5px;
   text-align: center;
 }
 
 
-.contact div:first-child,
-.media div:first-child {
+.contact p:first-child,
+.media p:first-child {
   font-weight: 500;
   font-size: 20px;
 }
@@ -450,11 +451,24 @@ footer {
 }
 
 
+.svg_container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.svg_container a {
+  width: 50px;
+}
+
 
 
 @media screen and (max-width: 1330px) {
   .logo {
     margin-left: 0;
+  }
+  .carousel-inner img{
+    width: calc(20% - 20px); /* adjust the width to your needs */
   }
 }
 
@@ -467,6 +481,9 @@ footer {
     top: 50px;
     right: 30px;
   }
+
+
+
 
 
   .menu {
@@ -484,15 +501,17 @@ footer {
     margin-top: 5px;
     background-color: rgb(224,212,188);
     min-height: 32.05px;
-    max-height: 40px;
+    max-height: 36.05px;
     z-index: 200;
     transform: translateX(0px);
+    padding: 0px;
   }
 
   .dropdown {
     display: none;
     width: 100%;
     z-index: 19999;
+    justify-content: center;
   }
 
   .main_link:last-child {
@@ -515,19 +534,22 @@ footer {
 
     width: 100%;
     margin-top: 23px;
-    transform: translateX(0px);
+    transform: translate(2.25%, -27px);
     padding: 0px;
-    margin: 0;
+
+    justify-content: center;
   }
 
   .dropdown-content li {
-    width: 99.5%;
-    height: 40px;
+    width: 95%;
+    min-height: 36.05px;
+    max-height: 36.05px;
     border-radius: 10px;
     border: 2px solid black;
     z-index: 300;
     position: relative; /* Add this */
     top: 45px; /* Adjust this value as needed */
+    
   }
 
   .category_text {
@@ -558,13 +580,17 @@ footer {
 @media screen and (max-width:770px) {
   .about_me_container {
     scale: 0.85;
-    transform: translate(-70px, 150px);
+    transform: translate(-100px, 150px);
   }
 
   .category-section {
     flex-wrap: nowrap;
   }
 
+  .contact,
+  .media {
+    margin: 10px;
+  }
   
 }
 
@@ -575,6 +601,10 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .carousel-inner img{
+    width: calc(25% - 20px); /* adjust the width to your needs */
   }
 
   .hamburger img {
@@ -593,26 +623,41 @@ footer {
   .category_text {
     font-size: 25px;
   }
+
+  .contact p,
+  .media p {
+    font-size: 15px;
+}
 }
 
 @media screen and (max-width:630px) {
   .about_me_container {
-    width: 115%;
+    width: 130%;
 
+  }
+
+  .content,
+  .media {
+    font-size: 10px;
   }
 }
 
 @media screen and (max-width:540px) {
   .about_me_container {
     height: 160px;
-    width: 120%;
+    width: 135%;
+  }
+
+  .carousel-inner img{
+    width: calc(33% - 20px); /* adjust the width to your needs */
   }
 }
 
 
-@media screen and (max-width:430px) {
+@media screen and (max-width:455px) {
   .about_me_container {
     height: 180px;
+    width: 142%;
   }
 
   .me_img {
@@ -626,12 +671,28 @@ footer {
 }
 
 
-@media screen and (max-width:363px) {
+@media screen and (max-width:390px) {
   .about_me_container {
     height: 200px;
+    width: 145%;
+  }
+  .categories_text {
+    font-size: 30px;
   }
 
   .me_img {
     transform: translateY(-19%);
   }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .contact p,
+  .media p {
+    font-size: 10px;
+    
+}
 }

@@ -34,3 +34,22 @@ function toggleTransitionClass() {
     carousel.classList.remove('transition-enabled');
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const thumbnails = document.querySelectorAll('.carousel-item');
+  const modal = document.querySelector('.modal');
+  const modalContent = document.querySelector('.modal-content');
+
+  thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+          const imgUrl = this.getAttribute('src');
+          modalContent.setAttribute('src', imgUrl);
+          modal.style.display = 'block';
+      });
+  });
+
+  modal.addEventListener('click', function() {
+      modal.style.display = 'none';
+  });
+});

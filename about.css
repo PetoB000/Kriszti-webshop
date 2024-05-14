@@ -15,7 +15,6 @@ footer {
   }
   
   .container {
-    max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
   }
@@ -46,10 +45,11 @@ footer {
 
 
   /* Responsive design */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .left img {
     width: 100%;
   }
+
 }
 
 
