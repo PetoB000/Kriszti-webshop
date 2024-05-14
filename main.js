@@ -80,11 +80,11 @@ dropdown.addEventListener('click', function() {
   dropdownContent.style.display = isdropdownOpen ? 'block' : 'none';
 });
 
-
+/* const dropDown = document.querySelectorAll('.main_link')
 const screenWidth = window.innerWidth;
-
+console.log(dropDown)
 if (screenWidth > 1000) {
-  dropdown.addEventListener('click', function() {
+  dropDown[4].addEventListener('click', function() {
     navigateToPage('index.html#category-section')
   })
-}
+} */

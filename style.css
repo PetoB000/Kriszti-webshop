@@ -86,9 +86,12 @@ footer {
 .dropdown-content {
   display: none;
   position: absolute;
-  z-index: 20000;
+  z-index: 2000;
   transform: translateX(-18%);
+}
 
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 
@@ -201,9 +204,7 @@ li:hover {
 
 
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+
 
 
 
@@ -448,6 +449,9 @@ footer {
   display: block;
 }
 
+
+
+
 @media screen and (max-width: 1330px) {
   .logo {
     margin-left: 0;
@@ -460,7 +464,7 @@ footer {
   .hamburger img {
     display: flex;
     position: absolute;
-    top: 70px;
+    top: 50px;
     right: 30px;
   }
 
@@ -542,7 +546,7 @@ footer {
 
   .about_me_container {
     z-index: 5;
-    transform: translate(-60px, 150px);
+    transform: translate(-20px, 150px);
   }
 
   .dropdown:hover .dropdown-content {
@@ -554,11 +558,14 @@ footer {
 @media screen and (max-width:770px) {
   .about_me_container {
     scale: 0.85;
+    transform: translate(-70px, 150px);
   }
 
   .category-section {
     flex-wrap: nowrap;
   }
+
+  
 }
 
 
