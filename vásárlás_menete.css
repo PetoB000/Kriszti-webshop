@@ -1,5 +1,7 @@
 .container {
     padding: 12.5px;
+    min-height: 80vh;
+    justify-content: center;
 }
 
 .content_container {
