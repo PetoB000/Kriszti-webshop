@@ -154,6 +154,7 @@ footer {
   font-size: 15px;
   cursor: pointer;
   border: 1px solid black;
+  z-index: 9999;
 }
 
 .dropdown-content li:first-child {
@@ -269,7 +270,7 @@ button:hover {
   position: relative;
   overflow: visible;
   height: 150px;
-  z-index: 200000;
+  z-index: 2000;
 }
 
 

@@ -25,16 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+if (window.innerWidth < 1001) {
+  dropdown = document.querySelector(".dropdown");
+  const dropdownContent = document.querySelector('.dropdown-content');
 
-dropdown = document.querySelector(".dropdown");
-const dropdownContent = document.querySelector('.dropdown-content');
+  let isdropdownOpen = false;
 
-let isdropdownOpen = false;
-
-dropdown.addEventListener('click', function() {
-  isdropdownOpen = !isdropdownOpen;
-  dropdownContent.style.display = isdropdownOpen ? 'block' : 'none';
-});
+  dropdown.addEventListener('click', function() {
+    isdropdownOpen = !isdropdownOpen;
+    dropdownContent.style.display = isdropdownOpen ? 'block' : 'none';
+  });
+}
 
 
 
