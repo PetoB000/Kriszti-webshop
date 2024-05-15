@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 if (window.innerWidth < 1001) {
   dropdown = document.querySelector(".dropdown");
   const dropdownContent = document.querySelector('.dropdown-content');
-
+  console.log(window.innerWidth)
   let isdropdownOpen = false;
 
   dropdown.addEventListener('click', function() {

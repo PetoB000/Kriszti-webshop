@@ -4,8 +4,18 @@ const prevButton = document.querySelector('.carousel-prev');
 const nextButton = document.querySelector('.carousel-next');
 let counter = 0;
 const slideWidth = images[0].offsetWidth + parseInt(getComputedStyle(images[0]).marginRight);
-const slidesToShow = 5;
+console.log(slideWidth)
+let slidesToShow = 5;
 const slidesToScroll = 2;
+const screenWidth = window.innerWidth;
+
+if (screenWidth < 661 && screenWidth > 540) {
+  slidesToShow = 4;
+} else if (screenWidth < 541) {
+  slidesToShow = 3;
+}
+console.log(slidesToShow)
+
 
 prevButton.addEventListener('click', () => {
   counter -= slidesToScroll;
@@ -24,7 +34,7 @@ nextButton.addEventListener('click', () => {
 });
 
 function animateCarousel() {
-  carousel.style.transform = `translateX(-${counter * slideWidth}px)`;
+  carousel.style.transform = `translateX(-${counter * slidesToScroll * slideWidth}px)`;
   toggleTransitionClass();
 }
 
