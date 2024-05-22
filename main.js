@@ -59,7 +59,7 @@ let cart = [];
 
 // Initialize the basket object
 
-var basket = {};
+let basket = {};
 
 
 // Save the basket to local storage
@@ -76,7 +76,7 @@ function saveBasket() {
 
 // Load the basket from local storage
 function loadBasket() {
-  var storedBasket = localStorage.getItem('basket')
+  let storedBasket = localStorage.getItem('basket')
   if (storedBasket) {
     basket = JSON.parse(storedBasket)
   } else {
@@ -85,9 +85,9 @@ function loadBasket() {
 
   // Generate the basket product structure for each product in the basket object
   for (const [productId, product] of Object.entries(basket)) {
-    var productDiv = generateBasketProduct(productId, product.name, product.price, product.imageURL, formatPrice)
+    let productDiv = generateBasketProduct(productId, product.name, product.price, product.imageURL, formatPrice)
 
-    var basketSection = document.querySelector('.basket-section')
+    let basketSection = document.querySelector('.basket-section')
     basketSection.appendChild(productDiv)
   }
   updateTotalPrice(basket)
@@ -102,10 +102,10 @@ loadBasket();
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('product-button')) {
     // Get the product information from the data attributes
-    var productId = event.target.getAttribute('data-product-id');
-    var productName = event.target.getAttribute('data-product-name');
-    var productPrice = event.target.getAttribute('data-product-price');
-    var productImageURL = event.target.getAttribute('data-product-image');
+    let productId = event.target.getAttribute('data-product-id');
+    let productName = event.target.getAttribute('data-product-name');
+    let productPrice = event.target.getAttribute('data-product-price');
+    let productImageURL = event.target.getAttribute('data-product-image');
 
     // Check if the product already exists in the basket object
     if (basket[productId]) {
@@ -117,7 +117,7 @@ document.addEventListener('click', function(event) {
       saveBasket();
 
       // Update the existing div in the basket section
-      var existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
+      let existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
       if (existingDiv) {
         existingDiv.querySelector('.data-product-quantity').innerText = `Quantity: ${basket[productId].quantity}`;
         existingDiv.querySelector('.data-product-price').innerText = `Price: ${basket[productId].price} Ft`;
@@ -132,10 +132,10 @@ document.addEventListener('click', function(event) {
       };
 
       // Generate the basket product structure
-      var productDiv = generateBasketProduct(productId, productName, productPrice, productImageURL, formatPrice);
+      let productDiv = generateBasketProduct(productId, productName, productPrice, productImageURL, formatPrice);
 
       // Add the new product div to the basket section
-      var basketSection = document.querySelector('.basket-section');
+      let basketSection = document.querySelector('.basket-section');
       basketSection.appendChild(productDiv);
     }
 
@@ -145,7 +145,7 @@ document.addEventListener('click', function(event) {
 
   const orderBtn = document.querySelector('.order-btn')
   orderBtn.addEventListener('click', function() {
-    var basket = JSON.parse(localStorage.getItem('basket'));
+    let basket = JSON.parse(localStorage.getItem('basket'));
 
     // Delete everything in the basket
     basket = {};
@@ -185,7 +185,7 @@ function formatPrice(price) {
 
 function generateBasketProduct(productId, productName, productPrice, productImageURL, formatPrice) {
   // Create a new div element for the product in the basket
-  var productDiv = document.createElement('div');
+  let productDiv = document.createElement('div');
   productDiv.classList.add('basket-product');
   productDiv.dataset.productId = productId;
   productDiv.innerHTML = `
@@ -209,8 +209,8 @@ function generateBasketProduct(productId, productName, productPrice, productImag
   `;
   updateTotalPrice(basket)
   // Add click event listeners to the increment and decrement buttons
-  var basePrice = basket[productId].price / basket[productId].quantity;
-  var incrementButton = productDiv.querySelector('.increment-button');
+  let basePrice = basket[productId].price / basket[productId].quantity;
+  let incrementButton = productDiv.querySelector('.increment-button');
   incrementButton.addEventListener('click', function() {
     // Increment the quantity and price
     basket[productId].quantity++;
@@ -220,7 +220,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     saveBasket();
 
     // Update the existing div in the basket section
-    var existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
+    let existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
     if (existingDiv) {
       existingDiv.querySelector('.basket-product-quantity').innerText = `Mennyiség: ${basket[productId].quantity}`;
       existingDiv.querySelector('.basket-product-price').innerText = `Ára: ${formatPrice(basket[productId].price)} Ft`;
@@ -228,7 +228,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     updateTotalPrice(basket)
   });
 
-  var decrementButton = productDiv.querySelector('.decrement-button');
+  let decrementButton = productDiv.querySelector('.decrement-button');
   decrementButton.addEventListener('click', function(event) {
     // Decrement the quantity and price
     if (basket[productId] && basket[productId].quantity > 1) {
@@ -239,7 +239,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
       saveBasket();
 
       // Update the existing div in the basket section
-      var existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
+      let existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
       if (existingDiv) {
         existingDiv.querySelector('.basket-product-quantity').innerText = `Mennyiség: ${basket[productId].quantity}`;
         existingDiv.querySelector('.basket-product-price').innerText = `Ára: ${formatPrice(basket[productId].price)} Ft`;
@@ -249,7 +249,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
   });
 
   // Add click event listener to the delete button
-  var deleteButton = productDiv.querySelector('.delete-button');
+  let deleteButton = productDiv.querySelector('.delete-button');
   deleteButton.addEventListener('click', function() {
     // Remove the product from the basket object
     delete basket[productId];
@@ -258,7 +258,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     saveBasket();
 
     // Remove the product div from the basket section
-    var basketSection = document.querySelector('.basket-section');
+    let basketSection = document.querySelector('.basket-section');
     basketSection.removeChild(productDiv);
     updateTotalPrice(basket)
   });
@@ -273,10 +273,10 @@ orderButton.addEventListener('click', function () {
   console.log('clicked order');
 
   // Get the basket object
-  var basket = JSON.parse(localStorage.getItem('basket'));
+  let basket = JSON.parse(localStorage.getItem('basket'));
 
   // Initialize an empty string to store the product names and quantities
-  var productsList = '';
+  let productsList = '';
 
   // Loop through the basket object and add the product names and quantities to the string
   for (const [productId, product] of Object.entries(basket)) {
@@ -284,7 +284,7 @@ orderButton.addEventListener('click', function () {
   }
 
 
-  var totalPrice = 0;
+  let totalPrice = 0;
   for (const [productId, product] of Object.entries(basket)) {
     totalPrice += product.price * product.quantity;
   }
@@ -294,7 +294,6 @@ orderButton.addEventListener('click', function () {
 
   container.innerHTML=`
   <div class="form_container">
-  <img src="img/shape.png" class="square" alt="" />
   <div class="form">
     <div class="contact-info">
       <h3 class="title">Köszönöm bizalmad!</h3>
