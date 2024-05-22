@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../categories.css">
-
+    <link rel="stylesheet" href="../contact.css">
+    <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
 <body>
     <div class="menu-container">
@@ -26,9 +30,14 @@
                     <li onclick="navigateToPage('./kollekciok.html')">Kollekciók</li>
                     <li onclick="navigateToPage('./Sutistalcak.html')">Sütis tálcák</li>
                     <li onclick="navigateToPage('./poharalatetek,talak.html')">Poháralátétek/Tálak</li>
+                    <li onclick="navigateToPage('./Ajándéktárgyak.html')">Ajándéktárgyak</li>
                 </ul>
             </div>
             <div class="main_link pulse" onclick="navigateToPage('../contact.html')">Kapcsolat</div>
+            <div class="basket icon-cart">
+                <img src="../img/icons/noun-basket-6865168.png" alt="">
+                <div class="basket-count">0</div>
+            </div>
             <div class="hamburger"><img src="../img/icons/menu-circle-3-512.png" alt=""></div>
         </div>
     </div>
@@ -98,6 +107,16 @@
             <p>krisztiepoxymuhelye@gmail.com</p>
         </div>
     </footer>
+    <div class="cartTab">
+        <div class="header">
+            <h1>Kosarad</h1>
+            <h1><svg class="basket-close-button" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="red" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"/></svg></h1>
+        </div>
+        <div class="basket-section"></div>
+        <div class="total">Üres a kosarad
+            <div class="order-button">Rendelés leadása</div>
+        </div>
+    </div>
     <script src="../main.js"></script>
     <script src="hamburger.js"></script>
 </body>

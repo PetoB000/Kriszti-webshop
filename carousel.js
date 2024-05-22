@@ -1,65 +1,123 @@
-const carousel = document.querySelector('.carousel-inner');
-const images = carousel.children;
-const prevButton = document.querySelector('.carousel-prev');
-const nextButton = document.querySelector('.carousel-next');
-let counter = 0;
-const slideWidth = images[0].offsetWidth + parseInt(getComputedStyle(images[0]).marginRight);
-console.log(slideWidth)
-let slidesToShow = 5;
-const slidesToScroll = 2;
-const screenWidth = window.innerWidth;
-
-if (screenWidth < 661 && screenWidth > 540) {
-  slidesToShow = 4;
-} else if (screenWidth < 541) {
-  slidesToShow = 3;
-}
-console.log(slidesToShow)
-
-
-prevButton.addEventListener('click', () => {
-  counter -= slidesToScroll;
-  if (counter < 0) {
-    counter = 0;
-  }
-  animateCarousel();
-});
-
-nextButton.addEventListener('click', () => {
-  counter += slidesToScroll;
-  if (counter > images.length - slidesToShow) {
-    counter = images.length - slidesToShow;
-  }
-  animateCarousel();
-});
-
-function animateCarousel() {
-  carousel.style.transform = `translateX(-${counter * slidesToScroll * slideWidth}px)`;
-  toggleTransitionClass();
-}
-
-function toggleTransitionClass() {
-  carousel.classList.add('transition-enabled');
-  requestAnimationFrame(() => {
-    carousel.classList.remove('transition-enabled');
-  });
-}
-
-
-/* document.addEventListener('DOMContentLoaded', function() {
-  const thumbnails = document.querySelectorAll('.carousel-item');
+document.addEventListener('DOMContentLoaded', function() {
+  const thumbnails = document.querySelectorAll('.image-item');
   const modal = document.querySelector('.modal');
-  const modalContent = document.querySelector('.modal-content');
+  const modalContent = document.querySelector('.modal-image');
+  const closeButton = document.querySelector('.close-button');
+  const nextButton = document.querySelector('.next-button');
+  const prevButton = document.querySelector('.prev-button');
+  let imgId = 0;
 
   thumbnails.forEach(thumbnail => {
       thumbnail.addEventListener('click', function() {
           const imgUrl = this.getAttribute('src');
+          imgId = this.getAttribute('id');
           modalContent.setAttribute('src', imgUrl);
-          modal.style.display = 'block';
+          modal.style.display = 'flex';
       });
   });
 
-  modal.addEventListener('click', function() {
+  closeButton.addEventListener('click', function() {
       modal.style.display = 'none';
   });
-}); */
+
+
+  nextButton.addEventListener('click', function() {
+    nextImgId = parseInt(imgId) + 1;
+    console.log('current id ' + imgId)
+    let nextImgElement = document.getElementById(nextImgId);
+
+    if (nextImgElement) {
+      let nextImgUrl = nextImgElement.getAttribute('src');
+      modalContent.setAttribute('src', nextImgUrl);
+      imgId = nextImgId;
+      console.log('next id ' + nextImgId)
+    }
+  });
+
+
+  prevButton.addEventListener('click', function() {
+    prevImgId = parseInt(imgId) - 1;
+    let prevImgElement = document.getElementById(prevImgId);
+
+    if (prevImgElement) {
+      let prevImgUrl = prevImgElement.getAttribute('src');
+      modalContent.setAttribute('src', prevImgUrl)
+      imgId = prevImgId;
+    }
+
+  });
+
+});
+
+
+
+
+
+const initSlider = () => {
+  const imageList = document.querySelector(".slider-wrapper .image-list");
+  const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
+  const sliderScrollbar = document.querySelector(".slider-container .slider-scrollbar");
+  const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+  
+  // Handle scrollbar thumb drag
+  scrollbarThumb.addEventListener("mousedown", (e) => {
+      const startX = e.clientX;
+      const thumbPosition = scrollbarThumb.offsetLeft;
+      const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+      
+      // Update thumb position on mouse move
+      const handleMouseMove = (e) => {
+          const deltaX = e.clientX - startX;
+          const newThumbPosition = thumbPosition + deltaX;
+
+          // Ensure the scrollbar thumb stays within bounds
+          const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+          const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+          
+          scrollbarThumb.style.left = `${boundedPosition}px`;
+          imageList.scrollLeft = scrollPosition;
+      }
+
+      // Remove event listeners on mouse up
+      const handleMouseUp = () => {
+          document.removeEventListener("mousemove", handleMouseMove);
+          document.removeEventListener("mouseup", handleMouseUp);
+      }
+
+      // Add event listeners for drag interaction
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+  });
+
+  // Slide images according to the slide button clicks
+  slideButtons.forEach(button => {
+      button.addEventListener("click", () => {
+          const direction = button.id === "prev-slide" ? -1 : 1;
+          const scrollAmount = imageList.clientWidth * direction;
+          imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+  });
+
+   // Show or hide slide buttons based on scroll position
+  const handleSlideButtons = () => {
+      slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+      slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+  }
+
+  // Update scrollbar thumb position based on image scroll
+  const updateScrollThumbPosition = () => {
+      const scrollPosition = imageList.scrollLeft;
+      const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+      scrollbarThumb.style.left = `${thumbPosition}px`;
+  }
+
+  // Call these two functions when image list scrolls
+  imageList.addEventListener("scroll", () => {
+      updateScrollThumbPosition();
+      handleSlideButtons();
+  });
+}
+
+window.addEventListener("resize", initSlider);
+window.addEventListener("load", initSlider);

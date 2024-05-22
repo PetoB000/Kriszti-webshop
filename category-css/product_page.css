@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 1800px;
+  max-width: 1900px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -80,17 +80,22 @@
 }
 
 .to_basket {
-  background-color: rgb(252, 197, 253);
-  border: 2px solid black;
+  background-image: url(../img/icons/Stacked_blob.svg);
+  background-position: center;
+  background-size: cover;
+  height: 180%;
+  width: 210px;
   border-radius: 20px;
   margin-left: 20px;
-  height: 50px;
-  width: 200px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
+
+
+
 
 #flower_collection_img {
   height: 50vh;
@@ -100,7 +105,6 @@
   height: 40vh;
   width: 90%;
 }
-
 
 
 @media screen and (max-width: 1200px) {
