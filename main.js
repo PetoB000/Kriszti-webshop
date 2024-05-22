@@ -205,7 +205,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     </div>
     <div class="basket-container">
       <div class="basket-product-price" product-values>Ára: ${formatPrice(productPrice)} Ft</div>
-      <div class="delete-button product-values"><img src="../../../img/icons/trashcan.svg"></div>
+      <div class="delete-button product-values"><img src="./img/icons/trashcan.svg"></div>
     </div>
   `;
   updateTotalPrice(basket)
