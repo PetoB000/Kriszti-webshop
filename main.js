@@ -141,6 +141,7 @@ document.addEventListener('click', function(event) {
 
     // Save the basket to local storage
     saveBasket();
+    window.location.reload();
   }
 
   const orderBtn = document.querySelector('.order-btn')
@@ -170,7 +171,7 @@ function updateTotalPrice(obj) {
   if (totalPrice > 0) {
     totalElement.innerHTML = `Összesen: ${totalPrice} Ft + Szállítás<div class="order-button">Rendelés leadása</div>`;
   } else {
-    totalElement.innerText = `Üres a kosarad`
+    totalElement.innerHTML = `Üres a kosarad  <div class="order-button">Rendelés leadása</div>`
   }
 
   const quantityCounter = document.querySelector('.basket-count')
@@ -265,6 +266,13 @@ function generateBasketProduct(productId, productName, productPrice, productImag
 
   return productDiv;
 }
+
+
+
+
+
+
+
 
 const container = document.querySelector('.container')
 const orderButton = document.querySelector('.order-button')
