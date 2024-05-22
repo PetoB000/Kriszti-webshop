@@ -1093,8 +1093,8 @@ footer {
 
   .about_me_container {
     height: 180px;
-    width: 140%;
-    
+    width: 130%;
+    transform: translate(-70px, 90px);
   }
 
   .me_img {
@@ -1122,7 +1122,7 @@ footer {
 @media screen and (max-width:390px) {
   .about_me_container {
     height: 200px;
-    width: 145%;
+    width: 135%;
   }
   .categories_text {
     font-size: 30px;
