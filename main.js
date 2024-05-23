@@ -169,7 +169,7 @@ function updateTotalPrice(obj) {
 
   const totalElement = document.querySelector('.total');
   if (totalPrice > 0) {
-    totalElement.innerHTML = `Összesen: ${totalPrice} Ft + Szállítás<div class="order-button">Rendelés leadása</div>`;
+    totalElement.innerHTML = `Összesen: ${formatPrice(totalPrice)} Ft + Szállítás<div class="order-button">Rendelés leadása</div>`;
   } else {
     totalElement.innerHTML = `Üres a kosarad  <div class="order-button">Rendelés leadása</div>`
   }

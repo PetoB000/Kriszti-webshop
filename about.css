@@ -11,7 +11,8 @@ footer {
     display: flex;
     height: 600px;
     justify-content: center;
-    margin-top: 5vh;
+    padding: 100px, 0px;
+
   }
   
   .container {
@@ -59,13 +60,10 @@ footer {
 
 
 @media (max-width: 768px) {
-  .container {
-    height: 1000px;
-  }
+
 
   .content_container {
     flex-direction: column;
-    transform: translateY(140px);
   }
   .left {
     display: flex;
@@ -86,10 +84,20 @@ footer {
 @media (max-width: 600px) {
   .left img {
     width: 50%;
+    margin-top: 40px;
   }
 
+
   .container {
-    height: 1000px;
+    height: 1200px;
+  }
+
+  .content_container {
+    transform: translateY(-70px);
+  }
+
+  .right {
+    margin-bottom: 50px;
   }
 }
 
@@ -97,26 +105,21 @@ footer {
   .left img {
     width: 50%;
     height: 280px;
+    margin-top: 130px;
   }
 
-  .content_container {
-    transform: translateY(170px);
-  }
 
-  .container {
-    height: 1100px;
-  }
+
 }
 
 @media (max-width: 480px) {
   .left img {
     height: 270px;
     width: 60%;
+
   }
 
-  .container {
-    height: 1100px;
-  }
+
 }
 
 @media (max-width: 440px) {
@@ -124,12 +127,11 @@ footer {
     height: 290px;
     width: 70%;
   }
+}
 
+@media screen and (max-width: 385px) {
   .content_container {
-    transform: translateY(270px);
+    padding-top: 30px;
   }
-
-  .container {
-    height: 1300px;
-  }
+  
 }
