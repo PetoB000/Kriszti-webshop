@@ -17,6 +17,31 @@ textarea {
 }
 
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgb(132,132,132) inset; /* or any other color */
+  box-shadow: 0 0 0 1000px rgb(132,132,132) inset; /* or any other color */
+
+}
+
+
+.input {
+  background-color: rgb(132,132,132); /* or any other color you prefer */
+  color: #fff!important;
+}
+
+
+
+.input {
+  outline: none;
+  color: white;
+}
+
+
 .container {
     position: relative;
     min-height: 100vh;

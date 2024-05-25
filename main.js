@@ -337,17 +337,14 @@ orderButton.addEventListener('click', function () {
           <input type="hidden" name="access_key" value="a4f9ff50-3dbf-4d09-8978-fb04c486d609">
           <input type="hidden" name="redirect" value="http://127.0.0.1:5501/thankYouPage.html">
           <div class="input-container">
-              <p>Név</p>
               <input type="text" name="name" class="input" required/>
               <label for=""></label>
           </div>
           <div class="input-container">
-              <p>Email</p>
               <input type="email" name="email" class="input" required/>
               <label for=""></label>
           </div>
           <div class="input-container">
-              <p>Telefonszám</p>
               <input type="tel" name="phone" class="input" required />
               <label for=""></label>
           </div>
@@ -369,5 +366,6 @@ orderButton.addEventListener('click', function () {
 </div>
   `
 });
+
 
 

@@ -18,7 +18,7 @@
 }
 
 .picture_container img {
-  max-width: 60vw;
+
   margin: 0 auto;
 }
 
@@ -95,12 +95,6 @@
 }
 
 
-
-
-#flower_collection_img {
-  height: 50vh;
-}
-
 #green_collection {
   height: 40vh;
   width: 90%;
@@ -143,6 +137,10 @@
     height: 110px;
   }
 
+  .shown_picture {
+    width: 90%;
+    height: auto;
+  }
 
 }
 
@@ -159,9 +157,13 @@
 @media screen and (max-width: 600px) {
 
   .shown_picture img {
-    width: 92%;
+    width: 100%;
 
     height: auto;
+  }
+
+  .picture_container {
+    width: 100%;
   }
 
   .product_description {
