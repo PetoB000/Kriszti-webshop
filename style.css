@@ -248,6 +248,10 @@ footer {
   margin-top: 0.7vh;
 }
 
+
+
+
+
 .main_link {
   display: flex;
   height: 3.7vh;
@@ -264,10 +268,16 @@ footer {
 }
 
 
-
 .main_link:hover {
   background-color: #F9D2C9;
 }
+
+
+/* This class will be toggled on the .menu container */
+.menu.hover-active .main_link:not(:hover) {
+  opacity: 0.5;
+}
+
 
 
 .pulse:hover, 
@@ -646,7 +656,7 @@ footer {
 
 .category:hover img {
   filter: blur(2px);
-  box-shadow: none
+  box-shadow: 0 0 30px rgb(255, 255, 255);
 }
 
 .category_text {
