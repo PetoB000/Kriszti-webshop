@@ -35,7 +35,7 @@ footer {
     width: 80%;
     object-fit: cover;
     border-radius: 10px;
-    height: 460px;
+    height: auto;
   }
 
   .introduction span {
@@ -51,6 +51,8 @@ footer {
   .container {
     padding: 20px 200px;
   }
+
+
   
 }
 
