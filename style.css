@@ -1039,7 +1039,9 @@ footer {
     right: 23px;
   }
 
-
+  .close-button img {
+    transform: translateY(0px);
+  }
 
 
   .hamburger img {
@@ -1125,7 +1127,7 @@ footer {
   }
 
   .modal-content {
-    max-width: 80%;
+    max-width: 77%;
   }
 
   .basket-product {
