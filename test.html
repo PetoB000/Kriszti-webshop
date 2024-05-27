@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="./category-css/product_page.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./categories.css">
+</head>
+<body>
+    <h1>Product List</h1>
+    <div id="products"></div>
+    <div class="product_section">
+        <div class="product long_product">
+            <img src="../img/categories/Vaza/image_6487327(26).JPG" class="product_img long_img object_fit" alt="">
+            Váza <br> <span>Ára: 4.000Ft</span> <br>
+            <button data-product-id="1" onclick="loadProductData(this)">megnézem</button>
+        </div>
+    </div>
+
+    <script>
+    async function loadProductData(button) {
+        const productId = button.dataset.productId;
+        
+        try {
+            const response = await fetch('./products.json');
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const products = await response.json();
+            const product = products.find(p => p.id == productId);
+
+            if (product) {
+                console.log('Product Data:', product);
+                navigateToPage(`./category-html/product-html/Ajandektargyak/${product.name.toLowerCase()}.html`);
+            } else {
+                console.log('Product not found');
+            }
+        } catch (error) {
+            console.error('Fetch error:', error);
+        }
+    }
+
+    // Example navigation function
+    function navigateToPage(url) {
+        window.location.href = url;
+    }
+    </script>
+</body>
+</html>

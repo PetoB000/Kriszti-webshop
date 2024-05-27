@@ -32,8 +32,9 @@ body {
 
 
 .modal-content img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
+  transform: translateY(-30px);
 }
 
 
@@ -91,7 +92,7 @@ body {
 
 .close-button img {
   width: 50px;
-  transform: translate(-50%, -200%);
+  transform: translate(-50%, -130%);
 }
 
 
@@ -123,7 +124,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  background-image: url(./img/letöltés\ \(7\).jpg);
+  background-image: url(./img/background.svg);
   padding: 30px;
 }
 
@@ -270,6 +271,7 @@ footer {
 
 .main_link:hover {
   background-color: #F9D2C9;
+  transition: opacity 0.5s;
 }
 
 
@@ -881,7 +883,7 @@ footer {
     margin-right: 0px;
     top: 20px;
     width: 40px;
-    height: 35px;
+    height: 40px;
   }
 
   .basket-count {
@@ -889,6 +891,10 @@ footer {
     right: -6px;
     top: -13px;
 
+  }
+
+  .basket img {
+    width: auto;
   }
 
   .modal-content {

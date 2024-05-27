@@ -3,34 +3,34 @@ function navigateToPage(pageUrl) {
 }
 
 
-/* menuContainer = document.querySelector('.menu-container')
+menuContainer = document.querySelector('.menu-container')
 
 menuContainer.innerHTML = `
 <div class="menu"> 
-<img src="./img/logo3.png" alt="" class="logo" onclick="navigateToPage('index.html')">        
-<div class="main_link pulse" onclick="navigateToPage('index.html')">Főoldal</div>
-<div class="main_link pulse" onclick="navigateToPage('about.html')">Rólam</div>
-<div class="main_link pulse" onclick="navigateToPage('vásárlás_menete.html')">Vásárlás menete</div>
+<img src="https://krisztiepoxymuhelye.com/img/logo3.png" alt="" class="logo" onclick="navigateToPage('https://krisztiepoxymuhelye.com/index.html')">        
+<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/index.html')">Főoldal</div>
+<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/about.html')">Rólam</div>
+<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/vasarlas_menete.html')">Vásárlás menete</div>
 <div class="dropdown">
-    <div class="main_link pulse" ondblclick="navigateToPage('index.html#category-section')">Termékeim  <img src="./img/icons/down-arrow (2).svg" alt="" class="icon"></div>
+    <div class="main_link pulse">Termékeim  <img src="https://krisztiepoxymuhelye.com/img/icons/down-arrow(2).svg" alt="" class="icon"></div>
     <ul class="dropdown-content">
-        <li onclick="navigateToPage('./category-html/talcak.html')">Tálcák</li>
-        <li onclick="navigateToPage('./category-html/emlekorok.html')">Emlékőrök</li>
-        <li onclick="navigateToPage('./category-html/faliorak.html')">Faliórák</li>
-        <li onclick="navigateToPage('./category-html/kollekciok.html')">Kollekciók</li>
-        <li onclick="navigateToPage('./category-html/Sutistalcak.html')">Sütis tálcák</li>
-        <li onclick="navigateToPage('./category-html/poharalatetek,talak.html')">Poháralátétek/Tálak</li>
-        <li onclick="navigateToPage('./category-html/Ajándéktárgyak.html')">Ajándéktárgyak</li>
+        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/talcak.html')">Tálcák</li>
+        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/emlekorok.html')">Emlékőrök</li>
+        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/faliorak.html')">Faliórák</li>
+        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/kollekciok.html')">Kollekciók</li>
+        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/Sutistalcak.html')">Sütis tálcák</li>
+        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/poharalatetektalak.html')">Poháralátétek/Tálak</li>
+        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/Ajandektargyak.html')">Ajándéktárgyak</li>
     </ul>
 </div>
-<div class="main_link pulse" onclick="navigateToPage('contact.html')">Kapcsolat</div>
+<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/contact.html')">Kapcsolat</div>
 <div class="basket icon-cart">
-    <img src="./img/icons/noun-basket-6865168.png" alt="">
-    <div class="basket-count">0</div>
+    <img src="https://krisztiepoxymuhelye.com/img/icons/noun-basket-6865168.svg" alt="">
+    <div class="basket-count"></div>
 </div>
-<div class="hamburger"><img src="./img/icons/menu-circle-3-512.png" alt=""></div>
+<div class="hamburger"><img src="https://krisztiepoxymuhelye.com/img/icons/menu-circle-3-512.svg" alt=""></div>
 </div>
-` */
+`
 
 
 footer = document.querySelector('footer')
@@ -120,7 +120,7 @@ let cart = [];
 let basket = {};
 
 
-// Save the basket to local storage
+
 // Save the basket to local storage
 function saveBasket() {
   // Loop through the basket object and add the quantity of each item to the object
@@ -202,16 +202,7 @@ document.addEventListener('click', function(event) {
     window.location.reload();
   }
 
-  const orderBtn = document.querySelector('.order-btn')
-  orderBtn.addEventListener('click', function() {
-    let basket = JSON.parse(localStorage.getItem('basket'));
 
-    // Delete everything in the basket
-    basket = {};
-
-    // Save the empty basket to local storage
-    localStorage.setItem('basket', JSON.stringify(basket));
-  });
 });
 
 
@@ -263,7 +254,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     </div>
     <div class="basket-container">
       <div class="basket-product-price" product-values>Ára: ${formatPrice(productPrice)} Ft</div>
-      <div class="delete-button product-values"><img src="https://krisztiepoxy.com/img/icons/trashcan.svg"></div>
+      <div class="delete-button product-values"><img src="https://krisztiepoxymuhelye.com/img/icons/trashcan.svg"></div>
     </div>
   `;
   updateTotalPrice(basket)
@@ -395,14 +386,17 @@ orderButton.addEventListener('click', function () {
           <input type="hidden" name="access_key" value="a4f9ff50-3dbf-4d09-8978-fb04c486d609">
           <input type="hidden" name="redirect" value="http://127.0.0.1:5501/thankYouPage.html">
           <div class="input-container">
+          <p>Név</p>
               <input type="text" name="name" class="input" required/>
               <label for=""></label>
           </div>
           <div class="input-container">
+          <p>Email</p>
               <input type="email" name="email" class="input" required/>
               <label for=""></label>
           </div>
           <div class="input-container">
+          <p>Telefonszám</p>
               <input type="tel" name="phone" class="input" required />
               <label for=""></label>
           </div>
@@ -423,6 +417,18 @@ orderButton.addEventListener('click', function () {
   </div>
 </div>
   `
+
+
+  const orderBtn = document.querySelector('.order-btn')
+  orderBtn.addEventListener('click', function() {
+    let basket = JSON.parse(localStorage.getItem('basket'));
+
+    // Delete everything in the basket
+    basket = {};
+
+    // Save the empty basket to local storage
+    localStorage.setItem('basket', JSON.stringify(basket));
+  });
 });
 
 

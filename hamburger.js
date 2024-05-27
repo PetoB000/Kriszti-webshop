@@ -10,7 +10,7 @@ hamburgerImg.parentNode.addEventListener('click', function() {
   menuLinks.forEach(menuLink => {
     menuLink.style.display = isMenuOpen? "flex" : "none";
   });
-  hamburgerImg.src = isMenuOpen? 'https://krisztiepoxy.com/img/icons/remove.png' : 'https://krisztiepoxy.com/img/icons/menu-circle-3-512.png';
+  hamburgerImg.src = isMenuOpen? 'https://krisztiepoxymuhelye.com/img/icons/remove(1).svg' : 'https://krisztiepoxymuhelye.com/img/icons/menu-circle-3-512.svg';
 
 
   dropdown.style.display = isMenuOpen? "flex" : "none";
