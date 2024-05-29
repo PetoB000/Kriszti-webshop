@@ -323,9 +323,13 @@ function generateBasketProduct(productId, productName, productPrice, productImag
   });
 
   return productDiv;
+
 }
 
-
+function clearBasket() {
+  basket = {};
+  localStorage.setItem('basket', JSON.stringify(basket));
+}
 
 
 
@@ -420,7 +424,7 @@ orderButton.addEventListener('click', function () {
               <label for=""></label>
           </div>
 
-        <button type="submit" value="Send" class="btn order-btn">Küldés</button>
+        <button type="submit" value="Send" class="btn order-btn" onclick="clearBasket()">Küldés</button>
       </form>
     </div>
   </div>
