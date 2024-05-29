@@ -14,13 +14,13 @@ menuContainer.innerHTML = `
 <div class="dropdown">
     <div class="main_link pulse">Termékeim  <img src="./img/icons/down-arrow(2).svg" alt="" class="icon"></div>
     <ul class="dropdown-content">
-        <li onclick="navigateToPage('./category-html/talcak.html')">Tálcák</li>
-        <li onclick="navigateToPage('./category-html/emlekorok.html')">Emlékőrök</li>
-        <li onclick="navigateToPage('./category-html/faliorak.html')">Faliórák</li>
-        <li onclick="navigateToPage('./category-html/kollekciok.html')">Kollekciók</li>
-        <li onclick="navigateToPage('./category-html/Sutistalcak.html')">Sütis tálcák</li>
-        <li onclick="navigateToPage('./category-html/poharalatetektalak.html')">Poháralátétek/Tálak</li>
-        <li onclick="navigateToPage('./category-html/Ajandektargyak.html')">Ajándéktárgyak</li>
+        <li data-categoryid="1" onclick="loadCategoryData(this)">Tálcák</li>
+        <li data-categoryid="3" onclick="loadCategoryData(this)">Emlékőrök</li>
+        <li data-categoryid="4" onclick="loadCategoryData(this)">Faliórák</li>
+        <li data-categoryid="5" onclick="loadCategoryData(this)">Kollekciók</li>
+        <li data-categoryid="7" onclick="loadCategoryData(this)">Sütis tálcák</li>
+        <li data-categoryid="6" onclick="loadCategoryData(this)">Poháralátétek/Tálak</li>
+        <li data-categoryid="2" onclick="loadCategoryData(this)">Ajándéktárgyak</li>
     </ul>
 </div>
 <div class="main_link pulse" onclick="navigateToPage('./contact.html')">Kapcsolat</div>
