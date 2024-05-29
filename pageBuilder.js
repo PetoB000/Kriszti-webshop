@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ${product.name} <br> <span>Ára: ${product.price}</span> <br>
             <button data-productid="${product.productId}" onclick="loadProductData(this)">megnézem</button>
             `        
-        console.log(product.productId)
         productsDiv.appendChild(productDiv);
 
     });
