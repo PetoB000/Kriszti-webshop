@@ -88,7 +88,7 @@
 }
 
 .to_basket {
-  background-image: url(../img/icons/Stacked_blob.svg);
+  background-image: url(./img/icons/Stacked_blob.svg);
   background-position: center;
   background-size: cover;
   height: 180%;
