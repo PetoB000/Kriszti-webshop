@@ -124,7 +124,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  background-image: url(./img/background.svg);
+  background-image: url(./img/background.png);
   padding: 30px;
 }
 
@@ -381,6 +381,7 @@ li:hover {
 
 .basket-section img {
   width: 100px;
+  margin-right: 5px;
 }
 
 .basket-product-price {
@@ -929,7 +930,7 @@ footer {
 
   .menu {
     flex-direction: column;
-
+    transition: height 1.2s ease;
     z-index: 100;
     height: 150px;
   }
@@ -946,7 +947,22 @@ footer {
     z-index: 200;
     transform: translateX(0px);
     padding: 0px;
+    opacity: 0;
   }
+
+
+  .main_link.visible {
+    display: flex;
+    animation: slowly 2s ease forwards; /* Use forwards to retain end state */
+
+
+  }
+
+@keyframes slowly {
+  from { opacity: 0; }
+  to { opacity: 1; }
+  
+}
 
   .dropdown {
     display: none;

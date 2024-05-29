@@ -7,10 +7,17 @@ let isMenuOpen = false;
 
 hamburgerImg.parentNode.addEventListener('click', function() {
   isMenuOpen =!isMenuOpen;
-  menuLinks.forEach(menuLink => {
+  menuLinks.forEach((menuLink, index) => {
+    if (isMenuOpen) {
+      menuLink.style.animationDelay = `${index * 0.4}s`; // Add delay for each item
+      menuLink.classList.add('visible');
+    } else {
+      menuLink.classList.remove('visible');
+    }
     menuLink.style.display = isMenuOpen? "flex" : "none";
+
   });
-  hamburgerImg.src = isMenuOpen? 'https://krisztiepoxymuhelye.com/img/icons/remove(1).svg' : 'https://krisztiepoxymuhelye.com/img/icons/menu-circle-3-512.svg';
+  hamburgerImg.src = isMenuOpen? './img/icons/remove(1).svg' : './img/icons/menu-circle-3-512.svg';
 
 
   dropdown.style.display = isMenuOpen? "flex" : "none";

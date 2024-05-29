@@ -7,28 +7,28 @@ menuContainer = document.querySelector('.menu-container')
 
 menuContainer.innerHTML = `
 <div class="menu"> 
-<img src="https://krisztiepoxymuhelye.com/img/logo3.png" alt="" class="logo" onclick="navigateToPage('https://krisztiepoxymuhelye.com/index.html')">        
-<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/index.html')">Főoldal</div>
-<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/about.html')">Rólam</div>
-<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/vasarlas_menete.html')">Vásárlás menete</div>
+<img src="./img/logo3.png" alt="" class="logo" onclick="navigateToPage('./index.html')">        
+<div class="main_link pulse" onclick="navigateToPage('./index.html')">Főoldal</div>
+<div class="main_link pulse" onclick="navigateToPage('./about.html')">Rólam</div>
+<div class="main_link pulse" onclick="navigateToPage('./vasarlas_menete.html')">Vásárlás menete</div>
 <div class="dropdown">
-    <div class="main_link pulse">Termékeim  <img src="https://krisztiepoxymuhelye.com/img/icons/down-arrow(2).svg" alt="" class="icon"></div>
+    <div class="main_link pulse">Termékeim  <img src="./img/icons/down-arrow(2).svg" alt="" class="icon"></div>
     <ul class="dropdown-content">
-        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/talcak.html')">Tálcák</li>
-        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/emlekorok.html')">Emlékőrök</li>
-        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/faliorak.html')">Faliórák</li>
-        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/kollekciok.html')">Kollekciók</li>
-        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/Sutistalcak.html')">Sütis tálcák</li>
-        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/poharalatetektalak.html')">Poháralátétek/Tálak</li>
-        <li onclick="navigateToPage('https://krisztiepoxymuhelye.com/category-html/Ajandektargyak.html')">Ajándéktárgyak</li>
+        <li onclick="navigateToPage('./category-html/talcak.html')">Tálcák</li>
+        <li onclick="navigateToPage('./category-html/emlekorok.html')">Emlékőrök</li>
+        <li onclick="navigateToPage('./category-html/faliorak.html')">Faliórák</li>
+        <li onclick="navigateToPage('./category-html/kollekciok.html')">Kollekciók</li>
+        <li onclick="navigateToPage('./category-html/Sutistalcak.html')">Sütis tálcák</li>
+        <li onclick="navigateToPage('./category-html/poharalatetektalak.html')">Poháralátétek/Tálak</li>
+        <li onclick="navigateToPage('./category-html/Ajandektargyak.html')">Ajándéktárgyak</li>
     </ul>
 </div>
-<div class="main_link pulse" onclick="navigateToPage('https://krisztiepoxymuhelye.com/contact.html')">Kapcsolat</div>
+<div class="main_link pulse" onclick="navigateToPage('./contact.html')">Kapcsolat</div>
 <div class="basket icon-cart">
-    <img src="https://krisztiepoxymuhelye.com/img/icons/noun-basket-6865168.svg" alt="">
+    <img src="./img/icons/noun-basket-6865168.svg" alt="">
     <div class="basket-count"></div>
 </div>
-<div class="hamburger"><img src="https://krisztiepoxymuhelye.com/img/icons/menu-circle-3-512.svg" alt=""></div>
+<div class="hamburger"><img src="./img/icons/menu-circle-3-512.svg" alt=""></div>
 </div>
 `
 
@@ -37,9 +37,9 @@ footer = document.querySelector('footer')
 
 footer.innerHTML = `
 <div class="media">
-<p>Kriszti Epoxy műhelye</p>
-<p>Egy szebb otthonért</p>
-<p>Ajándéktárgyimat kézzel, egyedileg készítem, igy minden alkotásom más és más.</p>
+  <p>Kriszti Epoxy műhelye</p>
+  <p>Egy szebb otthonért</p>
+  <p>Ajándéktárgyimat kézzel, egyedileg készítem, igy minden alkotásom más és más.</p>
 <div class="svg_container">
     <a href="https://www.facebook.com/kriszti.epoxy.muhelye" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
@@ -54,14 +54,23 @@ footer.innerHTML = `
 </div>
 </div>
 <div class="contact">
-<p>kapcsolat</p>
-<p>Petőné Birta Kriszti</p>
-<p>4243 Téglás, Beck Pál utca 34</p>
-<p>+36 20 416 64 22</p>
-<p>krisztiepoxymuhelye@gmail.com</p>
+  <p>kapcsolat</p>
+  <p>Petőné Birta Kriszti</p>
+  <p>4243 Téglás, Beck Pál utca 34</p>
+  <p>+36 20 416 64 22</p>
+  <p>krisztiepoxymuhelye@gmail.com</p>
 </div>
 `
-
+cartTab = document.querySelector('.cartTab')
+cartTab.innerHTML = ` 
+<div class="header">
+  <h1>Kosarad</h1>
+  <h1><svg class="basket-close-button" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="red" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"/></svg></h1>
+</div>
+<div class="basket-section"></div>
+<div class="total">Üres a kosarad
+  <div class="order-button">Rendelés leadása</div>
+</div>`
 
 
 // TERMÉK OLDALI KÉPVÁLASZTÓ
@@ -254,7 +263,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     </div>
     <div class="basket-container">
       <div class="basket-product-price" product-values>Ára: ${formatPrice(productPrice)} Ft</div>
-      <div class="delete-button product-values"><img src="https://krisztiepoxymuhelye.com/img/icons/trashcan.svg"></div>
+      <div class="delete-button product-values"><img src="./img/icons/trashcan.svg"></div>
     </div>
   `;
   updateTotalPrice(basket)

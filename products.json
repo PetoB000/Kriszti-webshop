@@ -1,20 +1,231 @@
 [
     {
-        "id": 1,
-        "name": "vaza",
-        "img_url": "https://example.com/img1.jpg",
-        "description": "Description of product 1"
+        "productId": 20,
+        "name": "Cukorka tartó",
+        "price": 4000,
+        "shownImg": "./img/categories/Cukorkatarto/image_6487327(25).JPG",
+        "thumbnails": [""],
+        "description": "Ez a kis tartó akrilgyanta felhasználásával készült. Sajátossága, hogy a felülete matt, betonhatású dekorációk készíthetőek belőle. <br><br>Ha valami apróbb, de mégis különleges ajándékot szeretnél adni, akkor a cukorkatartó kiváló választás. Ami amúgy sok minden másként is használható. Tehetsz bele úszógyertyát, ékszert, bármilyen apró csecsebecsét. Az ovális tálcán szuper kiegészítőként funkcionál. Szeretnéd kicsit feldobni az asztalodat, akkor ajánlom figyelmedbe akár szettként! Kérheted epoxy gyanta felhasználásával is. <br><br>Mérete: 9 cm x 8 cm <br><br>",
+        "dataImage": "./img/no-bg/cukorka-tarto.png"
     },
+
     {
-        "id": 2,
-        "name": "Product 2",
-        "img_url": "https://example.com/img2.jpg",
-        "description": "Description of product 2"
+        "productId": 22,
+        "name": "Ovális alátét",
+        "price": 4000,
+        "shownImg": "./img/categories/Ovalisalatet/image_6487327(25).JPG",
+        "thumbnails": [""],
+        "description": "Akrilgyanta felhasználásával készült. <br>Melynek a sajátossága, hogy a felülete matt, betonhatású dekorációk készíthetőek. <br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>Mérete: 18 cm x 9,5 cm. <br><br>",
+        "dataImage": "./img/no-bg/ovalistalca.png"
     },
+    
     {
-        "id": 3,
-        "name": "Product 3",
-        "img_url": "https://example.com/img3.jpg",
-        "description": "Description of product 3"
+        "productId": 21,
+        "name": "Váza",
+        "price": 4000,
+        "shownImg": "./img/categories/Vaza/image_6487327(26).JPG",
+        "thumbnails": [""],
+        "description": "Ez a váza akrilgyanta felhasználásával készült. Sajátossága, hogy a felülete matt, betonhatású dekorációk készíthetőek belőle. <br><br>Ha valami apróbb, de mégis különleges ajándékot szeretnél adni, akkor ez a váza jó választás. Az ovális tálcán szuper kiegészítőként funkcionál. Szeretnéd kicsit feldobni az asztalodat, akkor ajánlom figyelmedbe akár szettként! Kérheted epoxy gyanta felhasználásával is. <br><br>Mérete: 9 cm x 6,5 cm <br><br>",
+        "dataImage": "./img/no-bg/vaza.png"
+    },
+    
+    {
+        "productId": 1,
+        "name": "Emlékpiramis",
+        "price": 15000,
+        "shownImg": "./img/categories/Emlekpiramis/tumbnail.JPG",
+        "thumbnails": [""],
+        "description": "Epoxy gyantából, kézzel készült termék. A megrendelő által kért anyagok felhasználásával: homok, kavics, kagyló, fénykép. <br><br>Nyaralásból hoztál homokot és kagylót, szeretnél egyedi lakásdekorációt az otthonodba? Akkor küldd el részemre, hogy a múlt egy csodálatos pillanatát, örök emlékbe zárhassam. <br><br>Mérete: 25 cm magas, talprésze 13 cm széles. <br><br>",
+        "dataImage": "./img/no-bg/emlekpiramis.png"
+    },
+    
+    {
+        "productId": 2,
+        "name": "Fényképes, szívecske emlékőr I",
+        "price": 8000,
+        "shownImg": "./img/categories/FenykepesszivecskeemlekorI/image_6487327(16).JPG",
+        "thumbnails": [""],
+        "description": "Epoxy gyantából, kézzel készült termék. <br>Ennek az asztali dekorációnak az egyedisége abban rejlik, hogy képes személyessé tenni egy általad küldött képpel. <br><br>Mérete: 18,4 cm x 17 cm <br><br>",
+        "dataImage": "./img/no-bg/szivecskeemlekor2.png"
+    },
+    
+    {
+        "productId": 3,
+        "name": "Fényképes, szívecske emlékőr II",
+        "price": 10000,
+        "shownImg": "./img/categories/FenykepesszivecskesemlekorII/image_67147009.JPG",
+        "thumbnails": [""],
+        "description": "Epoxy gyantából, kézzel készült termék. <br>Ennek az emlékőrnek az egyedisége abban rejlik, hogy képes személyessé tenni egy általad küldött képpel, vagy a gyermeked születési adataival, első levágott hajtincseivel, bármivel, ami fontos számodra. <br><br>Mérete: 18,6 cm x 15,4 cm <br><br>",
+        "dataImage": "./img/no-bg/szivecskesemlekor1.png"
+    },
+    
+    {
+        "productId": 4,
+        "name": "Szív formájú Emlékőr",
+        "price": 25000,
+        "shownImg": "./img/categories/SzivformajuEmlekor/image_6487327(15).JPG",
+        "thumbnails": [""],
+        "description": "Epoxigyantából készült tömb, melybe egy speciális szárítási folyamat után az általad küldött virágokat teszem bele, megőrizve a virágok színét és formáját. <br>A végeredmény kristálytiszta és megismételhetetlen. <br><br>A virágok elrendezéséről minden esetben képeket küldök, hogy a számodra legszebb végeredményt készíthessem el neked. <br><br>Mérete: 18 cm x 20 cm <br><br>",
+        "dataImage": "./img/no-bg/szivformaju.png"
+    },
+    
+    {
+        "productId": 5,
+        "name": "Falióra (38cm)",
+        "price": 30000,
+        "shownImg": "./img/categories/faliora1/image_67184897.JPG",
+        "thumbnails": [""],
+        "description": "Fa alapra készült, epoxy gyantából öntöttem rá a mintát, díszítő elemként szórtam rá dekorkövet. A falióra hátulja akasztóval van ellátva. <br>Az ár magában foglalja a teljes óraszerkezetet. Fantasztikus ajándék bármilyen alkalomra! <br><br>Bármilyen színben rendelhető! <br>Színben hasonlót tudok készíteni, de még egy ugyanilyet biztos nem! <br><br>Mérete: 38 cm átmérőjű <br><br>",
+        "dataImage": "./img/no-bg/faliora1.png"
+    },
+    
+    {
+        "productId": 6,
+        "name": "Falióra (32cm)",
+        "price": 20000,
+        "shownImg": "./img/categories/faliora2/image_50738689.JPG",
+        "thumbnails": [""],
+        "description": "Alap nélküli, epoxy gyantából kézzel készült termék, díszítőelemként került rá dekorkő. A falióra hátulja akasztóval van ellátva. <br>Az ár magában foglalja a teljes óraszerkezetet. Fantasztikus ajándék bármilyen alkalomra! <br><br>Bármilyen színben rendelhető! <br>Színben hasonlót tudok készíteni, de még egy ugyanilyet biztos nem! Mérete: 32 cm <br><br>",
+        "dataImage": "./img/no-bg/faliora2.png"
+    },
+    
+    {
+        "productId": 23,
+        "name": "Falióra (35cm)",
+        "price": 30000,
+        "shownImg": "./img/categories/faliora3/image_6487327(26).jpg",
+        "thumbnails": [""],
+        "description": "Fa alapra készült, epoxy gyantából öntöttem rá a mintát, díszítő elemként szórtam rá dekorkövet. A falióra hátulja akasztóval van ellátva. <br>Az ár magában foglalja a teljes óraszerkezetet. Fantasztikus ajándék bármilyen alkalomra! <br><br>Bármilyen színben rendelhető! <br>Színben hasonlót tudok készíteni, de még egy ugyanilyet biztos nem! Mérete: 35 cm <br><br>",
+        "dataImage": "./img/no-bg/image_6487327_26_-removebg-preview.png"
+    },
+    
+    {
+        "productId": 7,
+        "name": "3D virágos kollekció",
+        "price": 24500,
+        "shownImg": "./img/categories/3Dviragoskollekcio/image_6487327(12).JPG",
+        "thumbnails": [""],
+        "description": "Ez a fehér 3D virágokat ábrázoló, arany széllel díszített kerek formájú hajlított kicsi és nagy tál, továbbá a 4 db hozzáillő poháralátét, epoxy gyantából, kézzel készült termékek, melyek egy kollekcióként vásárolhatók meg. <br>Tehetsz bele például süteményeket, pogácsát, csokoládét, ékszereket, de már önmagában is egy tökéletes dekoráció lehet az otthonodban. Fantasztikus ajándék ötlet bármilyen alkalomra. <br><br>Kiválasztott színben előrendelhető <br>Méretek: Hajlított nagy tál átmérője 26 cm (1 db), hajlított kicsi tál átmérője 13 cm (1 db), poháralátét 13 cm (4 db) <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>",
+        "dataImage": "./img/no-bg/viragos_koll.png"
+    },
+    
+    {
+        "productId": 8,
+        "name": "Jegyzetfüzet/notesz szett",
+        "price": 10000,
+        "shownImg": "./img/categories/Noteszszett/image_50392833.JPG",
+        "thumbnails": ["./img/categories/Noteszszett/image_50392833.JPG", "./img/categories/Noteszszett/image_6487327(23).JPG", "./img/categories/Noteszszett/image_6487327(24).JPG", "./img/categories/Noteszszett/image_67154945999999.JPG"],
+        "description": "Szett tartalma: A6 méretű jegyzetfüzet, melynek a két borítója epoxy gyantából készült. <br>A szétnyithatós kapocsnak köszönhetően bármikor tudsz hozzáadni vagy éppen kivenni lapokat, ezért örökéletű. A szetthez tartozik még egy színben hozzáillő toll és könyvjelző. <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>Mérete: 11 cm x 18 cm <br><br>",
+        "dataImage": "./img/no-bg/notesz.png"
+    },
+    
+    {
+        "productId": 9,
+        "name": "Smaragdzöld kollekció",
+        "price": 32000,
+        "shownImg": "./img/categories/Smaragdzoldkollekcio/image_6487327(14).JPG",
+        "thumbnails": [""],
+        "description": "Ez a smaragdzöld-arany színű,kerek formájú hajlított kicsi-és nagy tál, tovàbbá a 6db hozzáillő poháralátét, epoxy gyantából, kézzel készült termékek, melyek egy kollekcióként vásárolhatók meg.  <br>Tehetsz bele például süteményeket, pogácsát, csokoládét, ékszereket, de már önmagában is egy tökéletes dekoráció lehet az otthonodban. Fantasztikus ajándék ötlet bármilyen alkalomra.   <br><br><br>Bármilyen színben rendelhető! <br><br>Színben hasonlót tudok készíteni, de még egy ugyanilyet biztos nem! <br><br>Méretek: Hajlított nagy tál átmérője 30cm (1db), hajlított kicsi tál átmérője 13cm () poháralátét 13 cm (6db) <br><br>",
+        "dataImage": "./img/no-bg/smaragzoldkoll.png"
+    },
+    
+    {
+        "productId": 10,
+        "name": "Tündöklő rózsaszín-bézs kollekció",
+        "price": 29500,
+        "shownImg": "./img/categories/Tundoklorozsaszin-bezskollekcio/image_6487327(13).JPG",
+        "thumbnails": [""],
+        "description": "Ez a rózsaszín-bézs, arany széllel díszített kerek formájú hajlított kicsi és nagy tál, továbbá a 6 db hozzáillő poháralátét, epoxy gyantából, kézzel készült termékek, melyek egy kollekcióként vásárolhatók meg. <br>Tehetsz bele például süteményeket, pogácsát, csokoládét, ékszereket, de már önmagában is egy tökéletes dekoráció lehet az otthonodban. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>Kiválasztott színben előrendelhető <br>Méretek: Hajlított nagy tál átmérője 26 cm (1 db), hajlított kicsi tál átmérője 13 cm (1 db), poháralátét 13 cm (6 db) <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>",
+        "dataImage": "./img/no-bg/rozsaszinkoll.png"
+    },
+    
+    {
+        "productId": 11,
+        "name": "Hajlított kicsi tál",
+        "price": 2500,
+        "shownImg": "./img/categories/poharalatetek,talak/kistalak.JPG",
+        "thumbnails": [""],
+        "description": "Ez a hajlított kicsi tál epoxy gyantából, kézzel készült termék, mely egyedi formája miatt igazán különlegessé fogja varázsolni otthonodat. <br>Tehetsz bele rágcsálnivalót, csokoládét, édességet, ékszert, de már önmagában is egy tökéletes dekoráció. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>A tál átmérője: 13 cm <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>",
+        "dataImage": "./img/no-bg/kistalak-removebg-preview.png"
+    },
+    
+    {
+        "productId": 12,
+        "name": "Hajlított nagy tál",
+        "price": 10000,
+        "shownImg": "./img/categories/poharalatetektalak/nagytal.JPG",
+        "thumbnails": [""],
+        "description": "Ez a hajlított tál epoxy gyantából, kézzel készült termék, mely egyedi formája miatt igazán különlegessé fogja varázsolni otthonodat. <br>Tehetsz bele pogácsát, kekszet, édességet, de már önmagában is egy tökéletes dekoráció. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>A tál átmérője: 30 cm <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>",
+        "dataImage": "./img/no-bg/nagytal.png"
+    },
+    
+    {
+        "productId": 13,
+        "name": "Poháralátét",
+        "price": 2000,
+        "shownImg": "./img/categories/poharalatetektalak/image_6487327(19).JPG",
+        "thumbnails": ["./img/categories/poharalatetektalak/image_6487327(19).JPG", "./img/categories/poharalatetektalak/image_6487327(18).JPG"],
+        "description": "Az alátétek epoxy gyantából készültek, melyek mindegyike egyedi darab. Ami biztos, hogy igazán különlegessé fogja varázsolni otthonodat. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>Kiváló 4:1-ben poháralátét/ültetőkártya/köszönetajándék/dekorációs szerepet tölthet be esküvőkön. <br>Nagyobb megrendelés esetén kedvezményt tudok biztosítani. <br><br>Poháralátét átmérője: 13 cm <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>",
+        "dataImage": "./img/no-bg/poharalatet.png"
+    },
+    
+    {
+        "productId": 15,
+        "name": "3 szintes sütistálca",
+        "price": 15000,
+        "shownImg": "./img/categories/3szintessutistalca/image_6487327(17).JPG",
+        "thumbnails": ["./img/categories/3szintessutistalca/image_6487327(17).JPG", "./img/categories/3szintessutistalca/image_6487327(8).JPG", "./img/categories/3szintessutistalca/thumbnail.JPG", "./img/categories/3szintessutistalca/image_6487327(9).JPG"],
+        "description": "Ez a 3 szintes sütitálca epoxy gyantából, kézzel készült termék, mely egyedi színvilága miatt igazán különlegessé fogja varázsolni otthonodat. <br>Tehetsz rá például süteményeket, pogácsát, csokoládét, ékszereket, de már önmagában is egy tökéletes dekoráció. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>Mérete: Magassága 35 cm, alsó rész átmérője 25 cm <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>",
+        "dataImage": "./img/no-bg/3szintes.png"
+    },
+    
+    {
+        "productId": 14,
+        "name": "2 szintes sütistálca",
+        "price": 10000,
+        "shownImg": "./img/categories/2szintessutistalca/image_6487327(10).JPG",
+        "thumbnails": ["./img/categories/2szintessutistalca/image_6487327(10).JPG", "./img/categories/2szintessutistalca/image_6487327(11).JPG"],
+        "description": "Ez a 2 szintes sütitálca epoxy gyantából, kézzel készült termék, mely egyedi színvilága miatt igazán különlegessé fogja varázsolni otthonodat. <br>Tehetsz rá például süteményeket, pogácsát, csokoládét, ékszereket, de már önmagában is egy tökéletes dekoráció. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>Mérete: Magassága 25 cm, alsó rész átmérője 23 cm <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>",
+        "dataImage": "./img/no-bg/2szintes.png"
+    },
+    
+    {
+        "productId": 16,
+        "name": "Epoxy aranyozott szélű tálca",
+        "price": 15000,
+        "shownImg": "./img/categories/aranyozottszelutalca/image_6487327.JPG",
+        "thumbnails": ["./img/categories/aranyozottszelutalca/image_6487327.JPG", "./img/categories/aranyozottszelutalca/image_6487327(1).JPG", "./img/categories/aranyozottszelutalca/image_6487327(33.JPG"],
+        "description": "Egyszerűen mozgatható a védőperemnek köszönhetően, ami megakadályozza, hogy a tárgyak lecsússzanak róla. <br><br>Tálcaként is használhatod, tehetsz rá például gyertyát, ékszert, vázát, kávét, süteményeket, de már önmagában is egy tökéletes dekoráció. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>Anyaga: rozsdamentes acél, epoxigyanta <br>Mérete: 38 cm <br><br>",
+        "dataImage": "./img/no-bg/aranyszelutal.png"
+    },
+    
+    {
+        "productId": 19,
+        "name": "Tengeres Fatálca",
+        "price": 15000,
+        "shownImg": "./img/categories/TengeresFatalca/image_6487327(22).JPG",
+        "thumbnails": [""],
+        "description": "Ez a tálca epoxy gyantából, kézzel készült termék, mely egyedi formája miatt igazán különlegessé fogja varázsolni otthonodat. <br>Tálcaként is használhatod, tehetsz rá például gyertyát, ékszert, vázát, kávét, süteményeket, de már önmagában is egy tökéletes dekoráció. Fantasztikus ajándékötlet bármilyen alkalomra. <br><br>Nyaralásból hoztál homokot és kagylót, szeretnél egyedi lakásdekorációt az otthonodba? Akkor küldd el részemre, hogy a múlt egy csodálatos pillanatát örök emlékbe zárhassam. <br><br>        Mérete: 30 cm átmérőjű <br><br>",
+        "dataImage": "./img/no-bg/tengeresfat.png"
+    },
+    
+    {
+        "productId": 17,
+        "name": "Geoda tálca aranyozott fogóval",
+        "price": 15000,
+        "shownImg": "./img/categories/Geodatalca/image_6487327(1).JPG",
+        "thumbnails": [""],
+        "description": "Ez a tálca epoxy gyantából, kézzel készült termék, mely egyedi formája miatt igazán különlegessé fogja varázsolni otthonodat. <br><br>Tálcaként is használhatod, tehetsz rá például: gyertyát, ékszert, vázát, kávét, süteményeket, de már önmagában is egy tökéletes dekoráció. <br><br>Fantasztikus ajándékötlet bármilyen alkalomra. Ha személyesebbé szeretnéd tenni, kérhetsz rá feliratot is! <br>Mérete: 22 cm x 30 cm <br><br>",
+        "dataImage": "./img/no-bg/geoda.png"
+    },
+    
+    {
+        "productId": 18,
+        "name": "Ovális aranyozott tálca",
+        "price": 8000,
+        "shownImg": "./img/categories/Ovalisaranyozotttalca/image_6487327(3).JPG",
+        "thumbnails": ["./img/categories/Ovalisaranyozotttalca/image_6487327(3).JPG", "./img/categories/Ovalisaranyozotttalca/image_6487327(2).JPG", "./img/categories/Ovalisaranyozotttalca/image_6487327(4).JPG"],
+        "description": "Tálcaként is használhatod, tehetsz rá például: gyertyát, ékszert, vázát, kávét, süteményeket, de már önmagában is egy tökéletes dekoráció. <br>Fantasztikus ajándék ötlet bármilyen alkalomra,<br><br>Anyaga: rozsdamentes acél, epoxigyanta <br><br>Mérete: <br><br>",
+        "dataImage": "./img/no-bg/ovalistalca(2).png"
     }
 ]

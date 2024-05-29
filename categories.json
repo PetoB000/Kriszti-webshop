@@ -1,0 +1,245 @@
+[
+    {
+        "categoryId": 1,
+        "name": "Tálcák",
+        "products": [ 
+        {
+            "name": "Geoda tálca aranyozott fogóval",
+            "price": "15.000Ft",
+            "productId": 17,
+            "thumbnail": "./img/categories/Geodatalca/thumbnail.JPG",
+            "classes": "",
+            "imgClasses": "object-fit"
+            },
+
+        {
+            "name": "Ovális aranyozott tálca",
+            "price": "8.000Ft",
+            "productId": 18,
+            "thumbnail": "./img/categories/Ovalisaranyozotttalca/thumbnail.JPG",
+            "classes": "",
+            "imgClasses": "object-fit"
+            },
+
+        {
+            "name": "Tengeres Fatálca",
+            "price": "15.000Ft",
+            "productId": 19,
+            "thumbnail": "./img/categories/TengeresFatalca/image_6487327(6).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Epoxy aranyozott szélű tálca",
+            "price": "15.000Ft",
+            "productId": 16,
+            "thumbnail": "./img/categories/aranyozottszelutalca/image_6487327--2.JPG",
+            "classes": "",
+            "imgClasses": ""
+            }
+            ]
+    },
+    {
+        "categoryId": 2,
+        "name": "Ajándéktárgyak",
+        "products": [ 
+        {
+            "name": "Cukorka tartó",
+            "price": "4.000Ft",
+            "productId": 20,
+            "thumbnail": "./img/categories/Cukorkatarto/image_6487327(25).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Váza",
+            "price": "4.000Ft",
+            "productId": 21,
+            "thumbnail": "./img/categories/Vaza/image_6487327(26).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Ovális alátét",
+            "price": "4.000Ft",
+            "productId": 22,
+            "thumbnail": "./img/categories/Ovalisalatet/image_6487327(25).JPG",
+            "classes": "special",
+            "imgClasses": ""
+            }           
+            ]
+    },
+    {
+        "categoryId": 3,
+        "name": "Emlékőrzők",
+        "products": [ 
+        {
+            "name": "Emlékpiramis",
+            "price": "15.000Ft",
+            "productId": 1,
+            "thumbnail": "./img/categories/Emlekpiramis/tumbnail2.JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Fényképes, szívecske emlékőr I",
+            "price": "8.000Ft",
+            "productId": 2,
+            "thumbnail": "./img/categories/FenykepesszivecskeemlekorI/image_6487327(16).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Szív formájú Emlékőr",
+            "price": "25.000Ft",
+            "productId": 4,
+            "thumbnail": "./img/categories/SzivformajuEmlekor/image_6487327(15).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+        
+        {
+            "name": "Fényképes, szívecskés emlékőr II",
+            "price": "10.000Ft",
+            "productId": 3,
+            "thumbnail": "./img/categories/FenykepesszivecskesemlekorII/image_67147009.JPG",
+            "classes": "",
+            "imgClasses": ""
+        }    
+            ]
+    },
+    {
+        "categoryId": 4,
+        "name": "Faliórák",
+        "products": [
+        {
+            "name": "Falióra (38 cm)",
+            "price": "30.000Ft",
+            "productId": 5,
+            "thumbnail": "./img/categories/faliora1/thumbnail.JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Falióra (32 cm)",
+            "price": "20.000Ft",
+            "productId": 6,
+            "thumbnail": "./img/categories/faliora2/image_50738689.JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Falióra (35 cm)",
+            "price": "30.000Ft",
+            "productId": 23,
+            "thumbnail": "./img/categories/faliora3/image_6487327(26).jpg",
+            "classes": "special",
+            "imgClasses": ""
+            }
+    ]
+    },
+    {
+        "categoryId": 5,
+        "name": "Kollekciók",
+        "products": [
+        {
+            "name": "Smaragdzöld kollekció",
+            "price": "32.000Ft",
+            "productId": 9,
+            "thumbnail": "./img/categories/Smaragdzoldkollekcio/image_6487327(14).JPG",
+            "classes": "",
+            "imgClasses": "object_fit"
+            },
+
+        {
+            "name": "3D virágos kollekció",
+            "price": "24.500Ft",
+            "productId": 7,
+            "thumbnail": "./img/categories/3Dviragoskollekcio/image_6487327(12).JPG",
+            "classes": "",
+            "imgClasses": "object_fit"
+            },
+
+        {
+            "name": "Tündöklő rózsaszín-bézs kollekció",
+            "price": "29.500Ft",
+            "productId": 10,
+            "thumbnail": "./img/categories/Tundoklorozsaszin-bezskollekcio/image_6487327(13).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Jegyzetfüzet/notesz szett",
+            "price": "10.000Ft",
+            "productId": 8,
+            "thumbnail": "./img/categories/Noteszszett/image_50392833.JPG",
+            "classes": "",
+            "imgClasses": ""
+            }
+    ]
+    },
+    {
+        "categoryId": 6,
+        "name": "Sütis tálcák",
+        "products": [
+        {
+            "name": "3 szintes sütistálca",
+            "price": "15.000Ft",
+            "productId": 15,
+            "thumbnail": "./img/categories/3szintessutistalca/image_6487327(17).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "2 szintes sütistálca",
+            "price": "10.000Ft",
+            "productId": 14,
+            "thumbnail": "./img/categories/2szintessutistalca/image_6487327(10).JPG",
+            "classes": "",
+            "imgClasses": ""
+            }
+    ]
+    },
+    {
+        "categoryId": 7,
+        "name": "Poháralátétek/tálak",
+        "products": [
+        {
+            "name": "Poháralátét",
+            "price": "2.000Ft / db",
+            "productId": 13,
+            "thumbnail": "./img/categories/poharalatetektalak/image_6487327(18).JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Hajlított nagy tál",
+            "price": "10.000Ft",
+            "productId": 12,
+            "thumbnail": "./img/categories/poharalatetektalak/nagytalthumbnail.JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "Hajlított kicsi tál",
+            "price": "2.500Ft / db",
+            "productId": 11,
+            "thumbnail": "./img/categories/poharalatetektalak/kistalak.JPG",
+            "classes": "special",
+            "imgClasses": ""
+            }
+    ]
+    }
+]
+

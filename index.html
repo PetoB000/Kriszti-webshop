@@ -36,41 +36,41 @@
             <div class="categories_text">Termék kategóriáim</div>
             <section class="category-section">
                 <div class="category-container">
-                    <div class="category pulse" onclick="navigateToPage('./category-html/talcak.html')">
+                    <div class="category pulse" data-categoryid="1" onclick="loadCategoryData(this)">
                         <img src="./img/categories/Ovalisaranyozotttalca/thumbnail.JPG" alt="Category 1">
                         <div class="category_text">Tálcák</div>
                     </div>
                 
-                    <div class="category pulse" onclick="navigateToPage('./category-html/faliorak.html')">
+                    <div class="category pulse" data-categoryid="4" onclick="loadCategoryData(this)">
                         <img src="./img/categories/faliora1/image_67184897.JPG" alt="Category 2">
                         <div class="category_text">Faliórák</div>
                     </div>
                 </div>
             
                 <div class="category-container" >
-                    <div class="category pulse" onclick="navigateToPage('./category-html/emlekorok.html')">
+                    <div class="category pulse" data-categoryid="3" onclick="loadCategoryData(this)">
                         <img src="./img/categories/Emlekpiramis/tumbnail.JPG" alt="Category 3">
                         <div class="category_text">Emlékőrök</div>
                     </div>
                 
-                    <div class="category pulse" onclick="navigateToPage('./category-html/kollekciok.html')">
+                    <div class="category pulse" data-categoryid="5" onclick="loadCategoryData(this)">
                         <img src="./img/categories/3Dviragoskollekcio/image_6487327(12).JPG" alt="Category 4">
                         <div class="category_text">Kollekciók / Notesz szett</div>
                     </div>
                 </div>
                 <div class="category-container">
-                    <div class="category pulse" onclick="navigateToPage('./category-html/poharalatetektalak.html')">
+                    <div class="category pulse" data-categoryid="7" onclick="loadCategoryData(this)">
                         <img src="./img/categories/poharalatetektalak/image_6487327(18).JPG" alt="Category 1">
                         <div class="category_text">Poháralátétek / Tálak</div>
                     </div>
                 
-                    <div class="category pulse" onclick="navigateToPage('./category-html/Sutistalcak.html')">
+                    <div class="category pulse" data-categoryid="6" onclick="loadCategoryData(this)">
                         <img src="./img/categories/3szintessutistalca/image_6487327(171).JPG" alt="Category 2">
                         <div class="category_text">Sütis tálcák</div>
                     </div>
                 </div>
                 <div class="category-container">
-                    <div class="category pulse" onclick="navigateToPage('./category-html/Ajandektargyak.html')">
+                    <div class="category pulse" data-categoryid="2" onclick="loadCategoryData(this)">
                         <img src="./img/categories/Ovalisalatet/image_6487327(25).JPG" alt="Category 1">
                         <div class="category_text">Ajándéktárgyak</div>
                     </div>
@@ -137,20 +137,12 @@
         </div>
     </div>
     <div class="cartTab">
-        <div class="header">
-            <h1>Kosarad</h1>
-            <h1><svg class="basket-close-button" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="red" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"/></svg></h1>
-        </div>
-        <div class="basket-section"></div>
-        <div class="total">Üres a kosarad
-            <div class="order-button">Rendelés leadása</div>
-        </div>
+
     </div>
     <script src="main.js"></script>
     <script src="hamburger.js"></script>
     <script src="carousel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <script src="./dataLoader.js"></script>
 </body>
 
 
