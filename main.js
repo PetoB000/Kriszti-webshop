@@ -21,6 +21,7 @@ menuContainer.innerHTML = `
         <li data-categoryid="7" onclick="loadCategoryData(this)">Sütis tálcák</li>
         <li data-categoryid="6" onclick="loadCategoryData(this)">Poháralátétek/Tálak</li>
         <li data-categoryid="2" onclick="loadCategoryData(this)">Ajándéktárgyak</li>
+        <li data-categoryid="8" onclick="loadCategoryData(this)">Jegyzetfüzetek</li>
     </ul>
 </div>
 <div class="main_link pulse" onclick="navigateToPage('./contact.html')">Kapcsolat</div>

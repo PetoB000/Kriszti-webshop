@@ -67,7 +67,7 @@
             "price": "4.000Ft",
             "productId": 22,
             "thumbnail": "./img/categories/Ovalisalatet/image_6487327(25).JPG",
-            "classes": "special",
+            "classes": "",
             "imgClasses": ""
             }           
             ]
@@ -139,7 +139,7 @@
             "name": "Falióra (35 cm)",
             "price": "30.000Ft",
             "productId": 23,
-            "thumbnail": "./img/categories/faliora3/image_6487327(26).jpg",
+            "thumbnail": "./img/categories/faliora3/image_6487327(26).JPG",
             "classes": "special",
             "imgClasses": ""
             }
@@ -172,16 +172,7 @@
             "price": "29.500Ft",
             "productId": 10,
             "thumbnail": "./img/categories/Tundoklorozsaszin-bezskollekcio/image_6487327(13).JPG",
-            "classes": "",
-            "imgClasses": ""
-            },
-
-        {
-            "name": "Jegyzetfüzet/notesz szett",
-            "price": "10.000Ft",
-            "productId": 8,
-            "thumbnail": "./img/categories/Noteszszett/image_50392833.JPG",
-            "classes": "",
+            "classes": "special",
             "imgClasses": ""
             }
     ]
@@ -237,6 +228,29 @@
             "productId": 11,
             "thumbnail": "./img/categories/poharalatetektalak/kistalak.JPG",
             "classes": "special",
+            "imgClasses": ""
+            }
+    ]
+    },
+    {
+        "categoryId": 8,
+        "name": "Jegyzetfüzet/notesz",
+        "products": [
+        {
+            "name": "A6 Jegyzetfüzet/notesz",
+            "price": "10.000Ft",
+            "productId": 8,
+            "thumbnail": "./img/categories/A6Noteszszett/image_67142145.JPG",
+            "classes": "",
+            "imgClasses": ""
+            },
+
+        {
+            "name": "A5 Jegyzetfüzet/notesz",
+            "price": "10.000Ft",
+            "productId": 24,
+            "thumbnail": "./img/categories/A5Noteszszett/image_67171585.JPG",
+            "classes": "",
             "imgClasses": ""
             }
     ]

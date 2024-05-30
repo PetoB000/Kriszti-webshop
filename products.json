@@ -111,12 +111,22 @@
     
     {
         "productId": 8,
-        "name": "Jegyzetfüzet/notesz szett",
+        "name": "A6 Jegyzetfüzet/notesz",
         "price": 10000,
-        "shownImg": "./img/categories/Noteszszett/image_50392833.JPG",
-        "thumbnails": ["./img/categories/Noteszszett/image_50392833.JPG", "./img/categories/Noteszszett/image_6487327(23).JPG", "./img/categories/Noteszszett/image_6487327(24).JPG", "./img/categories/Noteszszett/image_67154945999999.JPG"],
+        "shownImg": "./img/categories/A6Noteszszett/image_67142145.JPG",
+        "thumbnails": ["./img/categories/A6Noteszszett/image_67142145.JPG", "./img/categories/A6Noteszszett/image_6487327(27).JPG", "./img/categories/A6Noteszszett/image_6487327(28).JPG", "./img/categories/A6Noteszszett/image_6487327(29).JPG"],
         "description": "Szett tartalma: A6 méretű jegyzetfüzet, melynek a két borítója epoxy gyantából készült. <br>A szétnyithatós kapocsnak köszönhetően bármikor tudsz hozzáadni vagy éppen kivenni lapokat, ezért örökéletű. A szetthez tartozik még egy színben hozzáillő toll és könyvjelző. <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>Mérete: 11 cm x 18 cm <br><br>",
         "dataImage": "./img/no-bg/notesz.png"
+    },
+
+    {
+        "productId": 24,
+        "name": "A5 Jegyzetfüzet/notesz",
+        "price": 10000,
+        "shownImg": "./img/categories/A5Noteszszett/image_67171585.JPG",
+        "thumbnails": ["./img/categories/A5Noteszszett/image_67171585.JPG", "./img/categories/A5Noteszszett/image_6487327(30).JPG"],
+        "description": "A5-ös méretű jegyzetfüzet, melynek a két borítója epoxy gyantàból készült. <br> A szétnyithatós kapocsnak köszönhetően bármikor tudsz hozzáadni vagy éppen kivenni lapokat, ezért örökéletű.  <br>Kérhetsz rá matricát is az általad választott színben és betűstílusban, ezáltal teljesen személyre szabható!  <br><br>Mivel a termékek saját kézzel készültek, lehetnek benne apróbb felületi egyenletlenségek, vagy a gyanta öntése során kialakult pici buborékok, amik szerintem csak még egyedibbé teszik a terméket. <br><br>Mérete: 21,3cm x 15,5cm  <br><br>",
+        "dataImage": "./img/no-bg/A5nobg.png"
     },
     
     {
