@@ -1161,7 +1161,9 @@ footer {
     height: 160px;
     width: 135%;
   }
-
+  .modal-content {
+    max-width: 94%;
+  }
 
 }
 
@@ -1185,9 +1187,7 @@ footer {
     width: 80px;
   }
 
-  .modal-content {
-    max-width: 77%;
-  }
+
 
   .basket-product {
     font-size: 12px;

@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   nextButton.addEventListener('click', function() {
     nextImgId = parseInt(imgId) + 1;
-    console.log('current id ' + imgId)
+
     let nextImgElement = document.getElementById(nextImgId);
 
     if (nextImgElement) {
       let nextImgUrl = nextImgElement.getAttribute('src');
       modalContent.setAttribute('src', nextImgUrl);
       imgId = nextImgId;
-      console.log('next id ' + nextImgId)
+
     }
   });
 
