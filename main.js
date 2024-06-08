@@ -3,6 +3,7 @@ function navigateToPage(pageUrl) {
 }
 
 
+
 menuContainer = document.querySelector('.menu-container')
 
 menuContainer.innerHTML = `
@@ -39,20 +40,29 @@ footer = document.querySelector('footer')
 footer.innerHTML = `
 <div class="media">
   <p>Kriszti Epoxy műhelye</p>
-  <p>Egy szebb otthonért</p>
+
   <p>Ajándéktárgyimat kézzel, egyedileg készítem, igy minden alkotásom más és más.</p>
-<div class="svg_container">
-    <a href="https://www.facebook.com/kriszti.epoxy.muhelye" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
-            <path d="M 25 3 C 12.861562 3 3 12.861562 3 25 C 3 36.019135 11.127533 45.138355 21.712891 46.728516 L 22.861328 46.902344 L 22.861328 29.566406 L 17.664062 29.566406 L 17.664062 26.046875 L 22.861328 26.046875 L 22.861328 21.373047 C 22.861328 18.494965 23.551973 16.599417 24.695312 15.410156 C 25.838652 14.220896 27.528004 13.621094 29.878906 13.621094 C 31.758714 13.621094 32.490022 13.734993 33.185547 13.820312 L 33.185547 16.701172 L 30.738281 16.701172 C 29.349697 16.701172 28.210449 17.475903 27.619141 18.507812 C 27.027832 19.539724 26.84375 20.771816 26.84375 22.027344 L 26.84375 26.044922 L 32.966797 26.044922 L 32.421875 29.564453 L 26.84375 29.564453 L 26.84375 46.929688 L 27.978516 46.775391 C 38.71434 45.319366 47 36.126845 47 25 C 47 12.861562 37.138438 3 25 3 z M 25 5 C 36.057562 5 45 13.942438 45 25 C 45 34.729791 38.035799 42.731796 28.84375 44.533203 L 28.84375 31.564453 L 34.136719 31.564453 L 35.298828 24.044922 L 28.84375 24.044922 L 28.84375 22.027344 C 28.84375 20.989871 29.033574 20.060293 29.353516 19.501953 C 29.673457 18.943614 29.981865 18.701172 30.738281 18.701172 L 35.185547 18.701172 L 35.185547 12.009766 L 34.318359 11.892578 C 33.718567 11.811418 32.349197 11.621094 29.878906 11.621094 C 27.175808 11.621094 24.855567 12.357448 23.253906 14.023438 C 21.652246 15.689426 20.861328 18.170128 20.861328 21.373047 L 20.861328 24.046875 L 15.664062 24.046875 L 15.664062 31.566406 L 20.861328 31.566406 L 20.861328 44.470703 C 11.816995 42.554813 5 34.624447 5 25 C 5 13.942438 13.942438 5 25 5 z"></path>
-        </svg>
-    </a>
-    <!-- <a href="https://www.instagram.com/YourInstagramPage" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 50 50">
-            <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
-        </svg>
-    </a>    -->
+  <div class="svg_container">
+      <a href="https://www.facebook.com/kriszti.epoxy.muhelye" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
+              <path d="M 25 3 C 12.861562 3 3 12.861562 3 25 C 3 36.019135 11.127533 45.138355 21.712891 46.728516 L 22.861328 46.902344 L 22.861328 29.566406 L 17.664062 29.566406 L 17.664062 26.046875 L 22.861328 26.046875 L 22.861328 21.373047 C 22.861328 18.494965 23.551973 16.599417 24.695312 15.410156 C 25.838652 14.220896 27.528004 13.621094 29.878906 13.621094 C 31.758714 13.621094 32.490022 13.734993 33.185547 13.820312 L 33.185547 16.701172 L 30.738281 16.701172 C 29.349697 16.701172 28.210449 17.475903 27.619141 18.507812 C 27.027832 19.539724 26.84375 20.771816 26.84375 22.027344 L 26.84375 26.044922 L 32.966797 26.044922 L 32.421875 29.564453 L 26.84375 29.564453 L 26.84375 46.929688 L 27.978516 46.775391 C 38.71434 45.319366 47 36.126845 47 25 C 47 12.861562 37.138438 3 25 3 z M 25 5 C 36.057562 5 45 13.942438 45 25 C 45 34.729791 38.035799 42.731796 28.84375 44.533203 L 28.84375 31.564453 L 34.136719 31.564453 L 35.298828 24.044922 L 28.84375 24.044922 L 28.84375 22.027344 C 28.84375 20.989871 29.033574 20.060293 29.353516 19.501953 C 29.673457 18.943614 29.981865 18.701172 30.738281 18.701172 L 35.185547 18.701172 L 35.185547 12.009766 L 34.318359 11.892578 C 33.718567 11.811418 32.349197 11.621094 29.878906 11.621094 C 27.175808 11.621094 24.855567 12.357448 23.253906 14.023438 C 21.652246 15.689426 20.861328 18.170128 20.861328 21.373047 L 20.861328 24.046875 L 15.664062 24.046875 L 15.664062 31.566406 L 20.861328 31.566406 L 20.861328 44.470703 C 11.816995 42.554813 5 34.624447 5 25 C 5 13.942438 13.942438 5 25 5 z"></path>
+          </svg>
+      </a>
+      <!-- <a href="https://www.instagram.com/YourInstagramPage" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 50 50">
+              <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
+          </svg>
+      </a>    -->
+  </div>
 </div>
+
+<div class="legal">
+  <p>Jogi tudnivalók</p>
+  <p onclick="navigateToPage('ASZF.html')">Vásárlási feltételek</p>
+  <p onclick="navigateToPage('Adatkezelesi-tajekoztato.html')">Adatkezelési tájékoztató</p>
+  <p onclick="navigateToPage('Adatkezelesi-tajekoztato.html')">Szállítási módok</p>
+  <p onclick="navigateToPage('Adatkezelesi-tajekoztato.html')">Fizetési módik</p>
+
 </div>
 <div class="contact">
   <p>kapcsolat</p>
@@ -61,6 +71,7 @@ footer.innerHTML = `
   <p>+36 20 416 64 22</p>
   <p>krisztiepoxymuhelye@gmail.com</p>
 </div>
+
 `
 cartTab = document.querySelector('.cartTab')
 cartTab.innerHTML = ` 
@@ -70,9 +81,12 @@ cartTab.innerHTML = `
 </div>
 <div class="basket-section"></div>
 <div class="total">Üres a kosarad
-  <div class="order-button">Rendelés leadása</div>
+  <div class="order-button">Rendelés leadása</a>
 </div>`
-
+const orderButton = document.querySelector('.order-button');
+orderButton.addEventListener('click', function() {
+  window.location.href = 'place-order.html'
+})
 
 // TERMÉK OLDALI KÉPVÁLASZTÓ
 
@@ -87,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
-
 
 
 
@@ -228,7 +241,7 @@ function updateTotalPrice(obj) {
 
   const totalElement = document.querySelector('.total');
   if (totalPrice > 0) {
-    totalElement.innerHTML = `Összesen: ${formatPrice(totalPrice)} Ft + Szállítás<div class="order-button">Rendelés leadása</div>`;
+    totalElement.innerHTML = `Összesen: ${formatPrice(totalPrice)} Ft + Szállítás  <div class="order-button"><a href="place-order.html">Rendelés leadása</a></div>`;
   } else {
     totalElement.innerHTML = `Üres a kosarad  <div class="order-button">Rendelés leadása</div>`
   }
@@ -236,6 +249,7 @@ function updateTotalPrice(obj) {
   const quantityCounter = document.querySelector('.basket-count')
   quantityCounter.innerText = `${quantityCount}`
 }
+  
 
 
 // Format price function
@@ -331,120 +345,6 @@ function clearBasket() {
   basket = {};
   localStorage.setItem('basket', JSON.stringify(basket));
 }
-
-
-
-
-
-
-const container = document.querySelector('.container')
-const orderButton = document.querySelector('.order-button')
-orderButton.addEventListener('click', function () {
-  body.classList.toggle('showCart');
-
-
-  // Get the basket object
-  let basket = JSON.parse(localStorage.getItem('basket'));
-
-  // Initialize an empty string to store the product names and quantities
-  let productsList = '';
-
-  // Loop through the basket object and add the product names and quantities to the string
-  for (const [productId, product] of Object.entries(basket)) {
-    productsList += `Termék: ${product.name}, Mennyiség: ${product.quantity}\n`;
-  }
-
-
-  let totalPrice = 0;
-  for (const [productId, product] of Object.entries(basket)) {
-    totalPrice += product.price * product.quantity;
-  }
-
-  // Add the total price to the products list
-  productsList += `Összesen: ${totalPrice} Ft + Szállítás\n\n`;
-
-  container.innerHTML=`
-  <div class="form_container">
-  <div class="form">
-    <div class="contact-info">
-      <h3 class="title">Köszönöm bizalmad!</h3>
-      <p class="text">
-        Miután kitöltötted a szükséges mezőket a küldés gombbal a kosaradban lévő termékeket megkapom és amint
-        tudok felkereslek a részletekkel kapcsolatban, ha még ez előtt van megjegyzésed kérlek írd az üzenet mezőbe"
-      </p>
-    
-      <div class="info">
-        <div class="information">
-          <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
-        
-          <p>4243 Téglás, Beck Pál utca 34</p>
-        </div>
-        <div class="information">
-          <i class="fas fa-envelope"></i> &nbsp &nbsp
-          <p>krisztiepoxymuhelye@gmail.com</p>
-        </div>
-        <div class="information">
-          <i class="fas fa-phone"></i>&nbsp&nbsp
-          <p>+36 20 416 64 22</p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="contact-form">
-      <span class="circle one"></span>
-      <span class="circle two"></span>
-    
-      <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="subject" value="Rendelés!!">
-          <input type="hidden" name="from_name" value="Epoxy">
-          <input type="hidden" name="access_key" value="a4f9ff50-3dbf-4d09-8978-fb04c486d609">
-          <input type="hidden" name="redirect" value="http://127.0.0.1:5501/thankYouPage.html">
-          <div class="input-container">
-          <p>Név</p>
-              <input type="text" name="name" class="input" required/>
-              <label for=""></label>
-          </div>
-          <div class="input-container">
-          <p>Email</p>
-              <input type="email" name="email" class="input" required/>
-              <label for=""></label>
-          </div>
-          <div class="input-container">
-          <p>Telefonszám</p>
-              <input type="tel" name="phone" class="input" required />
-              <label for=""></label>
-          </div>
-          <div class="input-container textarea hidden">
-
-              <textarea name="message" class="input">${productsList} Megjegyzés:\n</textarea>
-              <label for=""></label>
-          </div>
-          <div class="input-container textarea">
-              <p>Üzenet</p>
-              <textarea name="message" class="input"></textarea>
-              <label for=""></label>
-          </div>
-
-        <button type="submit" value="Send" class="btn order-btn" onclick="clearBasket()">Küldés</button>
-      </form>
-    </div>
-  </div>
-</div>
-  `
-
-
-  const orderBtn = document.querySelector('.order-btn')
-  orderBtn.addEventListener('click', function() {
-    let basket = JSON.parse(localStorage.getItem('basket'));
-
-    // Delete everything in the basket
-    basket = {};
-
-    // Save the empty basket to local storage
-    localStorage.setItem('basket', JSON.stringify(basket));
-  });
-});
-
 
  // Get the menu container and all main_link elements
 

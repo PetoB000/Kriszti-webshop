@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0YDH7D0KVC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0YDH7D0KVC');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriszti Műhelye</title>
+    <link rel="website icon" type="png" href="./img/purple-epoxy-resin-icon-cartoon-circle-vector-45522988-removebg.png">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+
+</head>
+<body>
+  <div class="menu-container">
+</div>
+  
+      <div class="container">
+        <div class="form_container">
+            <div class="form">
+              <div class="contact-info">
+                <h3 class="title">Köszönöm bizalmad!</h3>
+                <p class="text">
+                  Miután kitöltötted a szükséges mezőket a küldés gombbal a kosaradban lévő termékeket megkapom és amint
+                  tudok felkereslek a részletekkel kapcsolatban, ha még ez előtt van megjegyzésed kérlek írd az üzenet mezőbe"
+                </p>
+              
+                <div class="info">
+                  <div class="information">
+                    <i class="fas fa-map-marker-alt"></i> &nbsp &nbsp
+                  
+                    <p>4243 Téglás, Beck Pál utca 34</p>
+                  </div>
+                  <div class="information">
+                    <i class="fas fa-envelope"></i> &nbsp &nbsp
+                    <p>krisztiepoxymuhelye@gmail.com</p>
+                  </div>
+                  <div class="information">
+                    <i class="fas fa-phone"></i>&nbsp&nbsp
+                    <p>+36 20 416 64 22</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="contact-form">
+                <span class="circle one"></span>
+                <span class="circle two"></span>
+              
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="subject" value="Rendelés!!">
+                    <input type="hidden" name="from_name" value="Epoxy">
+                    <input type="hidden" name="access_key" value="fe210939-8be2-45f2-ba40-f02b696011fe">
+                    <input type="hidden" name="redirect" value="http://127.0.0.1:5501/thankYouPage.html">
+                    <div class="input-container">
+                        <input type="text" name="name" class="input" required/>
+                        <label for="">Név</label>
+                        <span>Név</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="email" name="email" class="input" required/>
+                        <label for="">Email</label>
+                        <span>Email</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="tel" name="phone" class="input" required />
+                        <label for="">Telefonszám</label>
+                        <span>Telefonszám</span>
+                    </div>
+                    <div class="input-container textarea hidden">
+          
+                        <textarea name="message" class="input product-list"> Megjegyzés:<br></textarea>
+                        <label for=""></label>
+                    </div>
+                    <div class="input-container textarea">
+                        <textarea name="message" class="input"></textarea>
+                        <label for="">Üzenet</label>
+                        <span>Üzenet</span>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" required>
+                      <p>Az <a href="ASZF.html">Általános szerződési feltételeket</a> elolvastam, megértettem és elfogadom.</p>
+                    </div>
+                    <div class="checkbox">
+                      <input type="checkbox" required>
+                      <p>Az <a href="Adatkezelesi-tajekoztato.html">Adatkezelési tájékoztatót</a> elolvastam, megértettem és elfogadom.
+                    </div>
+                  <button type="submit" value="Send" class="btn order-btn" onclick="clearBasket()">Küldés</button>
+                </form>
+              </div>
+            </div>
+          </div>
+  </div>
+  <footer>
+
+</footer>
+<div class="cartTab">
+
+</div>
+
+
+  <script src="contact.js"></script>
+  <script src="main.js"></script>
+  <script src="hamburger.js"></script>
+  <script src="./dataLoader.js"></script>
+  <script src="place-order.js"></script>
+</body>
+</html>

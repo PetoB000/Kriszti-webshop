@@ -21,6 +21,7 @@
     src="https://kit.fontawesome.com/64d58efce2.js"
     crossorigin="anonymous"
   ></script>
+ 
 
 </head>
 <body>
@@ -28,23 +29,39 @@
 
     </div>
 
-
+    <div class="container">
+        <script id="barat_script">var st = document.createElement("script");st.src = "//admin.fogyasztobarat.hu/e-api.js";st.type = "text/javascript";st.setAttribute("data-id", "T7CV4NBY");st.setAttribute("id", "fbarat-embed");st.setAttribute("data-type", "aszf");var s = document.getElementById("barat_script");s.parentNode.insertBefore(st, s);</script>
+    </div>
 
     <footer>
 
     </footer>
     <div class="cartTab">
-        <div class="header">
-            <h1>Kosarad</h1>
-            <h1><svg class="basket-close-button" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="red" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm0 10.293l5.293-5.293.707.707-5.293 5.293 5.293 5.293-.707.707-5.293-5.293-5.293 5.293-.707-.707 5.293-5.293-5.293-5.293.707-.707 5.293 5.293z"/></svg></h1>
-        </div>
-        <div class="basket-section"></div>
-        <div class="total">Üres a kosarad
-            <div class="order-button">Rendelés leadása</div>
-        </div>
+
+    </div>
     </div>
     <script src="main.js"></script>
     <script src="hamburger.js"></script>
+    <script src="carousel.js"></script>
     <script src="./dataLoader.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var hash = window.location.hash;
+            if (hash) {
+                var targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    // Feltételezzük, hogy van egy fülek kezelő funkció
+                    openTab(hash); // pl. jQuery vagy egyéni JavaScript függvény
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        function openTab(tabId) {
+            // Fülek megnyitása pl. jQuery vagy egyéni JavaScript függvénnyel
+            // Ez az adott implementációtól függ
+            $(tabId).addClass('active').siblings().removeClass('active');
+        }
+    </script>
 </body>
 </html>

@@ -610,16 +610,42 @@ footer {
   margin-right: 100px;
 }
 
+.contact p:nth-child(2),
+.media p:nth-child(2),
+.legal p:nth-child(2) {
+  margin-top: 20px;
+}
 
 .contact p,
-.media p {
+.media p,
+.legal p {
   margin-bottom: 5px;
   text-align: center;
 }
 
+.legal p:not(:first-child) {
+  cursor: pointer;
+}
+
+
+.checkbox {
+  display: flex;
+  font-size: 12px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.checkbox p {
+  margin-left: 10px;
+}
+
+.checkbox input {
+  cursor: pointer;
+}
 
 .contact p:first-child,
-.media p:first-child {
+.media p:first-child,
+.legal p:first-child {
   font-weight: 500;
   font-size: 20px;
 }
@@ -1052,23 +1078,33 @@ footer {
   }
 }
 
-@media screen and (max-width:880px) {
+@media screen and (max-width:900px) {
   .slider-wrapper .image-list .image-item {
     width: 180px;
     height: 240px;
   }
 
+  .legal {
+    min-width:  fit-content;
+    padding-left: 20px;
+  }
+
+  .media {
+    width: 300px;
+  }
+
 }
 
 
-@media screen and (max-width:770px) {
+@media screen and (max-width:780px) {
   .about_me_container {
     scale: 0.85;
     transform: translate(-100px, 90px);
   }
 
   .contact,
-  .media {
+  .media,
+  .legal {
     margin: 10px;
   }
 
@@ -1077,7 +1113,7 @@ footer {
 }
 
 
-@media screen and (max-width:680px) {
+@media screen and (max-width:690px) {
   .category-section {
     flex-wrap: wrap;
     flex-direction: column;
@@ -1113,7 +1149,8 @@ footer {
   }
 
   .contact p,
-  .media p {
+  .media p,
+  .legal p {
     font-size: 15px;
   }
   .slider-wrapper .image-list .image-item {
@@ -1127,6 +1164,14 @@ footer {
 
   .slider-wrapper .image-list {
     grid-template-columns: repeat(10, 1fr);
+  }
+
+  footer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer div:last-child {
+    margin: 0 auto;
   }
 }
 
@@ -1151,7 +1196,7 @@ footer {
   }
 }
 
-@media screen and (max-width:540px) {
+@media screen and (max-width:554px) {
   .slider-wrapper .image-list .image-item {
     width: 170px;
     height: 200px;
@@ -1163,6 +1208,17 @@ footer {
   }
   .modal-content {
     max-width: 94%;
+  }
+
+  .contact p,
+  .media p,
+  .legal p {
+    font-size: 12px;
+  }
+  .contact p:first-child,
+  .media p:first-child,
+  .legal p:first-child {
+    font-size: 16px;
   }
 
 }
@@ -1182,7 +1238,7 @@ footer {
   }
 }
 
-@media screen and (max-width:455px) {
+@media screen and (max-width:458px) {
   .basket-container:first-child img {
     width: 80px;
   }
@@ -1212,12 +1268,18 @@ footer {
   footer {
     display: flex;
     justify-content: center;
-    
   }
 
   .contact p,
-  .media p {
-    font-size: 12px;
+  .media p,
+  .legal p {
+    font-size: 13px;
+  }
+
+
+
+  .media {
+    width: 150px;
   }
 }
 
@@ -1236,8 +1298,9 @@ footer {
   }
 
   .contact p,
-  .media p {
-    font-size: 10px;
+  .media p,
+  .legal p {
+    font-size: 12px;
   }
 
 }
