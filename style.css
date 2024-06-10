@@ -360,16 +360,16 @@ li:hover {
 }
 
 
-.basket-container:first-child {
-  flex-basis: 40%;
+
+.basket-image-container {
+  flex-basis: 35%;
 }
-
-
 
 
 .basket-product-quantity {
   flex: 1;
   text-align: center;
+  min-width: fit-content;
 }
 
 .basket-product-name {
@@ -391,6 +391,8 @@ li:hover {
 .basket-product-price {
   font-weight: bold;
   text-align: center;
+  padding-right: 2px;
+  min-width: fit-content;
 }
 
 .quantity-container {
@@ -398,6 +400,7 @@ li:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-basis: 22%;
 }
 
 .increment-button,
@@ -607,12 +610,12 @@ footer {
 
 .media {
   width: 25vw;
-  margin-left: 100px;
+  margin-left: 20px;
 }
 
 
 .contact {
-  margin-right: 100px;
+  margin-right: 20px;
 }
 
 .contact p:first-child,
@@ -1264,11 +1267,17 @@ footer {
 }
 
 @media screen and (max-width:458px) {
-  .basket-container:first-child img {
-    width: 80px;
+  .basket-image-container img {
+    width: 65px;
   }
 
+  .quantity-container {
+    scale: 0.9;
+  }
 
+  .basket-product-price {
+    scale: 0.9;
+  }
 
   .basket-product {
     font-size: 12px;

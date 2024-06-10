@@ -111,7 +111,7 @@
     
     {
         "productId": 8,
-        "name": "A6 Jegyzetfüzet/notesz",
+        "name": "A6 Jegyzetfüzet",
         "price": 8000,
         "shownImg": "./img/categories/A6Noteszszett/image_67142145.JPG",
         "thumbnails": ["./img/categories/A6Noteszszett/image_67142145.JPG", "./img/categories/A6Noteszszett/image_6487327(27).JPG", "./img/categories/A6Noteszszett/image_6487327(28).JPG", "./img/categories/A6Noteszszett/image_6487327(29).JPG"],
@@ -121,7 +121,7 @@
 
     {
         "productId": 24,
-        "name": "A5 Jegyzetfüzet/notesz",
+        "name": "A5 Jegyzetfüzet",
         "price": 10000,
         "shownImg": "./img/categories/A5Noteszszett/image_67171585.JPG",
         "thumbnails": ["./img/categories/A5Noteszszett/image_67171585.JPG", "./img/categories/A5Noteszszett/image_6487327(30).JPG"],

@@ -19,8 +19,8 @@ menuContainer.innerHTML = `
         <li data-categoryid="3" onclick="loadCategoryData(this)">Emlékőrök</li>
         <li data-categoryid="4" onclick="loadCategoryData(this)">Faliórák</li>
         <li data-categoryid="5" onclick="loadCategoryData(this)">Kollekciók</li>
-        <li data-categoryid="7" onclick="loadCategoryData(this)">Sütis tálcák</li>
-        <li data-categoryid="6" onclick="loadCategoryData(this)">Poháralátétek/Tálak</li>
+        <li data-categoryid="6" onclick="loadCategoryData(this)">Sütis tálcák</li>
+        <li data-categoryid="7" onclick="loadCategoryData(this)">Poháralátétek/Tálak</li>
         <li data-categoryid="2" onclick="loadCategoryData(this)">Ajándéktárgyak</li>
         <li data-categoryid="8" onclick="loadCategoryData(this)">Jegyzetfüzetek</li>
     </ul>
@@ -263,7 +263,7 @@ function generateBasketProduct(productId, productName, productPrice, productImag
   productDiv.classList.add('basket-product');
   productDiv.dataset.productId = productId;
   productDiv.innerHTML = `
-    <div class="basket-container">
+    <div class="basket-container basket-image-container">
       <div class="basket-product-image product-values">
         <img src="${productImageURL}" alt="${productName}">
       </div>
