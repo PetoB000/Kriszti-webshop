@@ -362,7 +362,7 @@ function clearBasket() {
          if (![...mainLinks].some(link => link.matches(':hover'))) {
              menu.classList.remove('hover-active');
          }
-     }, 200); // 1000 milliseconds = 1 second
+     }, 200); 
  }
  // Add event listeners to each main_link
  mainLinks.forEach(link => {
