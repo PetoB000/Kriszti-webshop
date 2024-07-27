@@ -11,9 +11,6 @@ if (isset($_POST['l-submit'])) {
     $login = new LoginContr($uid, $pwd);
 
     if ($login->loginUser()) {
-        // Debug output
-        error_log("User logged in: " . $_SESSION["username"]);
-
         if ($_SESSION["username"] === "admin") {
             header("Location: admin.php");
             exit();
@@ -22,7 +19,6 @@ if (isset($_POST['l-submit'])) {
             exit();
         }
     } else {
-        error_log("Login failed for user: " . $uid);  // Debugging line
         header("Location: ./login.php?error=invalidcredentials");
         exit();
     }

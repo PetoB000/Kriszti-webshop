@@ -88,7 +88,7 @@ orderButton.addEventListener('click', function() {
   window.location.href = 'place-order.html'
 })
 
-// TERMÉK OLDALI KÉPVÁLASZTÓ
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const productThumbnails = document.querySelectorAll('.thumbnail_pictures img');
@@ -138,33 +138,32 @@ let cart = [];
 });
 
 
-// Initialize the basket object
+
 
 let basket = {};
 
 
 
-// Save the basket to local storage
+
 function saveBasket() {
-  // Loop through the basket object and add the quantity of each item to the object
+
   for (const [productId, product] of Object.entries(basket)) {
     product.quantity = product.quantity || 1;
   }
 
-  // Convert the basket object to a JSON string and save it to local storage
+
   localStorage.setItem('basket', JSON.stringify(basket));
 }
 
-// Load the basket from local storage
 function loadBasket() {
   let storedBasket = localStorage.getItem('basket')
   if (storedBasket) {
     basket = JSON.parse(storedBasket)
   } else {
-    basket = {}; // Initialize an empty basket if no data is stored
+    basket = {};
   }
 
-  // Generate the basket product structure for each product in the basket object
+
   for (const [productId, product] of Object.entries(basket)) {
     let productDiv = generateBasketProduct(productId, product.name, product.price, product.imageURL, formatPrice)
 
@@ -172,39 +171,30 @@ function loadBasket() {
     basketSection.appendChild(productDiv)
   }
   updateTotalPrice(basket)
-  // Update the total price
 }
 
 
-//TODO: GIVE THE LOADBASKET FUNCTION THE BASE PRODUCTPRICE 
-// Load the basket when the page loads
+
 loadBasket();
 
 document.addEventListener('click', function(event) {
   if (event.target.classList.contains('product-button')) {
-    // Get the product information from the data attributes
     let productId = event.target.getAttribute('data-product-id');
     let productName = event.target.getAttribute('data-product-name');
     let productPrice = event.target.getAttribute('data-product-price');
     let productImageURL = event.target.getAttribute('data-product-image');
 
-    // Check if the product already exists in the basket object
     if (basket[productId]) {
-      // Update the quantity and price
       basket[productId].quantity++;
       basket[productId].price += parseInt(productPrice);
-
-      // Save the basket to local storage
       saveBasket();
 
-      // Update the existing div in the basket section
       let existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
       if (existingDiv) {
         existingDiv.querySelector('.data-product-quantity').innerText = `Quantity: ${basket[productId].quantity}`;
         existingDiv.querySelector('.data-product-price').innerText = `Price: ${basket[productId].price} Ft`;
       }
     } else {
-      // Add the product to the basket object
       basket[productId] = {
         name: productName,
         quantity: 1,
@@ -212,15 +202,15 @@ document.addEventListener('click', function(event) {
         imageURL: productImageURL
       };
 
-      // Generate the basket product structure
+
       let productDiv = generateBasketProduct(productId, productName, productPrice, productImageURL, formatPrice);
 
-      // Add the new product div to the basket section
+
       let basketSection = document.querySelector('.basket-section');
       basketSection.appendChild(productDiv);
     }
 
-    // Save the basket to local storage
+
     saveBasket();
     window.location.reload();
   }
@@ -252,13 +242,12 @@ function updateTotalPrice(obj) {
   
 
 
-// Format price function
+
 function formatPrice(price) {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 function generateBasketProduct(productId, productName, productPrice, productImageURL, formatPrice) {
-  // Create a new div element for the product in the basket
   let productDiv = document.createElement('div');
   productDiv.classList.add('basket-product');
   productDiv.dataset.productId = productId;
@@ -282,18 +271,18 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     </div>
   `;
   updateTotalPrice(basket)
-  // Add click event listeners to the increment and decrement buttons
+
   let basePrice = basket[productId].price / basket[productId].quantity;
   let incrementButton = productDiv.querySelector('.increment-button');
   incrementButton.addEventListener('click', function() {
-    // Increment the quantity and price
+
     basket[productId].quantity++;
     basket[productId].price = basePrice * basket[productId].quantity;
 
-    // Save the basket to local storage
+
     saveBasket();
 
-    // Update the existing div in the basket section
+
     let existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
     if (existingDiv) {
       existingDiv.querySelector('.basket-product-quantity').innerText = `Mennyiség: ${basket[productId].quantity}`;
@@ -304,15 +293,15 @@ function generateBasketProduct(productId, productName, productPrice, productImag
 
   let decrementButton = productDiv.querySelector('.decrement-button');
   decrementButton.addEventListener('click', function(event) {
-    // Decrement the quantity and price
+
     if (basket[productId] && basket[productId].quantity > 1) {
       basket[productId].quantity--;
       basket[productId].price -= basePrice;
 
-      // Save the basket to local storage
+
       saveBasket();
 
-      // Update the existing div in the basket section
+
       let existingDiv = document.querySelector(`.basket-product[data-product-id="${productId}"]`);
       if (existingDiv) {
         existingDiv.querySelector('.basket-product-quantity').innerText = `Mennyiség: ${basket[productId].quantity}`;
@@ -322,16 +311,16 @@ function generateBasketProduct(productId, productName, productPrice, productImag
     updateTotalPrice(basket)
   });
 
-  // Add click event listener to the delete button
+
   let deleteButton = productDiv.querySelector('.delete-button');
   deleteButton.addEventListener('click', function() {
-    // Remove the product from the basket object
+
     delete basket[productId];
 
-    // Save the basket to local storage
+
     saveBasket();
 
-    // Remove the product div from the basket section
+
     let basketSection = document.querySelector('.basket-section');
     basketSection.removeChild(productDiv);
     updateTotalPrice(basket)
@@ -346,25 +335,23 @@ function clearBasket() {
   localStorage.setItem('basket', JSON.stringify(basket));
 }
 
- // Get the menu container and all main_link elements
+
 
  const mainLinks = document.querySelectorAll('.main_link');
  let hoverTimeout;
- // Function to add hover-active class
  function addHoverActive() {
      menu.classList.add('hover-active');
      clearTimeout(hoverTimeout);
  }
- // Function to remove hover-active class with a delay
+
  function removeHoverActive() {
      hoverTimeout = setTimeout(() => {
-         // Check if no main_link is being hovered
          if (![...mainLinks].some(link => link.matches(':hover'))) {
              menu.classList.remove('hover-active');
          }
      }, 200); 
  }
- // Add event listeners to each main_link
+
  mainLinks.forEach(link => {
      link.addEventListener('mouseover', addHoverActive);
      link.addEventListener('mouseout', removeHoverActive);
