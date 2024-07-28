@@ -96,6 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($_POST['add-product-b'])) {
         $adminContr->addProduct();
     }
+
+    if(isset($_POST['delete-product-b'])) {
+        $adminContr->deleteProduct();
+    }
 }
 
 

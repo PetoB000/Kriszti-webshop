@@ -11,13 +11,19 @@ class AdminModel extends Dbh {
         $stmt->execute([$productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage]);
     }
 
+    public function getAllProducts() {
+        $stmt = $this->connect()->prepare('SELECT * FROM products ORDER BY categoryId;');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function changeProduct($productId, $newName) {
         $stmt = $this->connect()->prepare('UPDATE products SET name = ? WHERE id = ?;');
         $stmt->execute([$newName, $productId]);
     }
 
     public function deleteProduct($productId) {
-        $stmt = $this->connect()->prepare('DELETE FROM products WHERE id = ?;');
+        $stmt = $this->connect()->prepare('DELETE FROM products WHERE productId = ?;');
         $stmt->execute([$productId]);
     }
 

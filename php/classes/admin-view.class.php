@@ -14,6 +14,7 @@ class AdminView {
         $adminModel = new AdminModel();
         $categories = $adminModel->getCategories();
         $galleryImages = $adminModel->getGalleryImages();
+        $products = $adminModel->getAllProducts();
         switch ($this->formToShow) {
             case 'add-category':
                 echo '
@@ -85,16 +86,29 @@ class AdminView {
                 </div>';
                 break;
 
-            case 'delete-product':
-                echo '
-                <div id="deleteProductForm">
-                    <form action="button-handler.inc.php" method="post">
-                        <h3>Delete Product</h3>
-                        <input type="number" name="product_id" placeholder="Product ID" required>
-                        <button type="submit" name="delete-product-b">Submit</button>
-                    </form>
-                </div>';
-                break;
+                case 'delete-product':
+                    echo '<div class="container">';
+                    echo '<div class="row gy-3">'; 
+                
+                    // Assuming $products is an array of products fetched from the database
+                    foreach ($products as $product) {
+                        echo '
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2"> <!-- Responsive column classes -->
+                            <form action="admin.php" method="post">
+                                <div class="mb-3 text-center"> <!-- Center content within each column -->
+                                    <img class="productImg img-fluid" src="' . htmlspecialchars($product['shownImg']) . '" alt="" style="height: 250px; object-fit: cover; width: 100%;">
+                                    <p>' . htmlspecialchars($product['name']) . '</p>
+                                    <input type="hidden" name="productId" value="' . htmlspecialchars($product['productId']) . '">
+                                    <button type="submit" class="btn btn-danger mt-2" name="delete-product-b">Delete</button>
+                                </div>
+                            </form>
+                        </div>';
+                    }
+                
+                    echo '</div>';
+                    echo '</div>';
+                    break;
+                
 
             case 'delete-category':
                 echo '

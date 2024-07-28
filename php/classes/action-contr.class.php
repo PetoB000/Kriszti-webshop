@@ -74,14 +74,14 @@ class ActionContr {
 
     public function changeProduct() {
         $productId = $_POST['product_id'] ?? 0;
-        $newName = $_POST['new_name'] ?? 'Updated Product';
+        $newName = $_POST['new_name'];
         $this->model->changeProduct($productId, $newName);
         header("Location: admin.php?success=productChanged");
         exit();
     }
 
     public function deleteProduct() {
-        $productId = $_POST['product_id'] ?? 0;
+        $productId = $_POST['productId'];
         $this->model->deleteProduct($productId);
         header("Location: admin.php?success=productDeleted");
         exit();
