@@ -7,28 +7,47 @@ class ActionContr {
         $this->model = new AdminModel();
     }
 
+    private function prepareImages($files, $uploadDir) {
+        $uploadedFiles = [];
 
-    public function setGalleryImage() {
-        $uploadDir = '../uploads/gallery/';
-        if (!empty($_FILES['pictures']['name'][0])) {
-            foreach ($_FILES['pictures']['name'] as $key => $fileName) {
-                $tmpName = $_FILES['pictures']['tmp_name'][$key];
+        if (!is_array($files['name'])) {
+            $files = array_map(function($value) { return [$value]; }, $files);
+        }
+
+        if (!empty($files['name'][0])) {
+            foreach ($files['name'] as $key => $fileName) {
+                $tmpName = $files['tmp_name'][$key];
                 $uniqueFileName = uniqid() . '-' . basename($fileName);
                 $targetFilePath = $uploadDir . $uniqueFileName;
                 $fileType = mime_content_type($tmpName);
+
                 if (strpos($fileType, 'image') === false) {
-                    echo "The file $fileName is not a valid image.<br>";
                     continue;
                 }
+
                 if (move_uploaded_file($tmpName, $targetFilePath)) {
-                    $this->model->setGalleryImage($targetFilePath);
-                    echo "The file $fileName has been uploaded and saved.<br>";
-                } else {
-                    echo "There was an error uploading the file $fileName.<br>";
+                    $uploadedFiles[] = $targetFilePath;
                 }
             }
         }
+        return count($uploadedFiles) > 1 ? implode(' ', $uploadedFiles) : ($uploadedFiles[0] ?? '');
     }
+
+
+    public function setGalleryImage() {
+        $uploadDir = '../uploads/gallery/';
+        $uploadedFiles = $this->prepareImages($_FILES['pictures'], $uploadDir);
+        if (str_contains($uploadedFiles, " ")) {
+            $galleryImages = explode(" ", $uploadedFiles);
+        } else {
+            $galleryImages = [$uploadedFiles];
+        }
+
+        foreach ($galleryImages as $filePath) {
+            $this->model->setGalleryImage($filePath);
+        }
+    }
+
     
     public function addCategory($categoryName) {
         $this->model->addCategory($categoryName);
@@ -37,13 +56,17 @@ class ActionContr {
     }
 
     public function addProduct() {
-        $productName = $_POST['product_name'];
-        $categoryId = $_POST['category_id'];
-        $price = $_POST['product_price'];
-        $description = $_POST['product_description'];
-        $shownImg = $_POST['shownImg'];
-        $thumbnails = $_POST['thumbnails'];
-        $dataImage = $_POST['dataImage'];
+        $uploadDir = '../uploads/products/';
+        $productName = $_POST['product-name'];
+        $categoryId = $_POST['category'];
+        $price = $_POST['product-price'];
+        $shownImg = $_FILES['picture'];
+        $thumbnails = $_FILES['pictures'];
+        $description = $_POST['product-description'];
+        $dataImage = $_FILES['data-image'];
+        $shownImg = $this->prepareImages($shownImg, $uploadDir);
+        $thumbnails = $this->prepareImages($thumbnails, $uploadDir);
+        $dataImage = $this->prepareImages($dataImage, $uploadDir);
         $this->model->addProduct($productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage);
         header("Location: admin.php?success=productAdded");
         exit();

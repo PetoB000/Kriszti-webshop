@@ -7,7 +7,7 @@ class AdminModel extends Dbh {
     }
 
     public function addProduct($productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage) {
-        $stmt = $this->connect()->prepare('INSERT INTO products (name, category_id, price, shownImg, thumbnails, description, dataImage) VALUES (?, ?, ?, ?, ?, ?, ?);');
+        $stmt = $this->connect()->prepare('INSERT INTO products (name, categoryId, price, shownImg, thumbnails, description, dataImage) VALUES (?, ?, ?, ?, ?, ?, ?);');
         $stmt->execute([$productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage]);
     }
 

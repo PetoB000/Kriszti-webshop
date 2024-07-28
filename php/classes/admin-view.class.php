@@ -31,7 +31,7 @@ class AdminView {
             case 'add-product':
                 echo '
                     <div class="container">
-                        <form action="your_upload_script.php" method="post" enctype="multipart/form-data">
+                        <form action="admin.php" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="product-name" class="form-label">Termék neve</label>
                                 <input type="text" class="form-control" id="product-name" name="product-name">
@@ -63,8 +63,12 @@ class AdminView {
 
                 echo '
                                 </select>
+                            <div class="mb-3">
+                                <label for="main-fileUpload" class="form-label">Kosár kép feltöltése</label>
+                                <input type="file" name="data-image" id="main-fileUpload" accept="image/*" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Feltöltés</button>
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="add-product-b">Feltöltés</button>
                         </form>
                     </div>';
                     break;
@@ -147,4 +151,4 @@ class AdminView {
         }
     }
 }
-?>
+

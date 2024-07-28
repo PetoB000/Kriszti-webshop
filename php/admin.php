@@ -92,7 +92,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $galleryId = $_POST['galleryId'];
         $adminContr->deleteGallery($galleryId);
     }
+
+    if(isset($_POST['add-product-b'])) {
+        $adminContr->addProduct();
+    }
 }
+
 
 
 
