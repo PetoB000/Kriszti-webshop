@@ -22,12 +22,12 @@ class AdminModel extends Dbh {
     }
 
     public function deleteCategory($categoryId) {
-        $stmt = $this->connect()->prepare('DELETE FROM categories WHERE id = ?;');
+        $stmt = $this->connect()->prepare('DELETE FROM categories WHERE categoryId = ?;');
         $stmt->execute([$categoryId]);
     }
 
-    public function addGalleryImage($imagePath) {
-        $stmt = $this->connect()->prepare('INSERT INTO gallery (image_path) VALUES (?);');
+    public function setGalleryImage($imagePath) {
+        $stmt = $this->connect()->prepare('INSERT INTO gallery (path) VALUES (?);');
         $stmt->execute([$imagePath]);
     }
 

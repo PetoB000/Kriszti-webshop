@@ -78,6 +78,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $categoryName = $_POST['category_name'];
         $adminContr->addCategory($categoryName);
     }
+
+    if(isset($_POST['add-galery-b'])) {
+        $adminContr->setGalleryImage();
+    }
+
+    if (isset($_POST['delete-category-b'])) {
+        $categoryId = $_POST['category'];
+        $adminContr->deleteCategory($categoryId);
+    }
 }
 
 

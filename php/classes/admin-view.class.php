@@ -92,24 +92,30 @@ class AdminView {
 
             case 'delete-category':
                 echo '
-                <div id="deleteCategoryForm">
-                    <form action="button-handler.inc.php" method="post">
-                        <h3>Delete Category</h3>
-                        <input type="number" name="category_id" placeholder="Category ID" required>
-                        <button type="submit" name="delete-category-b">Submit</button>
-                    </form>
-                </div>';
+                        <div class="container">
+                          <form action="admin.php" method="post">
+                            <select name="category" id="category">';
+                            foreach ($this->categories as $categoryId => $categoryName) {
+                                echo '<option value="' . htmlspecialchars($categoryId) . '">' . htmlspecialchars($categoryName) . '</option>';
+                            }
+                            echo '
+                            </select>
+                            <button type="submit" class="btn btn-danger" name="delete-category-b">Feltöltés</button>
+                          </form>
+                        </div>';
                 break;
 
             case 'add-gallery':
                 echo '
-                <div id="addGalleryForm">
-                    <form action="button-handler.inc.php" method="post">
-                        <h3>Add Gallery Image</h3>
-                        <input type="text" name="image_path" placeholder="Image Path" required>
-                        <button type="submit" name="add-galery-b">Submit</button>
-                    </form>
-                </div>';
+                     <div class="container">
+                        <form action="admin.php" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="fileUpload" class="form-label">Galéria képek hozzáadása</label>
+                                <input type="file" name="pictures[]" id="fileUpload" accept="image/*" class="form-control" multiple>
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="add-galery-b">Feltöltés</button>
+                        </form>
+                    </div>';
                 break;
 
             case 'delete-gallery':

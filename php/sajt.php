@@ -57,5 +57,28 @@
     </div>
     <!-- // Kategória hozzáadása -->
 
+    <!-- hozzáadás Galériához -->
+     <div class="container">
+     <form action="admin.php" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="fileUpload" class="form-label">Galéria képek hozzáadása</label>
+              <input type="file" name="pictures[]" id="fileUpload" accept="image/*" class="form-control" multiple>
+            </div>
+            <button type="submit" class="btn btn-primary" name="add-galery-b">Feltöltés</button>
+        </form>
+     </div>
+    <!-- // hozzáadás Galériához -->
+
+
+    
+    <!-- Kategória törlése -->
+      <div class="container">
+        <form action="admin.php" method="post">
+          <select name="category" id="category">
+
+          </select>
+        </form>
+      </div>
+    <!-- // Kategória törlése -->
 </body>
 </html>

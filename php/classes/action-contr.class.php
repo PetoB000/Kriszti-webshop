@@ -7,6 +7,29 @@ class ActionContr {
         $this->model = new AdminModel();
     }
 
+
+    public function setGalleryImage() {
+        $uploadDir = '../uploads/gallery/';
+        if (!empty($_FILES['pictures']['name'][0])) {
+            foreach ($_FILES['pictures']['name'] as $key => $fileName) {
+                $tmpName = $_FILES['pictures']['tmp_name'][$key];
+                $uniqueFileName = uniqid() . '-' . basename($fileName);
+                $targetFilePath = $uploadDir . $uniqueFileName;
+                $fileType = mime_content_type($tmpName);
+                if (strpos($fileType, 'image') === false) {
+                    echo "The file $fileName is not a valid image.<br>";
+                    continue;
+                }
+                if (move_uploaded_file($tmpName, $targetFilePath)) {
+                    $this->model->setGalleryImage($targetFilePath);
+                    echo "The file $fileName has been uploaded and saved.<br>";
+                } else {
+                    echo "There was an error uploading the file $fileName.<br>";
+                }
+            }
+        }
+    }
+    
     public function addCategory($categoryName) {
         $this->model->addCategory($categoryName);
         header("Location: admin.php?success=categoryAdded");
@@ -41,17 +64,9 @@ class ActionContr {
         exit();
     }
 
-    public function deleteCategory() {
-        $categoryId = $_POST['category_id'] ?? 0;
-        $this->model->deleteCategory($categoryId);
+    public function deleteCategory($categoryId) {
+        $this->model->deleteCategory(($categoryId));
         header("Location: admin.php?success=categoryDeleted");
-        exit();
-    }
-
-    public function addGallery() {
-        $imagePath = $_POST['image_path'] ?? 'default.jpg';
-        $this->model->addGalleryImage($imagePath);
-        header("Location: admin.php?success=imageAdded");
         exit();
     }
 
