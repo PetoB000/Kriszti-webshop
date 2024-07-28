@@ -48,7 +48,12 @@ class AdminModel extends Dbh {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-
+    public function getGalleryImagePath($galleryId) {
+        $stmt = $this->connect()->prepare("SELECT path FROM gallery WHERE galleryId = ?");
+        $stmt->execute([$galleryId]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? $result['path'] : null;
+    }
 
     
 }

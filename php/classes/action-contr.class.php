@@ -40,7 +40,7 @@ class ActionContr {
         if (str_contains($uploadedFiles, " ")) {
             $galleryImages = explode(" ", $uploadedFiles);
         } else {
-            $galleryImages = [$uploadedFiles];
+            $galleryImages[] = $uploadedFiles;
         }
 
         foreach ($galleryImages as $filePath) {
@@ -94,9 +94,14 @@ class ActionContr {
     }
 
     public function deleteGallery($galleryId) {
+        $filePath = $this->model->getGalleryImagePath($galleryId);
+        if ($filePath && file_exists($filePath)) {
+            unlink($filePath);
+        }
         $this->model->deleteGalleryImage($galleryId);
         header("Location: admin.php?success=imageDeleted");
         exit();
     }
+    
 }
 ?>
