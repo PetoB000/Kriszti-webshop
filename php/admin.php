@@ -6,8 +6,11 @@ if ($_SESSION['username'] !== 'admin' || !isset($_SESSION['username'])) {
     header("Location: ../index.html?error=unauthorized");
     exit();
 }
+include "classes/model.class.php";
+include "classes/admin-model.class.php";
+include "classes/action-contr.class.php"; 
 include "classes/admin-view.class.php";
-
+$adminContr = new ActionContr;
 
 ?>
 <!DOCTYPE html>
@@ -65,11 +68,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (isset($_POST['delete-galery'])) {
         $formToShow = 'delete-gallery';
     }
-    if ($formToShow) {
+
+    if (isset($formToShow)) {
         $adminView = new AdminView($formToShow);
         $adminView->renderForm();
     }
+
+    if(isset($_POST['add-category-b'])) {
+        $categoryName = $_POST['category_name'];
+        $adminContr->addCategory($categoryName);
+    }
 }
+
+
+
 
 
 ?>

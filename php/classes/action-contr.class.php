@@ -7,19 +7,21 @@ class ActionContr {
         $this->model = new AdminModel();
     }
 
-    public function addCategory() {
-        // You might retrieve the category name from a form input
-        $categoryName = $_POST['category_name'] ?? 'Default Category';
+    public function addCategory($categoryName) {
         $this->model->addCategory($categoryName);
         header("Location: admin.php?success=categoryAdded");
         exit();
     }
 
     public function addProduct() {
-        // Retrieve product details from form inputs
-        $productName = $_POST['product_name'] ?? 'Default Product';
-        $categoryId = $_POST['category_id'] ?? 1;
-        $this->model->addProduct($productName, $categoryId);
+        $productName = $_POST['product_name'];
+        $categoryId = $_POST['category_id'];
+        $price = $_POST['product_price'];
+        $description = $_POST['product_description'];
+        $shownImg = $_POST['shownImg'];
+        $thumbnails = $_POST['thumbnails'];
+        $dataImage = $_POST['dataImage'];
+        $this->model->addProduct($productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage);
         header("Location: admin.php?success=productAdded");
         exit();
     }

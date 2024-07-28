@@ -1,12 +1,10 @@
 <?php
 
-include "model.class.php";
-include "admin-model.class.php";
-include "action-contr.class.php"; 
+
 
 class AdminView {
     private $formToShow;
-    public $adminModel;
+    private $adminModel;
     public $categories;
 
     public function __construct($formToShow) {
@@ -20,7 +18,7 @@ class AdminView {
             case 'add-category':
                 echo '
                 <div id="addCategoryForm">
-                    <form action="button-handler.inc.php" method="post">
+                    <form action="admin.php" method="post">
                         <h3>Add Category</h3>
                         <input type="text" name="category_name" placeholder="Category Name" required>
                         <button type="submit" name="add-category-b">Submit</button>

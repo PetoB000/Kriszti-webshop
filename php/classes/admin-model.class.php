@@ -2,13 +2,13 @@
 
 class AdminModel extends Dbh {
     public function addCategory($categoryName) {
-        $stmt = $this->connect()->prepare('INSERT INTO categories (name) VALUES (?);');
+        $stmt = $this->connect()->prepare('INSERT INTO categories (cName) VALUES (?);');
         $stmt->execute([$categoryName]);
     }
 
-    public function addProduct($productName, $categoryId) {
-        $stmt = $this->connect()->prepare('INSERT INTO products (name, category_id) VALUES (?, ?);');
-        $stmt->execute([$productName, $categoryId]);
+    public function addProduct($productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage) {
+        $stmt = $this->connect()->prepare('INSERT INTO products (name, category_id, price, shownImg, thumbnails, description, dataImage) VALUES (?, ?, ?, ?, ?, ?, ?);');
+        $stmt->execute([$productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage]);
     }
 
     public function changeProduct($productId, $newName) {
