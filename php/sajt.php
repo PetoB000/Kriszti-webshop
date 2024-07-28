@@ -11,7 +11,7 @@
 <body>
 
     <!-- termék hozzáadása -->
-    <div class="container">
+<!--     <div class="container">
         <form>
             <div class="mb-3">
               <label for="product-name" class="form-label">Termék neve</label>
@@ -42,23 +42,23 @@
             </div>
             <button type="submit" class="btn btn-primary">Feltöltés</button>
         </form>
-    </div>
+    </div> -->
     <!-- // termék hozzáadása -->
 
     <!-- Kategória hozzáadása -->
-    <div class="container">
+<!--     <div class="container">
         <form>
             <div class="mb-3">
               <label for="category-name" class="form-label">Kategória neve</label>
-              <input type="text" class="form-control" id="category-name" name="category-name">
+              <input type="text" class="form-control" id="category-name" name="category_name">
             </div>
-            <button type="submit" class="btn btn-primary">Feltöltés</button>
+            <button type="submit" class="btn btn-primary" name="add-category-b">Feltöltés</button>
         </form>
-    </div>
+    </div> -->
     <!-- // Kategória hozzáadása -->
 
     <!-- hozzáadás Galériához -->
-     <div class="container">
+<!--      <div class="container">
      <form action="admin.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="fileUpload" class="form-label">Galéria képek hozzáadása</label>
@@ -66,19 +66,28 @@
             </div>
             <button type="submit" class="btn btn-primary" name="add-galery-b">Feltöltés</button>
         </form>
-     </div>
+     </div> -->
     <!-- // hozzáadás Galériához -->
 
-
-    
     <!-- Kategória törlése -->
-      <div class="container">
+<!--       <div class="container">
         <form action="admin.php" method="post">
           <select name="category" id="category">
 
           </select>
         </form>
-      </div>
+      </div> -->
     <!-- // Kategória törlése -->
+
+
+  <!-- galéria törlése -->
+   <div class="container">
+      <form action="admin.php" method="post">
+          <div class="mb-3">
+              <img src="../img/" alt="" srcset="">
+          </div>
+      </form>
+   </div>
+  <!-- // galéria törlése -->
 </body>
 </html>

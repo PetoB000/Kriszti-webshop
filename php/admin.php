@@ -87,6 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $categoryId = $_POST['category'];
         $adminContr->deleteCategory($categoryId);
     }
+
+    if (isset($_POST['delete-gallery-b'])) {
+        $galleryId = $_POST['galleryId'];
+        $adminContr->deleteGallery($galleryId);
+    }
 }
 
 

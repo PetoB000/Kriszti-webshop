@@ -70,9 +70,8 @@ class ActionContr {
         exit();
     }
 
-    public function deleteGallery() {
-        $imageId = $_POST['image_id'] ?? 0;
-        $this->model->deleteGalleryImage($imageId);
+    public function deleteGallery($galleryId) {
+        $this->model->deleteGalleryImage($galleryId);
         header("Location: admin.php?success=imageDeleted");
         exit();
     }

@@ -26,21 +26,30 @@ class AdminModel extends Dbh {
         $stmt->execute([$categoryId]);
     }
 
+    public function getCategories() {
+        $stmt = $this->connect()->prepare('SELECT * FROM categories;');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+    }
+
     public function setGalleryImage($imagePath) {
         $stmt = $this->connect()->prepare('INSERT INTO gallery (path) VALUES (?);');
         $stmt->execute([$imagePath]);
     }
 
     public function deleteGalleryImage($imageId) {
-        $stmt = $this->connect()->prepare('DELETE FROM gallery WHERE id = ?;');
+        $stmt = $this->connect()->prepare('DELETE FROM gallery WHERE galleryId = ?;');
         $stmt->execute([$imageId]);
     }
 
-    public function getCategories() {
-        $stmt = $this->connect()->prepare('SELECT * FROM categories;');
+    public function getGalleryImages() {
+        $stmt = $this->connect()->prepare('SELECT * FROM gallery;');
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+
+
     
 }
 ?>

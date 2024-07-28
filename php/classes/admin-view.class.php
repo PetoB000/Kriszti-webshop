@@ -4,24 +4,26 @@
 
 class AdminView {
     private $formToShow;
-    private $adminModel;
-    public $categories;
+
 
     public function __construct($formToShow) {
         $this->formToShow = $formToShow;
-        $this->adminModel = new AdminModel();
-        $this->categories = $this->adminModel->getCategories();
     }
 
     public function renderForm() {
+        $adminModel = new AdminModel();
+        $categories = $adminModel->getCategories();
+        $galleryImages = $adminModel->getGalleryImages();
         switch ($this->formToShow) {
             case 'add-category':
                 echo '
-                <div id="addCategoryForm">
+                <div class="container">
                     <form action="admin.php" method="post">
-                        <h3>Add Category</h3>
-                        <input type="text" name="category_name" placeholder="Category Name" required>
-                        <button type="submit" name="add-category-b">Submit</button>
+                        <div class="mb-3">
+                          <label for="category-name" class="form-label">Kategória neve</label>
+                          <input type="text" class="form-control" id="category-name" name="category_name">
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="add-category-b">Feltöltés</button>
                     </form>
                 </div>';
                 break;
@@ -55,7 +57,7 @@ class AdminView {
                                 <select name="category" id="category" class="form-select">
                                 ';
                                 
-                foreach ($this->categories as $categoryId => $categoryName) {
+                foreach ($categories as $categoryId => $categoryName) {
                     echo '<option value="' . htmlspecialchars($categoryId) . '">' . htmlspecialchars($categoryName) . '</option>';
                 }
 
@@ -95,7 +97,7 @@ class AdminView {
                         <div class="container">
                           <form action="admin.php" method="post">
                             <select name="category" id="category">';
-                            foreach ($this->categories as $categoryId => $categoryName) {
+                            foreach ($categories as $categoryId => $categoryName) {
                                 echo '<option value="' . htmlspecialchars($categoryId) . '">' . htmlspecialchars($categoryName) . '</option>';
                             }
                             echo '
@@ -119,14 +121,24 @@ class AdminView {
                 break;
 
             case 'delete-gallery':
-                echo '
-                <div id="deleteGalleryForm">
-                    <form action="button-handler.inc.php" method="post">
-                        <h3>Delete Gallery Image</h3>
-                        <input type="number" name="image_id" placeholder="Image ID" required>
-                        <button type="submit" name="delete-galery-b">Submit</button>
-                    </form>
-                </div>';
+                echo '<div class="container">';
+                echo '<div class="row gy-3">'; 
+
+                foreach ($galleryImages as $image) {
+                    echo '
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2"> <!-- Responsive column classes -->
+                        <form action="admin.php" method="post">
+                            <div class="mb-3 text-center"> <!-- Center content within each column -->
+                                <img class="galleryImg img-fluid" src="' . htmlspecialchars($image['path']) . '" alt="" style="height: 250px; object-fit: cover; width: 100%;">
+                                <input type="hidden" name="galleryId" value="' . htmlspecialchars($image['galleryId']) . '">
+                                <button type="submit" class="btn btn-danger mt-2" name="delete-gallery-b">Törlés</button>
+                            </div>
+                        </form>
+                    </div>';
+                }
+
+                echo '</div>';
+                echo '</div>';
                 break;
 
             default:
