@@ -10,8 +10,10 @@ class ActionContr {
     private function prepareImages($files, $uploadDir) {
         $uploadedFiles = [];
 
-        if (!is_array($files['name'])) {
-            $files = array_map(function($value) { return [$value]; }, $files);
+        foreach ($files as $file) {
+            if (!is_array($files['name'])) {
+                $files = array_map(function($value) { return [$value]; }, $files);
+            }
         }
 
         if (!empty($files['name'][0])) {
@@ -67,9 +69,21 @@ class ActionContr {
         $shownImg = $this->prepareImages($shownImg, $uploadDir);
         $thumbnails = $this->prepareImages($thumbnails, $uploadDir);
         $dataImage = $this->prepareImages($dataImage, $uploadDir);
-        $this->model->addProduct($productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage);
+        $this->model->addProduct($productName, $categoryId, $price, $shownImg,  $description, $dataImage);
+        $maxId = $this->model->getMaxtId();
+        $thumbnails = explode(" ", $thumbnails);
+        foreach ($thumbnails as $thumbnail) {
+            $this->model->setThumbnails($thumbnail, $maxId);
+        }
         header("Location: admin.php?success=productAdded");
         exit();
+    }
+
+    
+
+    public function getProduct() {
+        $id = $_POST['productId'];
+        return $this->model->getProductById($id);
     }
 
     public function changeProduct() {

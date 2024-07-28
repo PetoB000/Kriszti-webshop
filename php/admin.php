@@ -100,6 +100,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($_POST['delete-product-b'])) {
         $adminContr->deleteProduct();
     }
+
+    if(isset($_POST['modify-product-b'])) {
+        $adminView = new AdminView("");
+        $product = $adminContr->getProduct();
+        $adminView->renderProductForm($product);
+    }
 }
 
 

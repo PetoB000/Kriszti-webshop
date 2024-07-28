@@ -6,15 +6,26 @@ class AdminModel extends Dbh {
         $stmt->execute([$categoryName]);
     }
 
-    public function addProduct($productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage) {
-        $stmt = $this->connect()->prepare('INSERT INTO products (name, categoryId, price, shownImg, thumbnails, description, dataImage) VALUES (?, ?, ?, ?, ?, ?, ?);');
-        $stmt->execute([$productName, $categoryId, $price, $shownImg, $thumbnails, $description, $dataImage]);
+    public function addProduct($productName, $categoryId, $price, $shownImg, $description, $dataImage) {
+        $stmt = $this->connect()->prepare('INSERT INTO products (name, categoryId, price, shownImg, description, dataImage) VALUES (?, ?, ?, ?, ?, ?);');
+        $stmt->execute([$productName, $categoryId, $price, $shownImg, $description, $dataImage]);
+    }
+
+
+    public function updateProduct($productName, $categoryId, $price, $shownImg, $description, $dataImage) {
+        $stmt = $this->connect()->prepare('UPDATE products SET (name, categoryId, price, shownImg, thumbnails, description, dataImage) VALUES (?, ?, ?, ?, ?, ?);');
     }
 
     public function getAllProducts() {
         $stmt = $this->connect()->prepare('SELECT * FROM products ORDER BY categoryId;');
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getProductById($productId) {
+        $stmt = $this->connect()->prepare('SELECT * FROM products WHERE productId = ?;');
+        $stmt->execute([$productId]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function changeProduct($productId, $newName) {
@@ -37,6 +48,27 @@ class AdminModel extends Dbh {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
     }
+
+    public function setThumbnails($thumbnail, $productId) {
+        $stmt = $this->connect()->prepare('INSERT INTO thumbnails (productId, path) VALUES (?, ?)');
+        $stmt->execute([$productId, $thumbnail]);
+    }
+
+    public function getMaxtId() {
+        $stmt = $this->connect()->prepare('SELECT MAX(productId) as max_id FROM products');
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result && isset($result['max_id'])) {
+            return $result['max_id'];
+        }
+    }
+
+    public function getThumbnails($productId) {
+        $stmt = $this->connect()->prepare('SELECT path FROM thumbnails WHERE productId = (?);');
+        $stmt->execute($productId);
+        return $stmt->fetchAll(PDO::FETCH_DEFAULT);
+    }
+    
 
     public function setGalleryImage($imagePath) {
         $stmt = $this->connect()->prepare('INSERT INTO gallery (path) VALUES (?);');
