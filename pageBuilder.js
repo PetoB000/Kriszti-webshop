@@ -1,67 +1,108 @@
-
-
 function formatPrice(price) {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
+    return `${price.toLocaleString('hu-HU')} Ft`;
+  }
 
 
-
+// DOMContentLoaded event handler for category page
 document.addEventListener('DOMContentLoaded', () => {
-    const categoryName = document.querySelector('.container > span');
-    const category = JSON.parse(localStorage.getItem('category'));
-    categoryName.innerHTML = category.name;
-
-    const productsDiv = document.querySelector('.products');
-
-    category.products.forEach(product => {
-        const productDiv = document.createElement('div');
-        const img = document.createElement('img');
-        img.src = product.thumbnail;
-        img.alt = product.name;
-        img.classList.add("product_img");
-        if (product.imgClasses !== "") {
-            img.classList.add(product.imgClasses);
-        }
-        productDiv.className = 'product';
-        if (product.classes !== "") {
-            productDiv.classList.add(product.classes);
-        }
-        productDiv.appendChild(img)
-        productDiv.innerHTML += `
-            ${product.name} <br> <span>Ára: ${product.price}</span> <br>
-            <button data-productid="${product.productId}" onclick="loadProductData(this)">megnézem</button>
-            `        
-        productsDiv.appendChild(productDiv);
-
+    // Retrieve category data from localStorage
+    const categoryData = localStorage.getItem('selectedCategory');
+    if (!categoryData) return; // Exit early if no data is found
+  
+    const category = JSON.parse(categoryData);
+    console.log('Category data loaded:', category); // Debugging line
+  
+    // Select elements
+    const categoryNameElement = document.querySelector('.container > span');
+    const productsContainer = document.querySelector('.products');
+  
+    if (!categoryNameElement || !productsContainer) return; // Exit early if elements are not found
+  
+    // Set category name
+    categoryNameElement.textContent = category.name;
+  
+    // Clear existing products
+    productsContainer.innerHTML = '';
+  
+    // Create product elements
+    category.products.forEach((product) => {
+      const productElement = document.createElement('div');
+      productElement.className = 'product';
+  
+      // Add classes to product element
+      if (product.classes) {
+        productElement.classList.add(...product.classes.split(' '));
+      }
+  
+      // Create image element
+      const imageElement = document.createElement('img');
+      imageElement.src = product.thumbnail;
+      imageElement.alt = product.name;
+  
+      // Add image classes
+      if (imageElement.width > imageElement.height) {
+        imageElement.classList.add('product_img');
+      } else {
+        imageElement.classList.add('product_img_exception');
+      }
+      if (product.imgClasses) {
+        imageElement.classList.add(...product.imgClasses.split(' '));
+      }
+  
+      // Append image to product element
+      productElement.appendChild(imageElement);
+  
+      // Create product info element
+      const productInfo = document.createElement('div');
+      productInfo.innerHTML = `
+        ${product.name} <br>
+        <span>Ára: ${formatPrice(product.price)}</span> <br>
+        <button data-productid="${product.productId}" onclick="loadProductData(${product.productId})">megnézem</button>
+      `;
+  
+      // Append product info to product element
+      productElement.appendChild(productInfo);
+  
+      // Append product element to products container
+      productsContainer.appendChild(productElement);
     });
-});
+  });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const imgContainer = document.querySelector('.picture_container')
-    const shownImg = document.querySelector('.shown_picture img');
-    const thumbnailPictures = document.querySelector('.thumbnail_pictures');
-    const nameDiv = document.querySelector('.product_name'); 
-    const productDescription = document.querySelector('.product_description');
-    const product = JSON.parse(localStorage.getItem('product'));
-    shownImg.setAttribute('src', product.shownImg);
-    nameDiv.innerText = product.name;
-    if ("" != product.thumbnails) {
-        product.thumbnails.forEach(thumbnail => {
-            const img = document.createElement('img');
-            img.src = thumbnail;
-            thumbnailPictures.appendChild(img);
-        })
-    } else {
-        imgContainer.classList.add("no_thumbnail")
+  async function loadProductData(productId) {
+    try {
+      const response = await fetch('./products.json');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const products = await response.json();
+      const product = products.find(p => p.productId === productId);
+  
+      if (product) {
+        localStorage.setItem('product', JSON.stringify(product));
+        navigateToPage('./product-page.html');
+      } else {
+        console.error(`Product not found for ID: ${productId}`);
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
     }
-    productDescription.innerHTML = `
-    ${product.description}                     <span>Fontos!</span> <br> <br>
-    Az epoxy terméket ne tedd ki közvetlen forróságnak, napsütésnek és extrém hidegnek sem, mert ezek mind misőségromláshoz vezethetnek. <br>
-    Tisztítás: nedves, mosószeres ruhával <br><br>
-    <div class="product_price">Ára:${formatPrice(product.price)}Ft <div id="addToCartButton" class="to_basket product-button" 
-        data-product-id="${product.productId}" data-product-name="${product.name}" 
-        data-product-image="${product.dataImage}" data-product-price="${product.price}">Kosárba teszem</div>
-    </div>
-    `
-});
+  }
+  
+  // DOMContentLoaded event handler
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select product divs, which contain data-productid
+    const productDivs = document.querySelectorAll('.product');
+  
+    productDivs.forEach(div => {
+      div.addEventListener('click', event => {
+        const productId = div.getAttribute('data-productid');
+  
+        if (productId) {
+          loadProductData(productId);
+        } else {
+          console.error('No product ID found on div:', div);
+        }
+      });
+    });
+  });

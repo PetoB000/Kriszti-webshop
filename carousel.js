@@ -1,4 +1,37 @@
-document.addEventListener('DOMContentLoaded', function() {
+function appendImages(imagePaths) {
+  const imageList = document.querySelector('.image-list');
+  const fragment = document.createDocumentFragment();
+
+  imagePaths.forEach((path, index) => {
+    const img = document.createElement('img');
+    img.classList.add('image-item');
+    img.id = index + 1;
+    img.src = path;
+    img.alt = `Image ${index + 1}`;
+    const li = document.createElement('li');
+    li.appendChild(img);
+    fragment.appendChild(li);
+  });
+
+  imageList.appendChild(fragment);
+}
+
+async function loadGallery() {
+  try {
+    const response = await fetch('gallery.json');
+    return await response.json();
+  } catch (error) {
+    console.error(`Error loading gallery.json: ${error.message}`);
+    return [];
+  }
+}
+
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const gallery = await loadGallery();
+  appendImages(gallery);
   const thumbnails = document.querySelectorAll('.image-item');
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-image');
@@ -48,6 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
+
+
+
 
 
 
