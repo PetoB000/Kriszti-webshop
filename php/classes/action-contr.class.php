@@ -106,6 +106,7 @@ class ActionContr {
         if (!empty($files['name'][0])) {
             foreach ($files['name'] as $key => $fileName) {
                 $tmpName = $files['tmp_name'][$key];
+                $fileName = str_replace(' ', '', $fileName);
                 $uniqueFileName = uniqid() . '-' . basename($fileName);
                 $targetFilePath = $uploadDir . $uniqueFileName;
                 $fileType = mime_content_type($tmpName);
