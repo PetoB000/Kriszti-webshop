@@ -3,76 +3,202 @@ function navigateToPage(pageUrl) {
 }
 
 
+const menuContainer = document.querySelector('.menu-container')
+// Create the menu container
+menu = document.createElement('div');
+menu.className = 'menu';
 
-menuContainer = document.querySelector('.menu-container')
+// Create the logo
+const logo = document.createElement('img');
+logo.src = './img/logo3.png';
+logo.alt = '';
+logo.className = 'logo';
+logo.onclick = () => navigateToPage('./index.html');
+menu.appendChild(logo);
 
-menuContainer.innerHTML = `
-<div class="menu"> 
-<img src="./img/logo3.png" alt="" class="logo" onclick="navigateToPage('./index.html')">        
-<div class="main_link pulse" onclick="navigateToPage('./index.html')">Főoldal</div>
-<div class="main_link pulse" onclick="navigateToPage('./about.html')">Rólam</div>
-<div class="main_link pulse" onclick="navigateToPage('./vasarlas_menete.html')">Vásárlás menete</div>
-<div class="dropdown">
-    <div class="main_link pulse">Termékeim  <img src="./img/icons/down-arrow(2).svg" alt="" class="icon"></div>
-    <ul class="dropdown-content">
-        <li data-categoryid="1" onclick="loadCategoryData(this)">Tálcák</li>
-        <li data-categoryid="3" onclick="loadCategoryData(this)">Emlékőrök</li>
-        <li data-categoryid="4" onclick="loadCategoryData(this)">Faliórák</li>
-        <li data-categoryid="5" onclick="loadCategoryData(this)">Kollekciók</li>
-        <li data-categoryid="6" onclick="loadCategoryData(this)">Sütis tálcák</li>
-        <li data-categoryid="7" onclick="loadCategoryData(this)">Poháralátétek/Tálak</li>
-        <li data-categoryid="2" onclick="loadCategoryData(this)">Ajándéktárgyak</li>
-        <li data-categoryid="8" onclick="loadCategoryData(this)">Jegyzetfüzetek</li>
-    </ul>
-</div>
-<div class="main_link pulse" onclick="navigateToPage('./contact.html')">Kapcsolat</div>
-<div class="basket icon-cart">
-    <img src="./img/icons/noun-basket-6865168.svg" alt="">
-    <div class="basket-count"></div>
-</div>
-<div class="hamburger"><img src="./img/icons/menu-circle-3-512.svg" alt=""></div>
-</div>
-`
+// Create the main links
+const mainLinkss = [
+  { text: 'Főoldal', url: './index.html' },
+  { text: 'Rólam', url: './about.html' },
+  { text: 'Vásárlás menete', url: './vasarlas_menete.html' },
+  { text: 'Kapcsolat', url: './contact.html' },
+];
+
+mainLinkss.forEach((link) => {
+  const mainLink = document.createElement('div');
+  mainLink.className = 'main_link pulse';
+  mainLink.textContent = link.text;
+  mainLink.onclick = () => navigateToPage(link.url);
+  menu.appendChild(mainLink);
+});
+
+// Create the dropdown
+dropdown = document.createElement('div');
+dropdown.className = 'dropdown';
+menu.appendChild(dropdown);
+
+const dropdownLink = document.createElement('div');
+dropdownLink.className = 'main_link pulse';
+dropdownLink.textContent = 'Termékeim';
+const dropdownIcon = document.createElement('img');
+dropdownIcon.src = './img/icons/down-arrow(2).svg';
+dropdownIcon.alt = '';
+dropdownIcon.className = 'icon';
+dropdownLink.appendChild(dropdownIcon);
+dropdown.appendChild(dropdownLink);
+
+const dropdownContent = document.createElement('ul');
+dropdownContent.className = 'dropdown-content';
+dropdown.appendChild(dropdownContent);
+
+const dropdownItems = [
+  { text: 'Tálcák', categoryId: 1 },
+  { text: 'Emlékőrök', categoryId: 3 },
+  { text: 'Faliórák', categoryId: 4 },
+  { text: 'Kollekciók', categoryId: 5 },
+  { text: 'Sütis tálcák', categoryId: 6 },
+  { text: 'Poháralátétek/Tálak', categoryId: 7 },
+  { text: 'Ajándéktárgyak', categoryId: 2 },
+  { text: 'Jegyzetfüzetek', categoryId: 8 },
+];
+
+dropdownItems.forEach((item) => {
+  const dropdownItem = document.createElement('li');
+  dropdownItem.textContent = item.text;
+  dropdownItem.dataset.categoryid = item.categoryId;
+  dropdownItem.onclick = () => loadCategoryData(dropdownItem);
+  dropdownContent.appendChild(dropdownItem);
+});
+
+// Create the basket
+let basket = document.createElement('div');
+basket.className = 'basket icon-cart';
+menu.appendChild(basket);
+
+const basketIcon = document.createElement('img');
+basketIcon.src = './img/icons/noun-basket-6865168.svg';
+basketIcon.alt = '';
+basket.appendChild(basketIcon);
+
+const basketCount = document.createElement('div');
+basketCount.className = 'basket-count';
+basket.appendChild(basketCount);
+
+// Create the hamburger
+const hamburger = document.createElement('div');
+hamburger.className = 'hamburger';
+menu.appendChild(hamburger);
+
+const hamburgerIcon = document.createElement('img');
+hamburgerIcon.src = './img/icons/menu-circle-3-512.svg';
+hamburgerIcon.alt = '';
+hamburger.appendChild(hamburgerIcon);
+document.body.appendChild(menu);
+menuContainer.appendChild(menu)
 
 
-footer = document.querySelector('footer')
 
-footer.innerHTML = `
-<div class="media">
-  <p>Kriszti Epoxy műhelye</p>
 
-  <p>Ajándéktárgyimat kézzel, egyedileg készítem, igy minden alkotásom más és más.</p>
-  <div class="svg_container">
-      <a href="https://www.facebook.com/kriszti.epoxy.muhelye" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
-              <path d="M 25 3 C 12.861562 3 3 12.861562 3 25 C 3 36.019135 11.127533 45.138355 21.712891 46.728516 L 22.861328 46.902344 L 22.861328 29.566406 L 17.664062 29.566406 L 17.664062 26.046875 L 22.861328 26.046875 L 22.861328 21.373047 C 22.861328 18.494965 23.551973 16.599417 24.695312 15.410156 C 25.838652 14.220896 27.528004 13.621094 29.878906 13.621094 C 31.758714 13.621094 32.490022 13.734993 33.185547 13.820312 L 33.185547 16.701172 L 30.738281 16.701172 C 29.349697 16.701172 28.210449 17.475903 27.619141 18.507812 C 27.027832 19.539724 26.84375 20.771816 26.84375 22.027344 L 26.84375 26.044922 L 32.966797 26.044922 L 32.421875 29.564453 L 26.84375 29.564453 L 26.84375 46.929688 L 27.978516 46.775391 C 38.71434 45.319366 47 36.126845 47 25 C 47 12.861562 37.138438 3 25 3 z M 25 5 C 36.057562 5 45 13.942438 45 25 C 45 34.729791 38.035799 42.731796 28.84375 44.533203 L 28.84375 31.564453 L 34.136719 31.564453 L 35.298828 24.044922 L 28.84375 24.044922 L 28.84375 22.027344 C 28.84375 20.989871 29.033574 20.060293 29.353516 19.501953 C 29.673457 18.943614 29.981865 18.701172 30.738281 18.701172 L 35.185547 18.701172 L 35.185547 12.009766 L 34.318359 11.892578 C 33.718567 11.811418 32.349197 11.621094 29.878906 11.621094 C 27.175808 11.621094 24.855567 12.357448 23.253906 14.023438 C 21.652246 15.689426 20.861328 18.170128 20.861328 21.373047 L 20.861328 24.046875 L 15.664062 24.046875 L 15.664062 31.566406 L 20.861328 31.566406 L 20.861328 44.470703 C 11.816995 42.554813 5 34.624447 5 25 C 5 13.942438 13.942438 5 25 5 z"></path>
-          </svg>
-      </a>
-      <!-- <a href="https://www.instagram.com/YourInstagramPage" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  viewBox="0 0 50 50">
-              <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
-          </svg>
-      </a>    -->
-  </div>
-</div>
 
-<div class="legal">
-  <p>Jogi tudnivalók</p>
-  <p onclick="navigateToPage('ASZF.html')">Vásárlási feltételek</p>
-  <p onclick="navigateToPage('Adatkezelesi-tajekoztato.html')">Adatkezelési tájékoztató</p>
-  <p onclick="navigateToPage('Adatkezelesi-tajekoztato.html')">Szállítási módok</p>
-  <p onclick="navigateToPage('Adatkezelesi-tajekoztato.html')">Fizetési módik</p>
 
-</div>
-<div class="contact">
-  <p>kapcsolat</p>
-  <p>Petőné Birta Kriszti</p>
-  <p>4243 Téglás, Beck Pál utca 34</p>
-  <p>+36 20 416 64 22</p>
-  <p>krisztiepoxymuhelye@gmail.com</p>
-</div>
 
-`
+const footer = document.querySelector('footer');
+
+// Create media section
+const mediaDiv = document.createElement('div');
+mediaDiv.className = 'media';
+
+const mediaText1 = document.createElement('p');
+mediaText1.textContent = 'Kriszti Epoxy műhelye';
+
+const mediaText2 = document.createElement('p');
+mediaText2.textContent = 'Ajándéktárgyimat kézzel, egyedileg készítem, igy minden alkotásom más és más.';
+
+const svgContainer = document.createElement('div');
+svgContainer.className = 'svg_container';
+
+const facebookLink = document.createElement('a');
+facebookLink.href = 'https://www.facebook.com/kriszti.epoxy.muhelye';
+facebookLink.target = '_blank';
+
+const facebookSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+facebookSvg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+facebookSvg.setAttribute('x', '0px');
+facebookSvg.setAttribute('y', '0px');
+facebookSvg.setAttribute('viewBox', '0 0 50 50');
+
+const facebookPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+facebookPath.setAttribute('d', 'M 25 3 C 12.861562 3 3 12.861562 3 25 C 3 36.019135 11.127533 45.138355 21.712891 46.728516 L 22.861328 46.902344 L 22.861328 29.566406 L 17.664062 29.566406 L 17.664062 26.046875 L 22.861328 26.046875 L 22.861328 21.373047 C 22.861328 18.494965 23.551973 16.599417 24.695312 15.410156 C 25.838652 14.220896 27.528004 13.621094 29.878906 13.621094 C 31.758714 13.621094 32.490022 13.734993 33.185547 13.820312 L 33.185547 16.701172 L 30.738281 16.701172 C 29.349697 16.701172 28.210449 17.475903 27.619141 18.507812 C 27.027832 19.539724 26.84375 20.771816 26.84375 22.027344 L 26.84375 26.044922 L 32.966797 26.044922 L 32.421875 29.564453 L 26.84375 29.564453 L 26.84375 46.929688 L 27.978516 46.775391 C 38.71434 45.319366 47 36.126845 47 25 C 47 12.861562 37.138438 3 25 3 z M 25 5 C 36.057562 5 45 13.942438 45 25 C 45 34.729791 38.035799 42.731796 28.84375 44.533203 L 28.84375 31.564453 L 34.136719 31.564453 L 35.298828 24.044922 L 28.84375 24.044922 L 28.84375 22.027344 C 28.84375 20.989871 29.033574 20.060293 29.353516 19.501953 C 29.673457 18.943614 29.981865 18.701172 30.738281 18.701172 L 35.185547 18.701172 L 35.185547 12.009766 L 34.318359 11.892578 C 33.718567 11.811418 32.349197 11.621094 29.878906 11.621094 C 27.175808 11.621094 24.855567 12.357448 23.253906 14.023438 C 21.652246 15.689426 20.861328 18.170128 20.861328 21.373047 L 20.861328 24.046875 L 15.664062 24.046875 L 15.664062 31.566406 L 20.861328 31.566406 L 20.861328 44.470703 C 11.816995 42.554813 5 34.624447 5 25 C 5 13.942438 13.942438 5 25 5 z');
+
+facebookSvg.appendChild(facebookPath);
+facebookLink.appendChild(facebookSvg);
+svgContainer.appendChild(facebookLink);
+
+mediaDiv.appendChild(mediaText1);
+mediaDiv.appendChild(mediaText2);
+mediaDiv.appendChild(svgContainer);
+
+// Create legal section
+const legalDiv = document.createElement('div');
+legalDiv.className = 'legal';
+
+const legalTitle = document.createElement('p');
+legalTitle.textContent = 'Jogi tudnivalók';
+
+const legalText1 = document.createElement('p');
+legalText1.textContent = 'Vásárlási feltételek';
+legalText1.onclick = () => navigateToPage('ASZF.html');
+
+const legalText2 = document.createElement('p');
+legalText2.textContent = 'Adatkezelési tájékoztató';
+legalText2.onclick = () => navigateToPage('Adatkezelesi-tajekoztato.html');
+
+const legalText3 = document.createElement('p');
+legalText3.textContent = 'Szállítási módok';
+legalText3.onclick = () => navigateToPage('Adatkezelesi-tajekoztato.html');
+
+const legalText4 = document.createElement('p');
+legalText4.textContent = 'Fizetési módik';
+legalText4.onclick = () => navigateToPage('Adatkezelesi-tajekoztato.html');
+
+legalDiv.appendChild(legalTitle);
+legalDiv.appendChild(legalText1);
+legalDiv.appendChild(legalText2);
+legalDiv.appendChild(legalText3);
+legalDiv.appendChild(legalText4);
+
+// Create contact section
+const contactDiv = document.createElement('div');
+contactDiv.className = 'contact';
+
+const contactTitle = document.createElement('p');
+contactTitle.textContent = 'kapcsolat';
+
+const contactText1 = document.createElement('p');
+contactText1.textContent = 'Petőné Birta Kriszti';
+
+const contactText2 = document.createElement('p');
+contactText2.textContent = '4243 Téglás, Beck Pál utca 34';
+
+const contactText3 = document.createElement('p');
+contactText3.textContent = '+36 20 416 64 22';
+
+const contactText4 = document.createElement('p');
+contactText4.textContent = 'krisztiepoxymuhelye@gmail.com';
+
+contactDiv.appendChild(contactTitle);
+contactDiv.appendChild(contactText1);
+contactDiv.appendChild(contactText2);
+contactDiv.appendChild(contactText3);
+contactDiv.appendChild(contactText4);
+
+// Append all sections to footer
+footer.appendChild(mediaDiv);
+footer.appendChild(legalDiv);
+footer.appendChild(contactDiv);
+
+
+
 cartTab = document.querySelector('.cartTab')
 cartTab.innerHTML = ` 
 <div class="header">
@@ -107,7 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 if (window.innerWidth < 1001) {
-  dropdown = document.querySelector(".dropdown");
   const dropdownContent = document.querySelector('.dropdown-content');
   let isdropdownOpen = false;
 
@@ -140,7 +265,7 @@ let cart = [];
 
 
 
-let basket = {};
+basket = {};
 
 
 

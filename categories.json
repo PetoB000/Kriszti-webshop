@@ -28,10 +28,10 @@
                 "thumbnail": "./img/categories/TengeresFatalca/image_6487327(22).JPG"
             },
             {
-                "name": "kkkkkkkkkkkkkk",
+                "name": "grerher",
                 "price": 5565654,
-                "productId": 84,
-                "thumbnail": "./uploads/products/66aa7f865b5fa-ewgwe.jpg"
+                "productId": 93,
+                "thumbnail": "./uploads/products/66ad1bdedd558-fweg.jpg"
             }
         ]
     },
@@ -196,5 +196,10 @@
                 "thumbnail": "./img/categories/A5Noteszszett/image_67171585.JPG"
             }
         ]
+    },
+    {
+        "categoryId": 21,
+        "name": "ewgergezhrt",
+        "products": []
     }
 ]

@@ -148,6 +148,10 @@ class AdminView {
                         <div class="mb-3">
                             <label for="fileUpload" class="form-label">Galéria képek hozzáadása</label>
                             <input type="file" name="gallPictures[]" id="fileUpload" accept="image/*" class="form-control" multiple required>
+
+
+
+
                         </div>
                         <button type="submit" class="btn btn-primary" name="change-action" value="add-galery-b">Feltöltés</button>
                     </form>
@@ -209,7 +213,7 @@ class AdminView {
                 <div class="mb-3 row">
                     <label for="additional-fileUpload" class="form-label">További képek hozzáadása</label>
                     <input type="file" name="pictures[]" id="additional-fileUpload" accept="image/*" class="form-control" multiple>
-                    <label class="form-label">Jelenlegi képek: (Az első kép mindig a fő kép)</label>
+                    <label class="form-label">Jelenlegi képek: (A fő képet csak akkor töröld ki innen ha azt meg is változtatod)</label>
                     <div class="row">';
                             foreach ($thumbnails as $thumbnail) {
             $formHtml .= '

@@ -1,7 +1,7 @@
-const menu = document.querySelector(".menu");
+let menu = document.querySelector(".menu");
 const hamburgerImg = document.querySelector(".hamburger img");
 const menuLinks = document.querySelectorAll(".main_link");
-const dropdown = document.querySelector(".dropdown");
+let dropdown = document.querySelector(".dropdown");
 
 let isMenuOpen = false;
 

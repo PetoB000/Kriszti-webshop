@@ -5,7 +5,7 @@ class Dbh {
         try {
             $username = "root";
             $password = "";
-            $dbh = new PDO('mysql:host=localhost;dbname=webshop', $username, $password);
+            $dbh = new PDO('mysql:host=127.0.0.1;dbname=webshop', $username, $password);
             return $dbh;
         } catch (PDOException $e) {
             print("error!: " . $e->getMessage());

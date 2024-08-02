@@ -186,7 +186,7 @@ class ActionContr {
             $dataImage = $_FILES['data-image'];
 
             $this->model->updateProduct($productId, $name, $price, $description, $categoryId);
-            if ($picture && $picture['error'] === UPLOAD_ERR_OK) {
+            if (isset($picture) && $picture['error'] === UPLOAD_ERR_OK) {
                 $picture = $this->prepareImages($picture, '../uploads/products/');
                 $trimmedPicturePath = substr($picture, 1);
                 $this->model->setThumbnails($productId, $trimmedPicturePath);
