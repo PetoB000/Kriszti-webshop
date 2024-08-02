@@ -96,7 +96,7 @@ class ActionContr {
         }
     }
 
-    private function prepareImages($files, $uploadDir) {
+    private function uploadImages($files, $uploadDir) {
         $uploadedFiles = [];
         foreach ($files as $file) {
             if (!is_array($files['name'])) {
@@ -126,7 +126,7 @@ class ActionContr {
 
     public function setGalleryImage() {
         $uploadDir = '../uploads/gallery/';
-        $uploadedFiles = $this->prepareImages($_FILES['gallPictures'], $uploadDir);
+        $uploadedFiles = $this->uploadImages($_FILES['gallPictures'], $uploadDir);
         if (str_contains($uploadedFiles, " ")) {
             $galleryImages = explode(" ", $uploadedFiles);
         } else {
@@ -155,9 +155,9 @@ class ActionContr {
         $thumbnails = $_FILES['pictures'];
         $description = $_POST['product-description'];
         $dataImage = $_FILES['data-image'];
-        $shownImg = $this->prepareImages($shownImg, $uploadDir);
-        $thumbnails = $this->prepareImages($thumbnails, $uploadDir);
-        $dataImage = $this->prepareImages($dataImage, $uploadDir);
+        $shownImg = $this->uploadImages($shownImg, $uploadDir);
+        $thumbnails = $this->uploadImages($thumbnails, $uploadDir);
+        $dataImage = $this->uploadImages($dataImage, $uploadDir);
         $trimmedShownImg = substr($shownImg, 1);
         $trimmedDataImg = substr($dataImage, 1);
         $this->model->addProduct($productName, $categoryId, $price, $trimmedShownImg,  $description, $trimmedDataImg);
@@ -176,52 +176,53 @@ class ActionContr {
 
 
     public function updateProduct() {
-            $name = $_POST['product-name'];
-            $price = $_POST['product-price'];
-            $description = $_POST['product-description'];
-            $categoryId = $_POST['category'];
-            $productId = $_POST['productId'];
-            $picture = $_FILES['picture'];
-            $additionalPictures = $_FILES['pictures'];
-            $dataImage = $_FILES['data-image'];
+        $productId = $_POST['productId'];
+        $name = $_POST['product-name'];
+        $price = $_POST['product-price'];
+        $description = $_POST['product-description'];
+        $categoryId = $_POST['category'];
+        $this->model->updateProduct($productId, $name, $price, $description, $categoryId);
+        $this->handleImageUploads($productId);
+        if (isset($_POST['delete-thumbnails'])) {
+            $this->deleteThumbnails($_POST['delete-thumbnails']);
+        }
+    }
 
-            $this->model->updateProduct($productId, $name, $price, $description, $categoryId);
-            if (isset($picture) && $picture['error'] === UPLOAD_ERR_OK) {
-                $picture = $this->prepareImages($picture, '../uploads/products/');
-                $trimmedPicturePath = substr($picture, 1);
-                $this->model->setThumbnails($productId, $trimmedPicturePath);
-                $this->model->updateColumn('products', 'shownImg', $trimmedPicturePath, 'productId', $productId);
-            }
-    
-            if ($dataImage && $dataImage['error'] === UPLOAD_ERR_OK) {
-                $dataImage = $this->prepareImages($dataImage, '../uploads/products/');
-                $trimmedDataImagePath = substr($dataImage, 1);
-                $this->model->updateColumn('products', 'dataImage', $trimmedDataImagePath, 'productId', $productId);
-            }
-    
-            if (!empty($_FILES['pictures']['name'][0])) {
-                $thumbnails = $this->prepareImages($additionalPictures, "../uploads/products/");
-                if (is_array($thumbnails)) {
-                     
-                } else {
-                    $thumbnails = explode(" ", $thumbnails);
-                    foreach ($thumbnails as $thumbnail) {
-                        $trimmedThumbnail = substr($thumbnail, 1);
-                        $this->model->setThumbnails($productId, $trimmedThumbnail);
-                    }
+    private function handleImageUploads($productId) {
+        $picture = $_FILES['picture'];
+        $additionalPictures = $_FILES['pictures'];
+        $dataImage = $_FILES['data-image'];
+
+        if (isset($picture) && $picture['error'] === UPLOAD_ERR_OK) {
+            $picturePath = $this->uploadImages($picture, '../uploads/products/');
+            $this->model->setThumbnails($productId, substr($picturePath, 1));
+            $this->model->updateColumn('products', 'shownImg', substr($picturePath, 1), 'productId', $productId);
+        }
+
+        if (!empty($_FILES['pictures']['name'][0])) {
+            $thumbnails = $this->uploadImages($additionalPictures, "../uploads/products/");
+            if (is_array($thumbnails)) {
+            } else {
+                $thumbnails = explode(" ", $thumbnails);
+                foreach ($thumbnails as $thumbnail) {
+                    $this->model->setThumbnails($productId, substr($thumbnail, 1));
                 }
             }
+        }
 
-            if (isset($_POST['delete-thumbnails'])) {
-                $deleteThumbnails = $_POST['delete-thumbnails'];
-                foreach ($deleteThumbnails as $thumbnailId) {
-                    $filePath = $this->model->getThumbDeletePath($thumbnailId);
-                    $filePath = "." . $filePath;
-                    unlink($filePath);
-                    echo $filePath;
-                    $this->model->deleteThumbnail($thumbnailId);
-                }   
-            } 
+        if (isset($dataImage) && $dataImage['error'] === UPLOAD_ERR_OK) {
+            $dataImagePath = $this->uploadImages($dataImage, '../uploads/products/');
+            $this->model->updateColumn('products', 'dataImage', substr($dataImagePath, 1), 'productId', $productId);
+        }
+    }
+
+    private function deleteThumbnails($thumbnailIds) {
+        foreach ($thumbnailIds as $thumbnailId) {
+            $filePath = $this->model->getThumbDeletePath($thumbnailId);
+            $filePath = "." . $filePath;
+            unlink($filePath);
+            $this->model->deleteThumbnail($thumbnailId);
+        }
     }
 
     
@@ -230,14 +231,14 @@ class ActionContr {
         $id = $_POST['productId'];
         return $this->model->getProductById($id);
     }
-
+    
     public function getThumbnails($productId) {
         return $this->model->getThumbnails($productId);
     }
-
+    
     public function setThumbnail($productId, $thumbnail) {
         $this->model->setThumbnails($productId, $thumbnail);
-    }
+}
 
 
     public function deleteProduct($productId) {
