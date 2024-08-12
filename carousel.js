@@ -26,14 +26,14 @@ function loadGallery() {
   }
 }
 
-
+const gallery =  loadGallery();
+appendImages(gallery);
+initSlider();
 console.log('sajtos')
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log("sajt")
-  const gallery =  loadGallery();
-  appendImages(gallery);
-  initSlider();
+
   const thumbnails = document.getElementsByClassName('.image-item');
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-image');
