@@ -153,7 +153,7 @@ class ActionContr {
         $price = $_POST['product-price'];
         $shownImg = $_FILES['picture'];
         $thumbnails = $_FILES['pictures'];
-        $description = $_POST['product-description'];
+        $description = $_POST['product-description'] . '<br><br>';
         $dataImage = $_FILES['data-image'];
         $shownImg = $this->uploadImages($shownImg, $uploadDir);
         $thumbnails = $this->uploadImages($thumbnails, $uploadDir);

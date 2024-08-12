@@ -146,6 +146,10 @@ button:hover {
     .product_img {
         min-height: 80%;
     }
+
+    .product_img_exception {
+        height: 80%;
+    }
 }
 
 @media screen and (max-width: 405px) {

@@ -16,10 +16,10 @@ function appendImages(imagePaths) {
   imageList.appendChild(fragment);
 }
 
-async function loadGallery() {
+function loadGallery() {
   try {
-    const response = await fetch('gallery.json');
-    return await response.json();
+    const response =  fetch('gallery.json');
+    return  response.json();
   } catch (error) {
     console.error(`Error loading gallery.json: ${error.message}`);
     return [];
@@ -27,12 +27,14 @@ async function loadGallery() {
 }
 
 
+console.log('sajtos')
 
-
-document.addEventListener('DOMContentLoaded', async () => {
-  const gallery = await loadGallery();
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("sajt")
+  const gallery =  loadGallery();
   appendImages(gallery);
-  const thumbnails = document.querySelectorAll('.image-item');
+  initSlider();
+  const thumbnails = document.getElementsByClassName('.image-item');
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-image');
   const closeButton = document.querySelector('.close-button');

@@ -3,101 +3,6 @@ function navigateToPage(pageUrl) {
 }
 
 
-const menuContainer = document.querySelector('.menu-container')
-// Create the menu container
-menu = document.createElement('div');
-menu.className = 'menu';
-
-// Create the logo
-const logo = document.createElement('img');
-logo.src = './img/logo3.png';
-logo.alt = '';
-logo.className = 'logo';
-logo.onclick = () => navigateToPage('./index.html');
-menu.appendChild(logo);
-
-// Create the main links
-const mainLinkss = [
-  { text: 'Főoldal', url: './index.html' },
-  { text: 'Rólam', url: './about.html' },
-  { text: 'Vásárlás menete', url: './vasarlas_menete.html' },
-  { text: 'Kapcsolat', url: './contact.html' },
-];
-
-mainLinkss.forEach((link) => {
-  const mainLink = document.createElement('div');
-  mainLink.className = 'main_link pulse';
-  mainLink.textContent = link.text;
-  mainLink.onclick = () => navigateToPage(link.url);
-  menu.appendChild(mainLink);
-});
-
-// Create the dropdown
-dropdown = document.createElement('div');
-dropdown.className = 'dropdown';
-menu.appendChild(dropdown);
-
-const dropdownLink = document.createElement('div');
-dropdownLink.className = 'main_link pulse';
-dropdownLink.textContent = 'Termékeim';
-const dropdownIcon = document.createElement('img');
-dropdownIcon.src = './img/icons/down-arrow(2).svg';
-dropdownIcon.alt = '';
-dropdownIcon.className = 'icon';
-dropdownLink.appendChild(dropdownIcon);
-dropdown.appendChild(dropdownLink);
-
-const dropdownContent = document.createElement('ul');
-dropdownContent.className = 'dropdown-content';
-dropdown.appendChild(dropdownContent);
-
-const dropdownItems = [
-  { text: 'Tálcák', categoryId: 1 },
-  { text: 'Emlékőrök', categoryId: 3 },
-  { text: 'Faliórák', categoryId: 4 },
-  { text: 'Kollekciók', categoryId: 5 },
-  { text: 'Sütis tálcák', categoryId: 6 },
-  { text: 'Poháralátétek/Tálak', categoryId: 7 },
-  { text: 'Ajándéktárgyak', categoryId: 2 },
-  { text: 'Jegyzetfüzetek', categoryId: 8 },
-];
-
-dropdownItems.forEach((item) => {
-  const dropdownItem = document.createElement('li');
-  dropdownItem.textContent = item.text;
-  dropdownItem.dataset.categoryid = item.categoryId;
-  dropdownItem.onclick = () => loadCategoryData(dropdownItem);
-  dropdownContent.appendChild(dropdownItem);
-});
-
-// Create the basket
-let basket = document.createElement('div');
-basket.className = 'basket icon-cart';
-menu.appendChild(basket);
-
-const basketIcon = document.createElement('img');
-basketIcon.src = './img/icons/noun-basket-6865168.svg';
-basketIcon.alt = '';
-basket.appendChild(basketIcon);
-
-const basketCount = document.createElement('div');
-basketCount.className = 'basket-count';
-basket.appendChild(basketCount);
-
-// Create the hamburger
-const hamburger = document.createElement('div');
-hamburger.className = 'hamburger';
-menu.appendChild(hamburger);
-
-const hamburgerIcon = document.createElement('img');
-hamburgerIcon.src = './img/icons/menu-circle-3-512.svg';
-hamburgerIcon.alt = '';
-hamburger.appendChild(hamburgerIcon);
-document.body.appendChild(menu);
-menuContainer.appendChild(menu)
-
-
-
 
 
 
@@ -158,7 +63,7 @@ legalText3.textContent = 'Szállítási módok';
 legalText3.onclick = () => navigateToPage('Adatkezelesi-tajekoztato.html');
 
 const legalText4 = document.createElement('p');
-legalText4.textContent = 'Fizetési módik';
+legalText4.textContent = 'Fizetési módok';
 legalText4.onclick = () => navigateToPage('Adatkezelesi-tajekoztato.html');
 
 legalDiv.appendChild(legalTitle);
@@ -462,7 +367,7 @@ function clearBasket() {
 
 
 
- const mainLinks = document.querySelectorAll('.main_link');
+ mainLinks = document.querySelectorAll('.main_link');
  let hoverTimeout;
  function addHoverActive() {
      menu.classList.add('hover-active');
