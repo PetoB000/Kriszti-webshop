@@ -16,9 +16,9 @@ function appendImages(imagePaths) {
   imageList.appendChild(fragment);
 }
 
-function loadGallery() {
+async function loadGallery() {
   try {
-    const response =  fetch('gallery.json');
+    const response = await fetch('gallery.json');
     return  response.json();
   } catch (error) {
     console.error(`Error loading gallery.json: ${error.message}`);
@@ -26,7 +26,7 @@ function loadGallery() {
   }
 }
 
-const gallery =  loadGallery();
+const gallery = await loadGallery();
 appendImages(gallery);
 initSlider();
 console.log('sajtos')
