@@ -26,14 +26,13 @@ async function loadGallery() {
   }
 }
 
-const gallery = await loadGallery();
-appendImages(gallery);
-initSlider();
+
 console.log('sajtos')
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("sajt")
-
+document.addEventListener('DOMContentLoaded', async () => {
+  const gallery = await loadGallery();
+  appendImages(gallery);
+  initSlider();
   const thumbnails = document.getElementsByClassName('.image-item');
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-image');
