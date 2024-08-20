@@ -1,6 +1,7 @@
 function appendImages(imagePaths) {
   const imageList = document.querySelector('.image-list');
   const fragment = document.createDocumentFragment();
+  const imagePromises = [];
 
   imagePaths.forEach((path, index) => {
     const img = document.createElement('img');
@@ -11,9 +12,20 @@ function appendImages(imagePaths) {
     const li = document.createElement('li');
     li.appendChild(img);
     fragment.appendChild(li);
+
+    // Ensure images are fully loaded before continuing
+    const imgPromise = new Promise((resolve) => {
+      img.onload = resolve;
+    });
+    imagePromises.push(imgPromise);
   });
 
   imageList.appendChild(fragment);
+
+  // Wait for all images to load before initializing the slider
+  Promise.all(imagePromises).then(() => {
+    initSlider();
+  });
 }
 
 async function loadGallery() {
@@ -26,14 +38,10 @@ async function loadGallery() {
   }
 }
 
-
-
-
 document.addEventListener('DOMContentLoaded', async () => {
   const gallery = await loadGallery();
   appendImages(gallery);
-  console.log(gallery)
-  initSlider();
+
   const thumbnails = document.querySelectorAll('.image-item');
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-image');
@@ -55,20 +63,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       modal.style.display = 'none';
   });
 
-
   nextButton.addEventListener('click', function() {
     nextImgId = parseInt(imgId) + 1;
-
     let nextImgElement = document.getElementById(nextImgId);
 
     if (nextImgElement) {
       let nextImgUrl = nextImgElement.getAttribute('src');
       modalContent.setAttribute('src', nextImgUrl);
       imgId = nextImgId;
-
     }
   });
-
 
   prevButton.addEventListener('click', function() {
     prevImgId = parseInt(imgId) - 1;
@@ -76,20 +80,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (prevImgElement) {
       let prevImgUrl = prevImgElement.getAttribute('src');
-      modalContent.setAttribute('src', prevImgUrl)
+      modalContent.setAttribute('src', prevImgUrl);
       imgId = prevImgId;
     }
-
   });
-
 });
-
-
-
-
-
-
-
 
 const initSlider = () => {
   const imageList = document.querySelector(".slider-wrapper .image-list");
@@ -97,38 +92,33 @@ const initSlider = () => {
   const sliderScrollbar = document.querySelector(".slider-container .slider-scrollbar");
   const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
   const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
-  
+
   // Handle scrollbar thumb drag
   scrollbarThumb.addEventListener("mousedown", (e) => {
       const startX = e.clientX;
       const thumbPosition = scrollbarThumb.offsetLeft;
       const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
-      
-      // Update thumb position on mouse move
+
       const handleMouseMove = (e) => {
           const deltaX = e.clientX - startX;
           const newThumbPosition = thumbPosition + deltaX;
 
-          // Ensure the scrollbar thumb stays within bounds
           const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
           const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
-          
+
           scrollbarThumb.style.left = `${boundedPosition}px`;
           imageList.scrollLeft = scrollPosition;
       }
 
-      // Remove event listeners on mouse up
       const handleMouseUp = () => {
           document.removeEventListener("mousemove", handleMouseMove);
           document.removeEventListener("mouseup", handleMouseUp);
       }
 
-      // Add event listeners for drag interaction
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
   });
 
-  // Slide images according to the slide button clicks
   slideButtons.forEach(button => {
       button.addEventListener("click", () => {
           const direction = button.id === "prev-slide" ? -1 : 1;
@@ -137,25 +127,26 @@ const initSlider = () => {
       });
   });
 
-   // Show or hide slide buttons based on scroll position
   const handleSlideButtons = () => {
       slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
       slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
   }
 
-  // Update scrollbar thumb position based on image scroll
   const updateScrollThumbPosition = () => {
       const scrollPosition = imageList.scrollLeft;
       const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
       scrollbarThumb.style.left = `${thumbPosition}px`;
   }
 
-  // Call these two functions when image list scrolls
   imageList.addEventListener("scroll", () => {
       updateScrollThumbPosition();
       handleSlideButtons();
   });
+
+  handleSlideButtons();
+  updateScrollThumbPosition();
 }
 
+// Ensure slider is initialized on resize and full page load
 window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
